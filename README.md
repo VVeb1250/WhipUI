@@ -138,6 +138,13 @@ debugging, scripting, and creating a handoff artifact:
     npm run syntax-check
     npm pack --dry-run
 
-Release tags use GitHub Actions to run the same checks, publish to npm, and create a GitHub release. Configure the NPM_TOKEN repository secret, then run npm version patch, push the commit, and push the tag.
+Releases are PR-driven. After a conventional commit lands on `main`, Release
+Please opens or updates a release PR with the version bump and changelog. Merge
+that release PR to create the GitHub release and publish the package to npm.
+The release job runs the same tests and package checks before publishing. Keep
+the `NPM_TOKEN` repository secret configured for the `whipui` package.
+
+Dependabot patch and minor updates are auto-merged after CI passes. Major
+updates remain open for review.
 
 The package has no runtime dependencies and targets Node 18+.

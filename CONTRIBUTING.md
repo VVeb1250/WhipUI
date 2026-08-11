@@ -20,5 +20,11 @@ existing host skill, MCP server, or browser tool over adding a new runtime.
 
 ## Releases
 
-Use npm version patch, minor, or major. Push the commit and tag. GitHub Actions
-publishes the tag to npm and creates release notes.
+Use Conventional Commit prefixes in pull requests and squash-merge them into
+`main` (`fix:` for patch, `feat:` for minor, and `!` for breaking changes).
+Release Please opens or updates a release PR automatically. Merge that release
+PR to update the version and changelog, create the GitHub release, and publish
+to npm after the verification checks pass.
+
+Dependabot patch and minor updates are auto-merged after CI passes. Major
+updates are intentionally left for manual review.
