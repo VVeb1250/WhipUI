@@ -7,6 +7,12 @@
     "ownsEditorRuntime": false,
     "ownsMcpServer": false
   },
+  "setup": {
+    "scope": "project-local",
+    "interactiveInstallOnInit": true,
+    "nonInteractiveInstall": "use --yes explicitly",
+    "neverWritesGlobalConfig": true
+  },
   "inputs": [
     "prompt",
     "screenshot",
@@ -30,12 +36,17 @@
   },
   "designIntelligence": {
     "preferred": [
-      "ui-ux-pro-max-like-design-skill",
+      "ui-ux-pro-max",
+      "impeccable",
       "existing-frontend-design-skill",
       "existing-repository-design-system"
     ],
+    "roles": {
+      "ui-ux-pro-max": "design-system-and-visual-direction",
+      "impeccable": "visual-critique-refinement-and-anti-slop"
+    },
     "discoverAtRuntime": true,
-    "installAutomatically": false
+    "installAutomatically": "only-after-explicit-init-confirmation"
   },
   "visualQa": {
     "maxIterations": 3,

@@ -21,6 +21,8 @@ test('routes Pick from Web to Playwright MCP and does not own a runtime', () => 
   assert.equal(plan.kind, 'pick-from-web')
   assert.equal(plan.mcp[0].name, 'Playwright MCP')
   assert.equal(plan.mcp[0].role, 'primary')
+  assert.equal(plan.skills.some((skill) => skill.startsWith('UI/UX Pro Max')), true)
+  assert.equal(plan.skills.some((skill) => skill.startsWith('Impeccable')), true)
   assert.equal(plan.ownsRuntime, false)
 })
 
@@ -74,7 +76,11 @@ test('init is idempotent and preserves existing AGENTS content', async () => {
   assert.equal(existsSync(join(projectRoot, 'WhipUI.md')), true)
   assert.equal(existsSync(join(projectRoot, 'PROJECT-DNA.md')), true)
   assert.equal(existsSync(join(projectRoot, '.whipui/project-dna.json')), true)
+  assert.equal(existsSync(join(projectRoot, '.whipui/capabilities.json')), true)
+  assert.equal(existsSync(join(projectRoot, '.codex/config.toml')), true)
+  assert.equal(existsSync(join(projectRoot, '.vscode/mcp.json')), true)
   assert.equal(existsSync(join(projectRoot, '.github/prompts/whipui-frontend.prompt.md')), true)
+  assert.match(await readFile(join(projectRoot, 'AGENTS.md'), 'utf8'), /Impeccable/)
 })
 
 test('CLI creates Pick from Web, fingerprint, and visual QA handoff artifacts', async () => {

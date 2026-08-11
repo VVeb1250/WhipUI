@@ -14,5 +14,7 @@ test('init creates Claude Code instructions and a local WhipUI skill', async () 
   const claudeSkill = await readFile(join(projectRoot, '.claude/skills/whipui/SKILL.md'), 'utf8')
 
   assert.match(claudeInstructions, /WhipUI frontend design router/)
+  assert.match(claudeInstructions, /UI\/UX Pro Max/)
   assert.match(claudeSkill, /Playwright MCP/)
+  assert.match(claudeSkill, /Impeccable/)
 })

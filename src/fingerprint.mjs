@@ -388,7 +388,7 @@ export function buildAgentBrief({
     'Required workflow:',
     '1. Read WhipUI.md, PROJECT-DNA.md, .whipui/project-dna.json, and .whipui/design-fingerprint.json.',
     '2. Inspect the existing repository and reuse its components, tokens, fonts, assets, and routes.',
-    '3. Apply the available UI/UX Pro Max-like or existing design-intelligence skill. Do not install a duplicate runtime.',
+    '3. Apply UI/UX Pro Max for design-system direction when installed, Impeccable for critique when installed, or the existing design-intelligence skill as fallback.',
     '4. If a screenshot is supplied, separate identity from accidental pixels and record durable traits.',
     '5. If Figma is supplied and Figma MCP is connected, use its variables, components, assets, and hierarchy as the higher-confidence source.',
     '6. If a live URL is supplied, use Playwright MCP to inspect it in an isolated context. If this is a pick request, follow .whipui/workflows/pick-from-web.md.',

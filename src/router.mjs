@@ -77,7 +77,9 @@ export function routeRequest({
 } = {}) {
   const inputs = detectInputs({ prompt, screenshot, figma, url, existingRepo, webPick })
   const skills = [
-    'existing design intelligence skill, if available',
+    'UI/UX Pro Max for design-system direction, when installed',
+    'Impeccable for critique, refinement, and anti-slop, when installed',
+    'existing design intelligence skill as the fallback',
     'frontend implementation skill, if available'
   ]
   const mcp = []

@@ -4,12 +4,16 @@
 For frontend requests, read WhipUI.md, PROJECT-DNA.md,
 .whipui/project-dna.json, and .whipui/design-fingerprint.json before coding.
 
-WhipUI is a thin router. Do not build or install a new agent, browser, editor,
-or MCP server for a normal request. Route the work to capabilities already
-available in the host:
+WhipUI is a thin router. Do not build a new agent, browser, editor, or MCP
+server. Use the project-local capabilities recorded in .whipui/capabilities.json
+and route work to the existing host ecosystem:
 
-- Prompt: use the available UI/UX Pro Max-like or existing design-intelligence
-  skill, then reuse the repository design system.
+- Prompt: use UI/UX Pro Max for design-system direction when installed, then
+  reuse the repository design system.
+- Critique/refinement: use Impeccable when installed for anti-slop critique,
+  hierarchy, spacing, typography, responsive, and interaction refinement.
+- Fallback: use another existing design-intelligence or frontend skill exposed
+  by the host; never invent a second design database or runtime.
 - Screenshot: inspect the image as evidence and record durable visual traits.
 - Figma: use connected Figma MCP for variables, components, assets, and
   hierarchy.

@@ -8,9 +8,13 @@ description: Route frontend work through WhipUI Project DNA, Design Fingerprints
 Read WhipUI.md, PROJECT-DNA.md, .whipui/project-dna.json, and
 .whipui/design-fingerprint.json before frontend work.
 
-Use the existing host ecosystem:
+Use the existing host ecosystem, starting with the project capability report:
 
-- prompt to existing design intelligence;
+- read .whipui/capabilities.json and .whipui/providers.md;
+- use UI/UX Pro Max for design-system direction when installed;
+- use Impeccable for critique, refinement, and anti-slop rules when installed;
+- fall back to other existing design skills exposed by Claude.
+
 - screenshot to image understanding;
 - Figma to connected Figma MCP;
 - URL and Pick from Web to Playwright MCP;

@@ -26,6 +26,15 @@ Initialize a specific project directory with every host integration:
 
     npx whipui init .\my-app --ai all
 
+In a terminal, init asks once before downloading the named design skills. For
+CI, containers, or a non-interactive shell, make that choice explicit:
+
+    npx whipui init .\my-app --ai all --yes
+
+The setup is project-local. It configures Playwright MCP for the selected host
+and installs UI/UX Pro Max plus Impeccable when approved; it does not modify
+global Codex, Claude, or VS Code configuration.
+
 For local development:
 
     npm install
@@ -44,6 +53,11 @@ needed:
 Run init once. Generated files are safe by default: existing generated files
 are skipped, and existing AGENTS.md or Copilot instructions receive one
 idempotent managed section.
+
+To inspect or repeat setup later:
+
+    npx whipui doctor .\my-app
+    npx whipui setup .\my-app --ai all --yes
 
 ## User experience after init
 
@@ -75,6 +89,8 @@ requests automatically.
     ├── config.json
     ├── project-dna.json
     ├── design-fingerprint.json
+    ├── capabilities.json
+    ├── providers.md
     ├── workflows/
     │   ├── pick-from-web.md
     │   └── visual-qa.md
@@ -87,7 +103,7 @@ context. The Design Fingerprint stores page/task-specific visual decisions.
 
 | Input | Primary route |
 | --- | --- |
-| Prompt | Existing UI/UX Pro Max-like or frontend design skill |
+| Prompt | UI/UX Pro Max for direction, Impeccable for critique, then existing skills |
 | Screenshot | Host image understanding plus Design Fingerprint |
 | Figma | Connected Figma MCP |
 | URL | Playwright MCP in an isolated context |
@@ -110,11 +126,18 @@ launch a browser or attach to the users real profile.
 
 ## Design intelligence
 
-The package uses UI/UX Pro Max-like design intelligence as a route, not as a
-vendored database. If the host has that skill or another established frontend
-design skill, use it. Otherwise the generated WhipUI contract still supplies a
-structured pass for product type, audience, art direction, hierarchy,
-typography, palette, UX rules, and anti-patterns.
+The package uses UI/UX Pro Max as design-system intelligence and Impeccable as
+critique/refinement intelligence. They are installed by the explicit init/setup
+flow into the project when missing; their source is not bundled into WhipUI.
+If another established frontend design skill is already available, the
+generated contract can route to it instead. `.whipui/capabilities.json` records
+what is ready, missing, or optional.
+
+The optional ecosystem remains composable: Figma MCP is used when a Figma
+source is present, Chrome DevTools MCP can add runtime inspection, and
+Firecrawl, Fudge, Agentation, or onUI can be used when the host/project already
+provides them. WhipUI catalogs these as adapters rather than silently installing
+or replacing them.
 
 ## Visual QA
 
@@ -135,6 +158,7 @@ debugging, scripting, and creating a handoff artifact:
     whipui pick https://example.com --selector ".pricing-card"
     whipui critique http://localhost:3000/pricing
     whipui dna
+    whipui doctor --json
 
 ## Development
 
