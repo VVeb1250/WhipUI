@@ -1,0 +1,51 @@
+{
+  "name": "whipui",
+  "version": "0.1.0",
+  "description": "WhipUI — Make AI-built frontends feel designed.",
+  "type": "module",
+  "bin": {
+    "whipui": "bin/whipui.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./router": "./src/router.mjs",
+    "./fingerprint": "./src/fingerprint.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "syntax-check": "node --check bin/whipui.mjs && node --check src/cli.mjs && node --check src/dna.mjs && node --check src/fingerprint.mjs && node --check src/router.mjs && node --check src/scaffold.mjs && node --check src/web-pick.mjs && node --check src/index.mjs"
+  },
+  "keywords": [
+    "frontend",
+    "vibe-coding",
+    "design-system",
+    "codex",
+    "vscode",
+    "figma",
+    "playwright",
+    "visual-qa"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VVeb1250/WhipUI.git",
+    "directory": "."
+  },
+  "homepage": "https://github.com/VVeb1250/WhipUI",
+  "bugs": {
+    "url": "https://github.com/VVeb1250/WhipUI/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

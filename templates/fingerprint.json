@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "intent": "adapt",
+  "projectDna": ".whipui/project-dna.json",
+  "sources": {
+    "prompt": null,
+    "screenshot": null,
+    "figma": null,
+    "url": null,
+    "existingRepo": {
+      "kind": "existing-repo",
+      "root": ".",
+      "inspected": false
+    }
+  },
+  "identity": {
+    "oneThingToRemember": "",
+    "productType": "",
+    "audience": "",
+    "artDirection": "",
+    "keywords": [],
+    "antiReferences": []
+  },
+  "composition": {
+    "symmetry": "",
+    "density": "",
+    "dominantAxis": "",
+    "contentWidth": "",
+    "grid": "",
+    "whitespace": "",
+    "focalPoint": ""
+  },
+  "typography": {
+    "display": {
+      "category": "",
+      "family": "",
+      "scale": "",
+      "weight": "",
+      "leading": ""
+    },
+    "body": {
+      "category": "",
+      "family": "",
+      "scale": "",
+      "weight": "",
+      "leading": ""
+    },
+    "casing": "",
+    "contrast": ""
+  },
+  "color": {
+    "background": "",
+    "surface": "",
+    "foreground": "",
+    "muted": "",
+    "accent": "",
+    "semantic": {},
+    "usageRules": []
+  },
+  "spacing": {
+    "rhythm": "",
+    "baseUnit": "",
+    "sectionGap": "",
+    "layoutPadding": "",
+    "radius": "",
+    "shadow": ""
+  },
+  "imagery": {
+    "treatment": "",
+    "subject": "",
+    "crop": "",
+    "texture": "",
+    "rules": []
+  },
+  "motion": {
+    "personality": "",
+    "duration": "",
+    "easing": "",
+    "rules": []
+  },
+  "responsive": {
+    "strategy": "",
+    "preserved": [],
+    "allowedToChange": [],
+    "breakpoints": []
+  },
+  "webCapture": {
+    "status": "not-requested",
+    "sourceUrl": "",
+    "capturePath": "",
+    "fields": [
+      "outerHTML",
+      "computedStyles",
+      "boundingBox",
+      "screenshot",
+      "interactionStates"
+    ]
+  },
+  "components": [],
+  "uxRules": [],
+  "antiSlopChecks": [],
+  "openQuestions": [],
+  "visualQa": {
+    "status": "pending",
+    "axes": [],
+    "findings": [],
+    "iterations": 0
+  }
+}
