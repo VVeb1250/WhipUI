@@ -5,9 +5,14 @@ For frontend work, read WhipUI.md, PROJECT-DNA.md,
 .whipui/project-dna.json, and .whipui/design-fingerprint.json.
 
 WhipUI is a thin router. Do not create a new agent, browser, editor, or MCP
-server. Route the request to capabilities already available in Claude:
+server. Use .whipui/capabilities.json and route the request to the project-local
+or host capabilities already available in Claude:
 
-- Prompt: use the existing UI/UX Pro Max-like or frontend design skill.
+- Prompt: use UI/UX Pro Max for design-system direction when installed.
+- Critique/refinement: use Impeccable when installed for anti-slop critique and
+  visual refinement.
+- Fallback: use another existing frontend/design skill; do not create a second
+  design database or runtime.
 - Screenshot: inspect the image and preserve durable visual identity.
 - Figma: use connected Figma MCP for variables, components, assets, and
   hierarchy.

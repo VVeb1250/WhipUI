@@ -6,8 +6,9 @@ does not create or own a browser.
 ## Capture
 
 1. Open the URL in an isolated browser context with Playwright MCP.
-2. Let the user identify an element visually. If the host cannot expose a
-   picker, ask for a selector, text label, or coordinates.
+2. Use the host's element-picker or page-evaluation affordance so the user can
+   identify an element visually. If the host cannot expose a picker, ask for a
+   selector, text label, or coordinates; do not build a new browser picker.
 3. Capture:
    - URL and timestamp;
    - selector or locator, text, attributes, outerHTML, and ancestor path;
@@ -18,8 +19,8 @@ does not create or own a browser.
    - accessibility snapshot when available;
    - default, hover, focus-visible, active/pressed, disabled, expanded/open,
      and selected states when supported.
-4. Save a structured JSON record in .whipui/web-captures/ with image paths next
-   to it.
+4. Save a structured Reference Packet JSON record in .whipui/web-captures/
+   with image paths next to it.
 5. Update the Design Fingerprint with the durable visual rules. Do not copy
    CSS blindly.
 

@@ -6,17 +6,24 @@ It does not create a new frontend agent, browser, editor, or MCP server.
 
 ## One-time setup
 
-Run whipui init once in the existing frontend repository. After that, speak to
-Codex, Claude Code, or VS Code Agent in normal language. The generated instructions route
-the request without requiring the user to know which skill or MCP is underneath.
+Run `whipui init` once in the existing frontend repository. It writes project
+instructions, detects capabilities, configures project-local Playwright MCP for
+the selected hosts, and can install UI/UX Pro Max plus Impeccable after an
+explicit confirmation. Use `whipui setup --yes` in non-interactive environments
+and `whipui doctor` to inspect the result. It never edits global config.
+
+After setup, speak to Codex, Claude Code, or VS Code Agent in normal language.
+The generated instructions route the request without requiring the user to
+know which skill or MCP is underneath.
 
 ## Five inputs
 
 ### Prompt
 
-Use an available UI/UX Pro Max-like or existing design-intelligence skill to
-derive product type, audience, art direction, layout pattern, type pairing,
-palette, UX rules, and anti-patterns. Record the decisions in the Design
+Use UI/UX Pro Max when installed to derive product type, audience, art
+direction, layout pattern, type pairing, palette, UX rules, and anti-patterns.
+Use Impeccable when installed to critique and refine the result. Otherwise use
+an existing design-intelligence skill. Record durable decisions in the Design
 Fingerprint.
 
 ### Screenshot
@@ -29,8 +36,8 @@ to responsive layouts.
 ### Figma
 
 When Figma MCP is connected, prefer its variables, components, assets,
-hierarchy, and named styles over guesses from pixels. WhipUI accepts the URL but
-does not install or authenticate the MCP.
+hierarchy, and named styles over guesses from pixels. WhipUI accepts the URL and
+routes to the connected MCP; authentication remains with the host.
 
 ### URL
 
@@ -50,6 +57,14 @@ Project DNA describes the durable product, repository, design-system, tool
 routing, and visual QA context. The Design Fingerprint describes the visual
 identity of a particular page or task. Keep both concrete and update them as
 the implementation becomes clearer.
+
+## Capability routing
+
+`.whipui/capabilities.json` is the local capability manifest. Treat it as a
+routing hint, not a new runtime. Playwright MCP is the primary provider for
+live URL inspection, Pick from Web, and visual QA. Chrome DevTools MCP,
+Figma MCP, Firecrawl, Fudge, Agentation, and onUI are optional adapters used
+only when the host or project already exposes them.
 
 ## Anti-slop rules
 

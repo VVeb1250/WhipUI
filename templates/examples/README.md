@@ -7,8 +7,8 @@ Code Agent.
 
     Build a calm editorial landing page for an AI writing app. Keep one memorable typographic gesture and make it responsive.
 
-Route: existing design intelligence skill, existing repository design system,
-Design Fingerprint, then Visual QA.
+Route: UI/UX Pro Max when installed, Impeccable for critique when installed,
+existing repository design system, Design Fingerprint, then Visual QA.
 
 ## Screenshot
 

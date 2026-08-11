@@ -89,11 +89,12 @@ export function buildProjectDna({
       ownsBrowserRuntime: false,
       designIntelligence: {
         preferred: [
-          'UI/UX Pro Max-like design skill, when installed',
+          'UI/UX Pro Max, for design-system direction, when installed',
+          'Impeccable, for critique and anti-slop refinement, when installed',
           'existing frontend design skill in the host',
           'existing repository design system'
         ],
-        discovery: 'use what the host already exposes; do not install a second runtime'
+        discovery: 'use project-local capabilities first; init may install named skills with explicit confirmation'
       },
       mcp: {
         playwright: {

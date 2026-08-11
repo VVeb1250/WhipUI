@@ -5,11 +5,15 @@ description: Route frontend work through Project DNA, Design Fingerprints, exist
 
 # WhipUI
 
-Use this skill for frontend design and vibe-coding requests.
+Use this skill for frontend design and vibe-coding requests. Read
+.whipui/capabilities.json when present so routing reflects the actual project
+setup.
 
 ## Routing
 
-- Prompt: use the existing UI/UX Pro Max-like or frontend design skill.
+- Prompt: use UI/UX Pro Max for design-system direction when installed.
+- Critique/refinement: use Impeccable for anti-slop review when installed.
+- Fallback: use another existing design or frontend skill exposed by Claude.
 - Screenshot: inspect the image and preserve durable visual identity.
 - Figma: use connected Figma MCP for variables, components, assets, and
   hierarchy.
