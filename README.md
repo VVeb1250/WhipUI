@@ -22,6 +22,10 @@ When published:
 
     npx whipui init
 
+Initialize a specific project directory with every host integration:
+
+    npx whipui init .\my-app --ai all
+
 For local development:
 
     npm install
