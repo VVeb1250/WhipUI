@@ -1,6 +1,6 @@
 {
   "name": "whipui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "WhipUI — Make AI-built frontends feel designed.",
   "type": "module",
   "bin": {
