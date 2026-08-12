@@ -23,6 +23,7 @@ export {
   routeRequest
 } from './router.mjs'
 export {
+  buildSpawnSpec,
   buildProvidersDocument,
   buildSetupPlan,
   setupProject

@@ -233,23 +233,54 @@ async function applyMcpOperation(operation) {
   return configureJsonMcp(operation.path, config.rootKey)
 }
 
-function runCommand({ command, args, cwd }) {
-  const executable = process.platform === 'win32' && command === 'npx' ? 'npx.cmd' : command
+export function buildSpawnSpec({ command, args, cwd }) {
+  const isWindows = process.platform === 'win32'
+  const executable = isWindows && command === 'npx' ? 'npx.cmd' : command
+
+  if (isWindows) {
+    return {
+      executable: process.env.ComSpec || 'cmd.exe',
+      args: ['/d', '/s', '/c', executable, ...args],
+      cwd,
+      shell: false,
+      windowsHide: true
+    }
+  }
+
+  return {
+    executable,
+    args: [...args],
+    cwd,
+    shell: false,
+    windowsHide: false
+  }
+}
+
+function runCommand(operation) {
+  const spec = buildSpawnSpec(operation)
 
   return new Promise((resolve, reject) => {
-    const child = spawn(executable, args, {
-      cwd,
+    const child = spawn(spec.executable, spec.args, {
+      cwd: spec.cwd,
       stdio: 'inherit',
-      shell: false
+      shell: spec.shell,
+      windowsHide: spec.windowsHide
     })
 
-    child.once('error', reject)
+    child.once('error', (error) => {
+      const detail = error?.code === 'EINVAL'
+        ? 'Windows could not launch the package runner. WhipUI uses the Windows command shell for npx.cmd; check that Node.js and npm are installed.'
+        : error.message
+      const wrapped = new Error('Could not launch ' + spec.executable + ': ' + detail, { cause: error })
+      wrapped.code = error?.code
+      reject(wrapped)
+    })
     child.once('close', (code) => {
       if (code === 0) {
         resolve()
         return
       }
-      reject(new Error(executable + ' exited with code ' + code + '.'))
+      reject(new Error(spec.executable + ' exited with code ' + code + '.'))
     })
   })
 }
