@@ -41,6 +41,9 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Run project setup smoke test
+        run: node test/setup-smoke.mjs
+
       - name: Check syntax
         run: npm run syntax-check
 
@@ -75,22 +78,43 @@ jobs:
         run: npm test
 
       - name: Run project setup smoke test
-        shell: pwsh
-        run: |
-          $project = Join-Path $env:RUNNER_TEMP "whipui-setup"
-          $plan = node bin/whipui.mjs setup $project --ai all --yes --dry-run --json | ConvertFrom-Json
-          $skillCommands = @($plan.results | Where-Object { $_.kind -eq "install-skill" })
-          if ($skillCommands.Count -ne 3) { throw "Expected three approved design-skill installer commands in setup plan" }
-          if (-not (($skillCommands.displayCommand -join "\n") -match "impeccable")) { throw "Impeccable installer was not planned" }
-          if (-not (($skillCommands.displayCommand -join "\n") -match "ui-ux-pro-max-cli")) { throw "UI/UX Pro Max installer was not planned" }
-          node bin/whipui.mjs setup $project --ai all --yes --skip-skills
-          $manifest = Get-Content (Join-Path $project ".whipui/capabilities.json") -Raw | ConvertFrom-Json
-          if ($manifest.requiredMissing.Count -ne 0) {
-            throw ("Required capabilities missing: " + ($manifest.requiredMissing -join ", "))
-          }
-          if (-not (Test-Path (Join-Path $project ".codex/config.toml"))) { throw "Codex MCP config was not created" }
-          if (-not (Test-Path (Join-Path $project ".vscode/mcp.json"))) { throw "VS Code MCP config was not created" }
-          if (-not (Test-Path (Join-Path $project ".mcp.json"))) { throw "Claude MCP config was not created" }
+        run: node test/setup-smoke.mjs
 
       - name: Check syntax
         run: npm run syntax-check
+
+  macos-setup:
+    name: macOS (iOS host) setup Node ${{ matrix.node-version }}
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 18.x
+          - 20.x
+          - 22.x
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests including package-runner regression
+        run: npm test
+
+      - name: Run project setup smoke test
+        run: node test/setup-smoke.mjs
+
+      - name: Check syntax
+        run: npm run syntax-check
+
+      - name: Verify Apple runner
+        run: xcodebuild -version

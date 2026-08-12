@@ -166,6 +166,11 @@ debugging, scripting, and creating a handoff artifact:
     npm run syntax-check
     npm pack --dry-run
 
+GitHub Actions runs the setup smoke test on Linux, Windows, and macOS (the
+Apple runner used for iOS/Xcode workflows) across Node 18, 20, and 22. The
+smoke test validates the installer plan, the platform-safe `npx` launcher, and
+project-local Codex, VS Code, and Claude MCP configuration.
+
 Releases are PR-driven. After a conventional commit lands on `main`, Release
 Please opens or updates a release PR with the version bump and changelog. Merge
 that release PR to create the GitHub release and publish the package to npm.
