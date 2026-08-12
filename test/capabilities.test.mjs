@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { spawn } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -9,7 +10,7 @@ import {
   detectCapabilities,
   resolveAiHosts
 } from '../src/capabilities.mjs'
-import { buildSetupPlan, setupProject } from '../src/setup.mjs'
+import { buildSetupPlan, buildSpawnSpec, setupProject } from '../src/setup.mjs'
 
 async function createTempProject() {
   return mkdtemp(join(tmpdir(), 'whipui-capabilities-v0-'))
@@ -19,6 +20,47 @@ test('maps AI targets without changing the host contract', () => {
   assert.deepEqual(resolveAiHosts('both'), ['codex', 'vscode'])
   assert.deepEqual(resolveAiHosts('all'), ['codex', 'vscode', 'claude'])
   assert.deepEqual(resolveAiHosts('claude'), ['claude'])
+})
+
+test('builds a platform-safe package-runner process spec', () => {
+  const spec = buildSpawnSpec({
+    command: 'npx',
+    args: ['--yes', 'impeccable'],
+    cwd: 'project'
+  })
+
+  assert.equal(spec.executable, process.platform === 'win32' ? (process.env.ComSpec || 'cmd.exe') : 'npx')
+  assert.deepEqual(spec.args, process.platform === 'win32'
+    ? ['/d', '/s', '/c', 'npx.cmd', '--yes', 'impeccable']
+    : ['--yes', 'impeccable'])
+  assert.equal(spec.shell, false)
+  assert.equal(spec.windowsHide, process.platform === 'win32')
+})
+
+test('launches npx through the platform-safe package-runner spec', async () => {
+  const spec = buildSpawnSpec({
+    command: 'npx',
+    args: ['--version'],
+    cwd: process.cwd()
+  })
+
+  const result = await new Promise((resolve, reject) => {
+    const child = spawn(spec.executable, spec.args, {
+      cwd: spec.cwd,
+      shell: spec.shell,
+      windowsHide: spec.windowsHide,
+      stdio: ['ignore', 'pipe', 'pipe']
+    })
+    let stdout = ''
+    let stderr = ''
+    child.stdout.on('data', (chunk) => { stdout += chunk })
+    child.stderr.on('data', (chunk) => { stderr += chunk })
+    child.once('error', reject)
+    child.once('close', (code) => resolve({ code, stdout, stderr }))
+  })
+
+  assert.equal(result.code, 0, result.stderr)
+  assert.match(result.stdout.trim(), /^\d+\.\d+\.\d+/)
 })
 
 test('detects project-local skills and MCP configuration', async () => {
