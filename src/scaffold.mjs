@@ -14,6 +14,7 @@ const COMMON_FILES = Object.freeze([
   ['project-dna.md', 'PROJECT-DNA.md'],
   ['config.json', '.whipui/config.json'],
   ['readme.md', '.whipui/README.md'],
+  ['workflows/creative-direction.md', '.whipui/workflows/creative-direction.md'],
   ['workflows/pick-from-web.md', '.whipui/workflows/pick-from-web.md'],
   ['workflows/visual-qa.md', '.whipui/workflows/visual-qa.md'],
   ['examples/README.md', '.whipui/examples/README.md']

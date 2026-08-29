@@ -23,11 +23,20 @@ and route work to the existing host ecosystem:
 - Existing repo: inspect local components, tokens, routes, fonts, assets, and
   existing frontend conventions first.
 
+For a prompt-led request without usable visual direction, follow
+.whipui/workflows/creative-direction.md before writing UI code. Generate at
+least three structurally distinct directions, select the strongest one unless
+the user asks to compare, and pass the gate with a product truth, thesis,
+product-linked signature move, responsive promise, and three visible
+product-specific proofs.
+
 Always update the Design Fingerprint with concrete decisions. Finish with
 .whipui/workflows/visual-qa.md across all configured axes and viewports. Do not
 claim browser or visual validation when the host did not provide evidence.
 
 Avoid generic AI-slop output: default purple gradients, arbitrary glass cards,
 excessive rounded containers, invented variants, and decorative motion without
-a product, hierarchy, wayfinding, or brand reason.
+a product, hierarchy, wayfinding, or brand reason. Apply the logo-and-copy swap
+test; if the result becomes an interchangeable SaaS template, revise the
+direction before polishing.
 <!-- WhipUI:END -->

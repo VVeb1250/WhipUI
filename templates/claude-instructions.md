@@ -20,7 +20,15 @@ or host capabilities already available in Claude:
 - Pick from Web: follow .whipui/workflows/pick-from-web.md.
 - Existing repo: inspect local components, tokens, routes, fonts, and assets.
 
+For prompt-led work without usable visual direction, follow
+.whipui/workflows/creative-direction.md before coding. Generate three
+structurally distinct directions, select one autonomously unless the user asks
+to compare, and pass the gate with a product truth, thesis, product-linked
+signature move, responsive promise, and three product-specific proofs.
+
 Update the Design Fingerprint with concrete decisions. Finish with
 .whipui/workflows/visual-qa.md across every configured axis and viewport.
 Never claim visual validation without rendered browser or screenshot evidence.
+If the logo-and-copy swap test leaves a generic SaaS template, revise the
+direction rather than adding decorative polish.
 <!-- WhipUI:END -->

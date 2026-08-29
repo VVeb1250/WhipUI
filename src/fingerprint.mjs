@@ -1,5 +1,10 @@
 import { readFileSync, statSync } from 'node:fs'
 import { extname, relative, resolve, sep } from 'node:path'
+import {
+  buildCreativeDirection,
+  buildDirectionExploration,
+  shouldRunCreativeDirection
+} from './creative-direction.mjs'
 
 export const MODES = Object.freeze(['recreate', 'adapt', 'inspire'])
 
@@ -7,6 +12,20 @@ export const DEFAULT_VIEWPORTS = Object.freeze([
   { name: 'desktop', width: 1440, height: 900 },
   { name: 'tablet', width: 1024, height: 900 },
   { name: 'mobile', width: 390, height: 844 }
+])
+
+export const DEFAULT_QA_AXES = Object.freeze([
+  'identity',
+  'product-specificity',
+  'concept-coherence',
+  'generic-pattern-debt',
+  'composition-and-hierarchy',
+  'typography',
+  'color-and-contrast',
+  'spacing-and-density',
+  'responsive-behavior',
+  'interaction-states',
+  'accessibility'
 ])
 
 const IMAGE_MEDIA_TYPES = Object.freeze({
@@ -180,10 +199,18 @@ export function buildFingerprint({
   createdAt = new Date().toISOString()
 } = {}) {
   const intent = assertMode(mode)
+  const creativeDirectionRequired = shouldRunCreativeDirection({
+    prompt,
+    screenshot,
+    figma,
+    url
+  })
 
   return {
-    schemaVersion: 1,
-    status: 'pending-agent-analysis',
+    schemaVersion: 2,
+    status: creativeDirectionRequired
+      ? 'pending-creative-direction'
+      : 'pending-agent-analysis',
     createdAt,
     updatedAt: createdAt,
     intent,
@@ -207,6 +234,8 @@ export function buildFingerprint({
       keywords: [],
       antiReferences: []
     },
+    creativeDirection: buildCreativeDirection({ required: creativeDirectionRequired }),
+    exploration: buildDirectionExploration(),
     composition: {
       symmetry: '',
       density: '',
@@ -277,10 +306,14 @@ export function buildFingerprint({
       'No invented component variants when an existing project component can be reused.',
       'No decorative effect without a job: hierarchy, feedback, wayfinding, or brand character.',
       'No desktop-only implementation when the brief or source implies mobile use.',
-      'No silent substitution of the source character with a generic dashboard or landing-page pattern.'
+      'No silent substitution of the source character with a generic dashboard or landing-page pattern.',
+      'The result still reads as this product when the logo and product name are hidden.',
+      'One product-linked signature move is used deliberately instead of many unrelated flourishes.',
+      'Familiar controls stay familiar; novelty belongs in composition, identity, content treatment, or a high-signal interaction.'
     ],
     openQuestions: [
       'What is the single memorable visual idea?',
+      'Which three visible decisions could only belong to this product or workflow?',
       'Which visual traits are identity and which are accidental details of the reference?',
       'What must remain true at mobile widths?'
     ],
@@ -291,16 +324,7 @@ export function buildFingerprint({
     },
     visualQa: {
       status: 'pending',
-      axes: [
-        'identity',
-        'composition-and-hierarchy',
-        'typography',
-        'color-and-contrast',
-        'spacing-and-density',
-        'responsive-behavior',
-        'interaction-states',
-        'accessibility'
-      ],
+      axes: [...DEFAULT_QA_AXES],
       findings: [],
       iterations: 0
     }
@@ -315,6 +339,27 @@ export function mergeFingerprint(existingFingerprint, nextFingerprint, { reset =
     createdAt: existingFingerprint.createdAt ?? nextFingerprint.createdAt,
     updatedAt: nextFingerprint.updatedAt,
     identity: existingFingerprint.identity ?? nextFingerprint.identity,
+    creativeDirection: existingFingerprint.creativeDirection
+      ? {
+          ...nextFingerprint.creativeDirection,
+          ...existingFingerprint.creativeDirection,
+          status: nextFingerprint.creativeDirection.status,
+          required: nextFingerprint.creativeDirection.required,
+          workflow: nextFingerprint.creativeDirection.workflow,
+          signatureMove: {
+            ...nextFingerprint.creativeDirection.signatureMove,
+            ...existingFingerprint.creativeDirection.signatureMove
+          },
+          gate: {
+            ...nextFingerprint.creativeDirection.gate,
+            ...existingFingerprint.creativeDirection.gate,
+            status: existingFingerprint.creativeDirection.gate?.status === 'passed'
+              ? 'passed'
+              : nextFingerprint.creativeDirection.gate.status
+          }
+        }
+      : nextFingerprint.creativeDirection,
+    exploration: existingFingerprint.exploration ?? nextFingerprint.exploration,
     composition: existingFingerprint.composition ?? nextFingerprint.composition,
     typography: existingFingerprint.typography ?? nextFingerprint.typography,
     color: existingFingerprint.color ?? nextFingerprint.color,
@@ -366,6 +411,12 @@ export function buildAgentBrief({
     ?? 'Infer the missing brief from the supplied visual/design context.'
   const screenshotSource = screenshot ? readImageMetadata(screenshot, projectRoot) : null
   const figmaSource = parseFigmaUrl(figma)
+  const creativeDirectionRequired = shouldRunCreativeDirection({
+    prompt,
+    screenshot,
+    figma,
+    url
+  })
   const lines = [
     '# WhipUI implementation request',
     '',
@@ -388,17 +439,22 @@ export function buildAgentBrief({
     'Required workflow:',
     '1. Read WhipUI.md, PROJECT-DNA.md, .whipui/project-dna.json, and .whipui/design-fingerprint.json.',
     '2. Inspect the existing repository and reuse its components, tokens, fonts, assets, and routes.',
-    '3. Apply UI/UX Pro Max for design-system direction when installed, Impeccable for critique when installed, or the existing design-intelligence skill as fallback.',
-    '4. If a screenshot is supplied, separate identity from accidental pixels and record durable traits.',
-    '5. If Figma is supplied and Figma MCP is connected, use its variables, components, assets, and hierarchy as the higher-confidence source.',
-    '6. If a live URL is supplied, use Playwright MCP to inspect it in an isolated context. If this is a pick request, follow .whipui/workflows/pick-from-web.md.',
-    '7. Update .whipui/design-fingerprint.json with concrete decisions before or alongside implementation.',
-    '8. Implement the smallest coherent slice and reuse the existing project design system.',
-    '9. Run .whipui/workflows/visual-qa.md across every axis and viewport. Fix hierarchy and identity before micro-polish.',
-    '10. Re-check accessibility, focus, loading, empty, error, and reduced-motion states.',
+    creativeDirectionRequired
+      ? '3. Follow .whipui/workflows/creative-direction.md. Generate three structurally distinct directions, select one, and pass the Creative Direction Gate before writing UI code.'
+      : '3. Use .whipui/workflows/creative-direction.md when the supplied direction is weak or the user explicitly asks to explore alternatives.',
+    '4. Apply UI/UX Pro Max for design-system intelligence when installed, Impeccable for critique when installed, or the existing design-intelligence skill as fallback.',
+    '5. If a screenshot is supplied, separate identity from accidental pixels and record durable traits.',
+    '6. If Figma is supplied and Figma MCP is connected, use its variables, components, assets, and hierarchy as the higher-confidence source.',
+    '7. If a live URL is supplied, use Playwright MCP to inspect it in an isolated context. If this is a pick request, follow .whipui/workflows/pick-from-web.md.',
+    '8. Update .whipui/design-fingerprint.json with concrete decisions before or alongside implementation.',
+    '9. Implement the smallest coherent slice and reuse the existing project design system.',
+    '10. Run .whipui/workflows/visual-qa.md across every axis and viewport. Fix direction, hierarchy, and identity before micro-polish.',
+    '11. Re-check accessibility, focus, loading, empty, error, and reduced-motion states.',
     '',
     'Acceptance bar:',
     '- The result has a clear art direction and one memorable visual idea.',
+    '- Three visible product-specific decisions support the selected thesis.',
+    '- The logo-and-copy swap test does not reduce the result to an interchangeable SaaS template.',
     '- The UI uses a deliberate type scale, spacing rhythm, and color hierarchy.',
     '- Existing project components are reused where appropriate.',
     '- No generic AI-slop pattern was added without a reason recorded in the fingerprint.',
@@ -411,16 +467,7 @@ export function buildAgentBrief({
 export function buildCritiqueBrief({
   url = 'http://localhost:3000',
   viewports = DEFAULT_VIEWPORTS,
-  axes = [
-    'identity',
-    'composition-and-hierarchy',
-    'typography',
-    'color-and-contrast',
-    'spacing-and-density',
-    'responsive-behavior',
-    'interaction-states',
-    'accessibility'
-  ]
+  axes = DEFAULT_QA_AXES
 } = {}) {
   const viewportRows = viewports
     .map(({ name, width, height }) => '| ' + name + ' | ' + width + ' | ' + height + ' | ☐ | ☐ |')
@@ -453,6 +500,13 @@ export function buildCritiqueBrief({
     'P0 — blocks use or breaks layout: ',
     'P1 — weakens hierarchy, identity, or responsive behavior: ',
     'P2 — polish opportunity: ',
+    '',
+    'Distinctiveness audit:',
+    '- [ ] Product specificity: hiding the logo and product name still leaves a product-shaped interface.',
+    '- [ ] Concept coherence: at least three visible decisions support the selected design thesis.',
+    '- [ ] Generic-pattern debt: every generic card, pill, gradient, glass panel, oversized heading, or decorative motion has a recorded job.',
+    '- [ ] Signature discipline: one memorable product-linked move is clear without being repeated everywhere.',
+    '- [ ] Familiarity boundary: standard controls remain understandable and accessible.',
     '',
     'Final checks:',
     '- [ ] No horizontal overflow at mobile width.',

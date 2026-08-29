@@ -1,5 +1,6 @@
 export {
   DEFAULT_VIEWPORTS,
+  DEFAULT_QA_AXES,
   MODES,
   buildAgentBrief,
   buildCritiqueBrief,
@@ -7,6 +8,12 @@ export {
   parseFigmaUrl,
   readImageMetadata
 } from './fingerprint.mjs'
+export {
+  buildCreativeDirection,
+  buildDirectionExploration,
+  requestsCreativeDirection,
+  shouldRunCreativeDirection
+} from './creative-direction.mjs'
 export {
   AI_TARGETS,
   CAPABILITY_CATALOG,
