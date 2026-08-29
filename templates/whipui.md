@@ -20,11 +20,16 @@ know which skill or MCP is underneath.
 
 ### Prompt
 
-Use UI/UX Pro Max when installed to derive product type, audience, art
-direction, layout pattern, type pairing, palette, UX rules, and anti-patterns.
-Use Impeccable when installed to critique and refine the result. Otherwise use
-an existing design-intelligence skill. Record durable decisions in the Design
-Fingerprint.
+When the prompt has no usable visual direction, follow
+`.whipui/workflows/creative-direction.md` before writing UI code. Establish the
+product truth, generate three structurally distinct directions, select one,
+and lock its thesis and product-linked signature move in the Design
+Fingerprint. Choose autonomously unless the user asks to compare directions.
+
+Use UI/UX Pro Max when installed to derive suitable product patterns, type,
+palette, UX rules, and anti-patterns. Treat those as ingredients rather than
+the final concept. Use Impeccable when installed to critique and refine the
+result. Otherwise use an existing design-intelligence skill.
 
 ### Screenshot
 
@@ -58,6 +63,19 @@ routing, and visual QA context. The Design Fingerprint describes the visual
 identity of a particular page or task. Keep both concrete and update them as
 the implementation becomes clearer.
 
+## Creative Direction Gate
+
+Prompt-only work must pass the Creative Direction Gate before implementation.
+The selected direction needs a product truth, tension pair, thesis, layout
+grammar, type and color logic, responsive promise, one signature move with a
+product reason, and at least three visible product-specific proofs.
+
+Three candidates must differ structurally, not only by color, font, radius, or
+decoration. If removing the logo and product name leaves an interchangeable
+SaaS template, the gate has not passed. Keep standard controls familiar;
+distinctiveness should come from product-shaped composition, identity, content
+treatment, or one high-signal interaction.
+
 ## Capability routing
 
 `.whipui/capabilities.json` is the local capability manifest. Treat it as a
@@ -68,8 +86,8 @@ only when the host or project already exposes them.
 
 ## Anti-slop rules
 
-- Choose an art direction and one memorable visual idea before building a
-  component grid.
+- Pass the Creative Direction Gate before building a prompt-only interface.
+- Choose one product-linked memorable idea rather than many unrelated effects.
 - Do not default to purple-gradient-on-white, generic SaaS cards, or
   interchangeable typography unless the product asks for them.
 - Do not use glass, pills, giant rounded cards, shadows, gradients, texture, or
@@ -81,8 +99,9 @@ only when the host or project already exposes them.
 
 ## Visual QA
 
-Use Playwright MCP as the primary browser runtime. Evaluate identity,
-composition and hierarchy, typography, color and contrast, spacing and density,
-responsive behavior, interaction states, and accessibility across desktop,
-tablet, and mobile. Fix the highest-impact mismatch, reload, and inspect again
-for a bounded number of iterations.
+Use Playwright MCP as the primary browser runtime. Evaluate identity, product
+specificity, concept coherence, generic-pattern debt, composition and
+hierarchy, typography, color and contrast, spacing and density, responsive
+behavior, interaction states, and accessibility across desktop, tablet, and
+mobile. Fix the highest-impact mismatch, reload, and inspect again for a
+bounded number of iterations.

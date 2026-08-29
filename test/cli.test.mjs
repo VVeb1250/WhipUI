@@ -60,6 +60,7 @@ test('builds a fingerprint for screenshot, URL, Figma, and repo context', async 
   assert.equal(fingerprint.sources.url.url, 'https://example.com/pricing')
   assert.equal(fingerprint.sources.existingRepo.inspected, false)
   assert.equal(fingerprint.visualQa.axes.includes('responsive-behavior'), true)
+  assert.equal(fingerprint.visualQa.axes.includes('product-specificity'), true)
 })
 
 test('init is idempotent and preserves existing AGENTS content', async () => {
@@ -76,11 +77,13 @@ test('init is idempotent and preserves existing AGENTS content', async () => {
   assert.equal(existsSync(join(projectRoot, 'WhipUI.md')), true)
   assert.equal(existsSync(join(projectRoot, 'PROJECT-DNA.md')), true)
   assert.equal(existsSync(join(projectRoot, '.whipui/project-dna.json')), true)
+  assert.equal(existsSync(join(projectRoot, '.whipui/workflows/creative-direction.md')), true)
   assert.equal(existsSync(join(projectRoot, '.whipui/capabilities.json')), true)
   assert.equal(existsSync(join(projectRoot, '.codex/config.toml')), true)
   assert.equal(existsSync(join(projectRoot, '.vscode/mcp.json')), true)
   assert.equal(existsSync(join(projectRoot, '.github/prompts/whipui-frontend.prompt.md')), true)
   assert.match(await readFile(join(projectRoot, 'AGENTS.md'), 'utf8'), /Impeccable/)
+  assert.match(await readFile(join(projectRoot, 'AGENTS.md'), 'utf8'), /three structurally distinct directions/)
 })
 
 test('CLI creates Pick from Web, fingerprint, and visual QA handoff artifacts', async () => {

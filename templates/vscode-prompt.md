@@ -13,6 +13,11 @@ intelligence skill for prompt work, connected Figma MCP for Figma input, and
 Playwright MCP for live URLs and Pick from Web. Do not create a new agent,
 browser, editor, or MCP server.
 
+For a prompt-led request without usable visual direction, follow
+.whipui/workflows/creative-direction.md before implementation. Generate three
+structurally distinct directions, select one unless the user asks to compare,
+and pass the Creative Direction Gate before writing UI code.
+
 Preserve the existing project design system, update the fingerprint with
 concrete decisions, and run .whipui/workflows/visual-qa.md across every axis
 and viewport before declaring the work complete.

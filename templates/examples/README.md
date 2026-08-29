@@ -8,7 +8,13 @@ Code Agent.
     Build a calm editorial landing page for an AI writing app. Keep one memorable typographic gesture and make it responsive.
 
 Route: UI/UX Pro Max when installed, Impeccable for critique when installed,
-existing repository design system, Design Fingerprint, then Visual QA.
+Creative Direction Gate with three structurally distinct candidates, existing
+repository design system, Design Fingerprint, then Visual QA. Unless you ask to
+compare directions, the agent selects one and continues autonomously.
+
+To inspect the divergence step before implementation:
+
+    Show me three design directions first. Do not write code yet.
 
 ## Screenshot
 

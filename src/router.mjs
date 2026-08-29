@@ -1,3 +1,8 @@
+import {
+  requestsCreativeDirection,
+  shouldRunCreativeDirection
+} from './creative-direction.mjs'
+
 const URL_PATTERN = /https?:\/\/[^\s)]+/gi
 const WEB_PICK_PATTERN = /\b(pick|select|capture|extract|borrow|copy|inspect)\b|เลือก|จับ|เก็บ|ดึง/iu
 
@@ -63,7 +68,8 @@ export function detectInputs({
   return {
     modes: unique(detected),
     urls,
-    webPick: asksToPickFromWeb
+    webPick: asksToPickFromWeb,
+    creativeDirectionRequested: requestsCreativeDirection(normalizedPrompt)
   }
 }
 
@@ -76,6 +82,13 @@ export function routeRequest({
   webPick = false
 } = {}) {
   const inputs = detectInputs({ prompt, screenshot, figma, url, existingRepo, webPick })
+  const creativeDirectionRequired = shouldRunCreativeDirection({
+    prompt,
+    screenshot,
+    figma,
+    url,
+    force: inputs.creativeDirectionRequested
+  })
   const skills = [
     'UI/UX Pro Max for design-system direction, when installed',
     'Impeccable for critique, refinement, and anti-slop, when installed',
@@ -89,6 +102,10 @@ export function routeRequest({
     'Write down the design decisions before implementation.',
     'Run visual QA across the configured axes and viewports, then refine the highest-impact mismatch.'
   ]
+
+  if (creativeDirectionRequired) {
+    steps.splice(2, 0, 'Follow the Creative Direction workflow: generate three structurally distinct directions, select one, and pass the gate before implementation.')
+  }
 
   if (inputs.webPick) {
     mcp.push({
@@ -130,6 +147,10 @@ export function routeRequest({
   return {
     kind: inputs.webPick ? 'pick-from-web' : 'frontend-design-route',
     inputs,
+    creativeDirection: {
+      required: creativeDirectionRequired,
+      workflow: '.whipui/workflows/creative-direction.md'
+    },
     skills: unique(skills),
     mcp,
     steps,
@@ -143,6 +164,7 @@ export function formatRouteSummary(plan) {
     'WhipUI route: ' + plan.kind,
     'Inputs: ' + plan.inputs.modes.join(', '),
     'Runtime owned by WhipUI: no',
+    'Creative direction gate: ' + (plan.creativeDirection.required ? 'required' : 'optional'),
     '',
     'Skills:',
     ...plan.skills.map((skill) => '- ' + skill),
