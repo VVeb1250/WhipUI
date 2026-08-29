@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/VVeb1250/WhipUI/compare/v0.2.1...v0.3.0) (2026-08-29)
+
+
+### Features
+
+* add creative direction gate ([#8](https://github.com/VVeb1250/WhipUI/issues/8)) ([38b79c6](https://github.com/VVeb1250/WhipUI/commit/38b79c68438f0712573fee0a9180a9a219bae49b))
+
 ## [0.2.1](https://github.com/VVeb1250/WhipUI/compare/v0.2.0...v0.2.1) (2026-08-12)
 
 
