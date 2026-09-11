@@ -1,6 +1,6 @@
 {
   "name": "whipui",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "WhipUI + WhipDesign: faithful UI implementation and UX-led design skills for coding agents.",
   "type": "module",
   "bin": {
