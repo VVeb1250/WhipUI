@@ -5,7 +5,11 @@
     "ownsAgentRuntime": false,
     "ownsBrowserRuntime": false,
     "ownsEditorRuntime": false,
-    "ownsMcpServer": false
+    "ownsMcpServer": false,
+    "workflows": {
+      "ui": "whipui",
+      "design": "whipdesign"
+    }
   },
   "setup": {
     "scope": "project-local",
@@ -36,17 +40,19 @@
   },
   "designIntelligence": {
     "preferred": [
-      "ui-ux-pro-max",
+      "bundled-sumi-ux-references",
       "impeccable",
-      "existing-frontend-design-skill",
+      "ui-ux-pro-max",
       "existing-repository-design-system"
     ],
     "roles": {
-      "ui-ux-pro-max": "design-system-and-visual-direction",
-      "impeccable": "visual-critique-refinement-and-anti-slop"
+      "bundled-sumi-ux-references": "task-flows-navigation-and-heuristic-review",
+      "impeccable": "scoped-visual-craft-and-critique",
+      "ui-ux-pro-max": "optional-task-specific-consultation"
     },
     "discoverAtRuntime": true,
-    "installAutomatically": "only-after-explicit-init-confirmation"
+    "installAutomatically": "only-after-explicit-init-confirmation",
+    "loading": "one-workflow-owner; specialists loaded per question"
   },
   "visualQa": {
     "maxIterations": 3,
@@ -79,6 +85,15 @@
       "responsive-behavior",
       "interaction-states",
       "accessibility"
+    ]
+  },
+  "uxQa": {
+    "workflow": ".whipui/workflows/ux-review.md",
+    "humanEvidenceRequiredForUserTestingClaims": true,
+    "outcomes": [
+      "observed",
+      "blocked",
+      "not-tested"
     ]
   }
 }

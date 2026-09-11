@@ -83,7 +83,8 @@ test('init is idempotent and preserves existing AGENTS content', async () => {
   assert.equal(existsSync(join(projectRoot, '.vscode/mcp.json')), true)
   assert.equal(existsSync(join(projectRoot, '.github/prompts/whipui-frontend.prompt.md')), true)
   assert.match(await readFile(join(projectRoot, 'AGENTS.md'), 'utf8'), /Impeccable/)
-  assert.match(await readFile(join(projectRoot, 'AGENTS.md'), 'utf8'), /three structurally distinct directions/)
+  assert.equal(existsSync(join(projectRoot, '.agents/skills/whipdesign/SKILL.md')), true)
+  assert.equal(existsSync(join(projectRoot, '.whipui/workflows/ux-review.md')), true)
 })
 
 test('CLI creates Pick from Web, fingerprint, and visual QA handoff artifacts', async () => {

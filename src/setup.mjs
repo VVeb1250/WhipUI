@@ -105,7 +105,7 @@ function getMcpOperation(projectRoot, host) {
   }
 }
 
-function getMissingSkillOperations(projectRoot, ai, capabilities) {
+function getMissingSkillOperations(projectRoot, ai, capabilities, { withProMax = false } = {}) {
   const hosts = resolveAiHosts(ai)
   const operations = []
 
@@ -136,7 +136,7 @@ function getMissingSkillOperations(projectRoot, ai, capabilities) {
 
   const uiUx = capabilities.find((capability) => capability.id === 'ui-ux-pro-max')
   const uiUxHosts = hosts.filter((host) => host === 'codex' || host === 'claude')
-  if (uiUx && !uiUx.ready) {
+  if (withProMax && uiUx && !uiUx.ready) {
     for (const host of uiUxHosts) {
       operations.push({
         kind: 'install-skill',
@@ -154,7 +154,7 @@ function getMissingSkillOperations(projectRoot, ai, capabilities) {
 
 export function buildSetupPlan(
   projectRoot,
-  { ai = 'all', configureMcp = true, installSkills = false } = {}
+  { ai = 'all', configureMcp = true, installSkills = false, withProMax = false } = {}
 ) {
   const hosts = resolveAiHosts(ai)
   const capabilities = detectCapabilities(projectRoot, { ai })
@@ -168,7 +168,7 @@ export function buildSetupPlan(
     (capability) => capability.kind === 'skill' && capability.active && !capability.ready
   )
   if (installSkills) {
-    operations.push(...getMissingSkillOperations(projectRoot, ai, capabilities))
+    operations.push(...getMissingSkillOperations(projectRoot, ai, capabilities, { withProMax }))
   }
 
   return {
@@ -177,6 +177,7 @@ export function buildSetupPlan(
     hosts,
     configureMcp,
     installSkills,
+    withProMax,
     capabilities,
     operations,
     missingSkills: skillCapabilities.map((capability) => capability.id),
@@ -290,6 +291,7 @@ function formatCommand(operation) {
 }
 
 function formatStatus(capability) {
+  if (capability.status === 'bundled') return 'bundled'
   if (capability.status === 'installed') return 'installed'
   if (capability.status === 'configured') return 'configured'
   if (capability.status === 'detected') return 'detected'
@@ -323,7 +325,7 @@ export function buildProvidersDocument(manifest) {
 
   if (manifest.installableMissing.length > 0) {
     lines.push('- Installable skills still missing: ' + manifest.installableMissing.join(', ') + '.')
-    lines.push('- Run `whipui setup --yes` to install them into this project.')
+    lines.push('- Run `whipui setup --yes` for Impeccable; add `--with-pro-max` to opt into UI/UX Pro Max.')
   }
 
   lines.push(
@@ -340,10 +342,11 @@ export async function setupProject(
     ai = 'all',
     configureMcp = true,
     installSkills = false,
+    withProMax = false,
     dryRun = false
   } = {}
 ) {
-  const plan = buildSetupPlan(projectRoot, { ai, configureMcp, installSkills })
+  const plan = buildSetupPlan(projectRoot, { ai, configureMcp, installSkills, withProMax })
   const results = []
   const failures = []
 

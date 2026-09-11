@@ -63,6 +63,9 @@ export function buildProjectDna({
       purpose: '',
       audience: '',
       primaryJobs: [],
+      assumptions: [],
+      evidence: [],
+      journeys: [],
       voice: [],
       antiReferences: []
     },
@@ -89,8 +92,9 @@ export function buildProjectDna({
       ownsBrowserRuntime: false,
       designIntelligence: {
         preferred: [
-          'UI/UX Pro Max, for design-system direction, when installed',
-          'Impeccable, for critique and anti-slop refinement, when installed',
+          'bundled Sumi-derived UX references, selected per task',
+          'UI/UX Pro Max, for a specific unresolved design question, when installed',
+          'Impeccable, for scoped visual craft or critique, when installed',
           'existing frontend design skill in the host',
           'existing repository design system'
         ],
@@ -145,7 +149,7 @@ export function mergeProjectDna(existingDna, nextDna, { reset = false } = {}) {
     createdAt: existingDna.createdAt ?? nextDna.createdAt,
     updatedAt: nextDna.updatedAt,
     project: { ...nextDna.project, ...existingDna.project },
-    product: existingDna.product ?? nextDna.product,
+    product: { ...nextDna.product, ...existingDna.product },
     designSystem: existingDna.designSystem ?? nextDna.designSystem,
     inputPolicy: existingDna.inputPolicy ?? nextDna.inputPolicy,
     routing: existingDna.routing ?? nextDna.routing,

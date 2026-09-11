@@ -11,13 +11,14 @@ import {
 } from '../src/creative-direction.mjs'
 import { formatRouteSummary, routeRequest } from '../src/router.mjs'
 
-test('requires the Creative Direction Gate for a prompt without visual direction', () => {
+test('routes a rough product brief to UX-led design and visual exploration', () => {
   const plan = routeRequest({ prompt: 'Build a release planning dashboard.' })
 
   assert.equal(plan.creativeDirection.required, true)
   assert.equal(plan.creativeDirection.workflow, '.whipui/workflows/creative-direction.md')
-  assert.equal(plan.steps.some((step) => /three structurally distinct directions/i.test(step)), true)
-  assert.match(formatRouteSummary(plan), /Creative direction gate: required/)
+  assert.equal(plan.selection.skill, 'whipdesign')
+  assert.equal(plan.selection.focus, 'ux-and-ui')
+  assert.match(formatRouteSummary(plan), /Visual exploration: required/)
 })
 
 test('keeps the gate optional when a visual source already supplies direction', () => {
@@ -50,17 +51,19 @@ test('honors natural-language requests to explore distinctive directions', () =>
   }), true)
 })
 
-test('builds the schema v2 direction contract and distinctiveness QA axes', () => {
+test('builds separate unevaluated UX and visual evidence without mandatory novelty quotas', () => {
   const fingerprint = buildFingerprint({
     prompt: 'Build a release planning dashboard.'
   })
 
-  assert.equal(fingerprint.schemaVersion, 2)
+  assert.equal(fingerprint.schemaVersion, 3)
   assert.equal(fingerprint.status, 'pending-creative-direction')
   assert.equal(fingerprint.creativeDirection.required, true)
   assert.equal(fingerprint.creativeDirection.gate.status, 'pending')
-  assert.equal(fingerprint.creativeDirection.signatureMove.repetitionLimit, 2)
-  assert.equal(fingerprint.exploration.minimumCandidates, 3)
+  assert.equal(fingerprint.creativeDirection.signatureMove.repetitionLimit, null)
+  assert.equal(fingerprint.exploration.minimumCandidates, 1)
+  assert.equal(fingerprint.uxQa.status, 'not-tested')
+  assert.equal(fingerprint.uxQa.humanValidation, 'not-performed')
   assert.equal(fingerprint.visualQa.axes.includes('product-specificity'), true)
   assert.equal(fingerprint.visualQa.axes.includes('concept-coherence'), true)
   assert.equal(fingerprint.visualQa.axes.includes('generic-pattern-debt'), true)
@@ -82,11 +85,11 @@ test('upgrades a schema v1 fingerprint without losing existing visual decisions'
 
   const upgraded = mergeFingerprint(existingFingerprint, nextFingerprint)
 
-  assert.equal(upgraded.schemaVersion, 2)
+  assert.equal(upgraded.schemaVersion, 3)
   assert.equal(upgraded.createdAt, existingFingerprint.createdAt)
   assert.equal(upgraded.identity, existingFingerprint.identity)
   assert.equal(upgraded.creativeDirection.required, true)
-  assert.equal(upgraded.exploration.minimumCandidates, 3)
+  assert.equal(upgraded.exploration.minimumCandidates, 1)
 })
 
 test('promotes the optional init fingerprint when a prompt-only task arrives', () => {
@@ -108,11 +111,11 @@ test('does not mistake a unique identifier requirement for a design request', ()
   assert.equal(requestsCreativeDirection('Use this screenshot as visual direction.'), false)
 })
 
-test('adds product-specificity checks to the browser critique brief', () => {
+test('critique handoff preserves review-only scope and separates UX from visual evidence', () => {
   const brief = buildCritiqueBrief()
 
-  assert.match(brief, /Distinctiveness audit/)
-  assert.match(brief, /Product specificity/)
-  assert.match(brief, /logo and product name/)
-  assert.match(brief, /Generic-pattern debt/)
+  assert.match(brief, /without changing application code/)
+  assert.match(brief, /ux-review\.md/)
+  assert.match(brief, /visual-qa\.md/)
+  assert.match(brief, /not human user testing/)
 })

@@ -1,5 +1,7 @@
 import { readFileSync, statSync } from 'node:fs'
 import { extname, relative, resolve, sep } from 'node:path'
+import { routeRequest } from './router.mjs'
+import { selectWorkflow } from './workflow.mjs'
 import {
   buildCreativeDirection,
   buildDirectionExploration,
@@ -154,7 +156,8 @@ export function parseFigmaUrl(value) {
     throw new Error('Invalid Figma URL: "' + value + '"')
   }
 
-  if (!parsedUrl.hostname.toLowerCase().endsWith('figma.com')) {
+  const figmaHost = parsedUrl.hostname.toLowerCase()
+  if (figmaHost !== 'figma.com' && !figmaHost.endsWith('.figma.com')) {
     throw new Error('Expected a figma.com URL, received "' + value + '"')
   }
 
@@ -194,6 +197,7 @@ export function buildFingerprint({
   url = null,
   existingRepo = true,
   webCapture = null,
+  workflow = 'auto',
   mode = 'adapt',
   projectRoot = process.cwd(),
   createdAt = new Date().toISOString()
@@ -203,11 +207,13 @@ export function buildFingerprint({
     prompt,
     screenshot,
     figma,
-    url
+    url,
+    workflow
   })
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
+    selection: selectWorkflow({ prompt, screenshot, figma, url, workflow }),
     status: creativeDirectionRequired
       ? 'pending-creative-direction'
       : 'pending-agent-analysis',
@@ -301,19 +307,26 @@ export function buildFingerprint({
     },
     components: [],
     uxRules: [],
+    uxQa: {
+      status: 'not-tested',
+      tasks: [],
+      findings: [],
+      evidence: [],
+      humanValidation: 'not-performed'
+    },
     antiSlopChecks: [
-      'No default purple-gradient-on-white treatment unless the source asks for it.',
+      'Preserve the user-approved visual authority rather than substituting a specialist default.',
       'No invented component variants when an existing project component can be reused.',
       'No decorative effect without a job: hierarchy, feedback, wayfinding, or brand character.',
       'No desktop-only implementation when the brief or source implies mobile use.',
       'No silent substitution of the source character with a generic dashboard or landing-page pattern.',
-      'The result still reads as this product when the logo and product name are hidden.',
-      'One product-linked signature move is used deliberately instead of many unrelated flourishes.',
+      'Evaluate new design choices against the product task and rendered evidence.',
+      'Use visual character deliberately without making familiar tasks harder.',
       'Familiar controls stay familiar; novelty belongs in composition, identity, content treatment, or a high-signal interaction.'
     ],
     openQuestions: [
-      'What is the single memorable visual idea?',
-      'Which three visible decisions could only belong to this product or workflow?',
+      'What user task should this screen support?',
+      'Which visual decisions are supplied, selected, or still assumptions?',
       'Which visual traits are identity and which are accidental details of the reference?',
       'What must remain true at mobile widths?'
     ],
@@ -353,9 +366,7 @@ export function mergeFingerprint(existingFingerprint, nextFingerprint, { reset =
           gate: {
             ...nextFingerprint.creativeDirection.gate,
             ...existingFingerprint.creativeDirection.gate,
-            status: existingFingerprint.creativeDirection.gate?.status === 'passed'
-              ? 'passed'
-              : nextFingerprint.creativeDirection.gate.status
+            status: nextFingerprint.creativeDirection.gate.status
           }
         }
       : nextFingerprint.creativeDirection,
@@ -370,10 +381,11 @@ export function mergeFingerprint(existingFingerprint, nextFingerprint, { reset =
     webCapture: existingFingerprint.webCapture ?? nextFingerprint.webCapture,
     components: existingFingerprint.components ?? nextFingerprint.components,
     uxRules: existingFingerprint.uxRules ?? nextFingerprint.uxRules,
+    uxQa: { ...nextFingerprint.uxQa, ...existingFingerprint.uxQa, status: 'not-tested' },
     antiSlopChecks: existingFingerprint.antiSlopChecks ?? nextFingerprint.antiSlopChecks,
     openQuestions: existingFingerprint.openQuestions ?? nextFingerprint.openQuestions,
     analysis: existingFingerprint.analysis ?? nextFingerprint.analysis,
-    visualQa: existingFingerprint.visualQa ?? nextFingerprint.visualQa
+    visualQa: { ...nextFingerprint.visualQa, ...existingFingerprint.visualQa, status: 'pending' }
   }
 }
 
@@ -403,65 +415,43 @@ export function buildAgentBrief({
   url = null,
   existingRepo = true,
   mode = 'adapt',
+  workflow = 'auto',
   target = 'the existing frontend project',
   projectRoot = process.cwd()
 } = {}) {
   const intent = assertMode(mode)
-  const normalizedPrompt = normalizeOptionalText(prompt)
-    ?? 'Infer the missing brief from the supplied visual/design context.'
-  const screenshotSource = screenshot ? readImageMetadata(screenshot, projectRoot) : null
-  const figmaSource = parseFigmaUrl(figma)
-  const creativeDirectionRequired = shouldRunCreativeDirection({
-    prompt,
-    screenshot,
-    figma,
-    url
-  })
-  const lines = [
-    '# WhipUI implementation request',
+  const plan = routeRequest({ prompt, screenshot, figma, url, existingRepo, workflow })
+  return [
+    '# ' + plan.selection.skill + ' request',
     '',
-    'Build or refine ' + target + '.',
-    '',
+    'Target: ' + target,
     'Intent: ' + intent,
+    'Scope: ' + plan.selection.focus + '; stopping point: ' + plan.selection.action,
+    'Route is a heuristic hint. Honor the full user request over the hint.',
     '',
     'User brief:',
-    normalizedPrompt,
+    normalizeOptionalText(prompt) ?? 'Use the supplied reference within the requested scope.',
     '',
     'Reference inputs:',
     formatSourceList({
-      prompt: normalizeOptionalText(prompt),
-      screenshot: screenshotSource,
-      figma: figmaSource,
-      url: normalizeOptionalText(url),
+      prompt,
+      screenshot: screenshot ? readImageMetadata(screenshot, projectRoot) : null,
+      figma: parseFigmaUrl(figma),
+      url,
       existingRepo
     }),
     '',
-    'Required workflow:',
-    '1. Read WhipUI.md, PROJECT-DNA.md, .whipui/project-dna.json, and .whipui/design-fingerprint.json.',
-    '2. Inspect the existing repository and reuse its components, tokens, fonts, assets, and routes.',
-    creativeDirectionRequired
-      ? '3. Follow .whipui/workflows/creative-direction.md. Generate three structurally distinct directions, select one, and pass the Creative Direction Gate before writing UI code.'
-      : '3. Use .whipui/workflows/creative-direction.md when the supplied direction is weak or the user explicitly asks to explore alternatives.',
-    '4. Apply UI/UX Pro Max for design-system intelligence when installed, Impeccable for critique when installed, or the existing design-intelligence skill as fallback.',
-    '5. If a screenshot is supplied, separate identity from accidental pixels and record durable traits.',
-    '6. If Figma is supplied and Figma MCP is connected, use its variables, components, assets, and hierarchy as the higher-confidence source.',
-    '7. If a live URL is supplied, use Playwright MCP to inspect it in an isolated context. If this is a pick request, follow .whipui/workflows/pick-from-web.md.',
-    '8. Update .whipui/design-fingerprint.json with concrete decisions before or alongside implementation.',
-    '9. Implement the smallest coherent slice and reuse the existing project design system.',
-    '10. Run .whipui/workflows/visual-qa.md across every axis and viewport. Fix direction, hierarchy, and identity before micro-polish.',
-    '11. Re-check accessibility, focus, loading, empty, error, and reduced-motion states.',
+    'Read .whipui/router.md, then ' + plan.selection.workflow + '.',
+    ...plan.steps.map((step, index) => (index + 1) + '. ' + step),
     '',
-    'Acceptance bar:',
-    '- The result has a clear art direction and one memorable visual idea.',
-    '- Three visible product-specific decisions support the selected thesis.',
-    '- The logo-and-copy swap test does not reduce the result to an interchangeable SaaS template.',
-    '- The UI uses a deliberate type scale, spacing rhythm, and color hierarchy.',
-    '- Existing project components are reused where appropriate.',
-    '- No generic AI-slop pattern was added without a reason recorded in the fingerprint.',
-    '- Visual validation is based on a rendered page or screenshot, not source code alone.',
+    'Acceptance:',
+    '- Preserve the requested scope; plan and review requests do not authorize application edits.',
+    '- For WhipUI, match the specified component/page, source character and requested behavior.',
+    '- For a WhipDesign build, test a small clickable slice of the primary task before expansion.',
+    '- Record assumptions separately from observations. Keep UX outcomes and visual findings separate.',
+    '- Missing browser evidence is not tested, not passed. Agent review is not human usability research.',
     ''
-  ]
-  return lines.join('\n')
+  ].join('\n')
 }
 
 export function buildCritiqueBrief({
@@ -469,51 +459,26 @@ export function buildCritiqueBrief({
   viewports = DEFAULT_VIEWPORTS,
   axes = DEFAULT_QA_AXES
 } = {}) {
-  const viewportRows = viewports
-    .map(({ name, width, height }) => '| ' + name + ' | ' + width + ' | ' + height + ' | ☐ | ☐ |')
-    .join('\n')
-
   return [
-    '# WhipUI visual QA loop',
+    '# WhipUI + WhipDesign review',
     '',
     'Target: ' + url,
+    'This is a review-only handoff. Report findings without changing application code.',
+    'Read .whipui/router.md and .whipui/workflows/visual-qa.md.',
+    'For task/flow evaluation also read .whipui/workflows/ux-review.md.',
+    'Use Playwright MCP or available host browser tools. Configuration is not evidence.',
     '',
-    'Use Playwright MCP as the primary browser runtime. Chrome DevTools is optional. Do not claim visual validation from source code alone.',
+    'Inspect the supplied reference or selected design, realistic content and the primary task.',
+    'Evaluate responsive behavior at these viewports:',
+    ...viewports.map(({ name, width, height }) => '- ' + name + ': ' + width + 'x' + height),
     '',
-    'Loop:',
-    '1. Open the target and wait for the page to settle.',
-    '2. Inspect the rendered result at every configured viewport.',
-    '3. Compare it against Project DNA, the Design Fingerprint, and supplied sources.',
-    '4. Record the three highest-impact mismatches.',
-    '5. Fix one high-impact mismatch, reload, and inspect again.',
-    '6. Stop after the configured iteration limit or when the result is coherent.',
+    'Visual axes (apply only those relevant to this request):',
+    ...axes.map((axis) => '- ' + axis),
     '',
-    'QA axes:',
-    ...axes.map((axis) => '- [ ] ' + axis),
-    '',
-    'Viewport checklist:',
-    '| Viewport | Width | Height | Rendered | Reviewed |',
-    '| --- | ---: | ---: | :---: | :---: |',
-    viewportRows,
-    '',
-    'Findings:',
-    'P0 — blocks use or breaks layout: ',
-    'P1 — weakens hierarchy, identity, or responsive behavior: ',
-    'P2 — polish opportunity: ',
-    '',
-    'Distinctiveness audit:',
-    '- [ ] Product specificity: hiding the logo and product name still leaves a product-shaped interface.',
-    '- [ ] Concept coherence: at least three visible decisions support the selected design thesis.',
-    '- [ ] Generic-pattern debt: every generic card, pill, gradient, glass panel, oversized heading, or decorative motion has a recorded job.',
-    '- [ ] Signature discipline: one memorable product-linked move is clear without being repeated everywhere.',
-    '- [ ] Familiarity boundary: standard controls remain understandable and accessible.',
-    '',
-    'Final checks:',
-    '- [ ] No horizontal overflow at mobile width.',
-    '- [ ] Heading wraps intentionally at every viewport.',
-    '- [ ] Focus, hover, disabled, loading, empty, and error states are coherent.',
-    '- [ ] Contrast and hit targets are acceptable.',
-    '- [ ] Motion respects reduced-motion preferences.',
+    'Report each finding with task/state, screenshot or observation, impact and proposed correction.',
+    'Separate UX task blockers from visual craft and reference-fidelity mismatches.',
+    'Report observed, blocked, or not tested. Heuristic assessment is not human user testing.',
+    'Only an explicit fix request authorizes refinement; then use the configured iteration limit.',
     ''
   ].join('\n')
 }

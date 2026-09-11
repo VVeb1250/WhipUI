@@ -1,193 +1,162 @@
-# WhipUI
+# WhipUI + WhipDesign
 
-Make AI-built frontends feel designed.
+Two skills, one thin package for coding agents.
 
-WhipUI is a thin frontend design router for Codex, Claude Code, and VS Code Agent.
+**WhipUI** implements specified components and pages faithfully.
+**WhipDesign** helps shape a usable, visually considered experience from a rough
+product request, with UX as the starting point. You do not need a detailed design
+prompt or reference images.
 
-It packages and orchestrates capabilities that already exist in the host:
-
-    Prompt / Screenshot / Figma / URL / Existing repo
-        -> Project DNA + Design Fingerprint
-        -> Creative Direction Gate when visual direction is missing
-        -> existing design intelligence
-        -> existing frontend components
-        -> Playwright MCP visual QA
-
-WhipUI does not create a new frontend agent, browser, editor, MCP server, or
-vision runtime. Its value is the routing contract, durable project context,
-Pick from Web capture schema, product-specific creative direction, anti-slop
-rules, and repeatable visual QA loop.
+The existing repository, npm name `whipui`, CLI and release pipeline stay in
+place. WhipDesign is a skill included in this package, not a separately published
+npm package. Both share setup, Project DNA, Design Fingerprint and host tools.
 
 ## Install once
 
-When published:
+```sh
+npx whipui init
+```
 
-    npx whipui init
+Initialize a target project with all supported host integrations:
 
-Initialize a specific project directory with every host integration:
+```powershell
+npx whipui init .\my-app --ai all
+```
 
-    npx whipui init .\my-app --ai all
+Init asks before downloading Impeccable. UI/UX Pro Max is opt-in with
+`--with-pro-max`; existing installations are retained and discoverable.
+Use `--yes` to approve downloads non-interactively, or `--skip-skills` to use the bundled UX
+references and skills already available in your host. `--skip-mcp` leaves MCP
+configuration unchanged.
 
-In a terminal, init asks once before downloading the named design skills. For
-CI, containers, or a non-interactive shell, make that choice explicit:
+Setup is project-local. No global instructions, skills or configuration are
+overwritten. Codex, Claude Code and VS Code Agent are supported. The host runs
+the models/browser; WhipUI is not an agent, editor, browser or MCP server.
 
-    npx whipui init .\my-app --ai all --yes
+This README describes the renovated source tree. Until a new release is
+published, registry `npx whipui` still resolves the published version. To try this
+checkout now, run `node /path/to/WhipUI/bin/whipui.mjs init /path/to/my-app --ai all`.
 
-The setup is project-local. It configures Playwright MCP for the selected host
-and installs UI/UX Pro Max plus Impeccable when approved; it does not modify
-global Codex, Claude, or VS Code configuration.
+## Upgrade an existing project
 
-For local development:
+```powershell
+npx whipui init .\my-app --ai all --refresh --skip-skills --skip-mcp
+```
 
-    npm install
-    npm link
-    cd path/to/your-existing-frontend
-    whipui init
+Use the renovated local CLI in place of `npx whipui` until released.
+`--refresh` replaces package-owned skill/workflow templates and preserves a copy
+of each changed file under `.whipui/backups/<id>/`. It keeps Project DNA,
+Design Fingerprint, config and unmanaged AGENTS/CLAUDE/Copilot instruction text.
+The managed instruction block is refreshed idempotently. Backups allow restoring
+custom template edits. Without refresh, existing template files are skipped.
 
-The default target is Codex, Claude Code, and VS Code. Use a narrower target when
-needed:
+Do not use `--force` as the normal upgrade path: that older option overwrites
+generated project/design state. `--refresh` preserves state even with `--force`.
 
-    whipui init --ai codex
-    whipui init --ai vscode
-    whipui init --ai claude
-    whipui init --ai all
+## Natural-language use
 
-Run init once. Generated files are safe by default: existing generated files
-are skipped, and existing AGENTS.md or Copilot instructions receive one
-idempotent managed section.
-
-To inspect or repeat setup later:
-
-    npx whipui doctor .\my-app
-    npx whipui setup .\my-app --ai all --yes
-
-## User experience after init
-
-The user should not need to know MCP or skill names:
-
-    Build a calm editorial landing page for this product.
-
-    Build a release planning dashboard. Choose a distinctive direction yourself and continue.
-
-    Show me three design directions first. Do not write code yet.
-
-    Use the attached screenshot as visual direction, but redesign the mobile layout.
-
-    Use this Figma design for the settings page: https://www.figma.com/design/FILE_KEY/name?node-id=12-34
-
-    Open https://example.com and let me pick the pricing card. Capture its styles and adapt it to our app.
-
-    Inspect this existing repo and keep the visual language consistent while adding a new route.
-
-The generated AGENTS.md, CLAUDE.md, Claude skill, Copilot instructions, and VS Code prompt route these
-requests automatically.
-
-## What init creates
-
-    WhipUI.md
-    PROJECT-DNA.md
-    AGENTS.md
-    CLAUDE.md
-    .claude/skills/whipui/SKILL.md
-    .github/copilot-instructions.md
-    .github/prompts/whipui-frontend.prompt.md
-    .whipui/
-    ├── config.json
-    ├── project-dna.json
-    ├── design-fingerprint.json
-    ├── capabilities.json
-    ├── providers.md
-    ├── workflows/
-    │   ├── creative-direction.md
-    │   ├── pick-from-web.md
-    │   └── visual-qa.md
-    └── examples/README.md
-
-Project DNA stores durable product, repository, design-system, routing, and QA
-context. The Design Fingerprint stores page/task-specific visual decisions.
-
-## Five input routes
-
-| Input | Primary route |
+| Request | Workflow |
 | --- | --- |
-| Prompt | Creative Direction Gate, UI/UX Pro Max design intelligence, then Impeccable critique |
-| Screenshot | Host image understanding plus Design Fingerprint |
-| Figma | Connected Figma MCP |
-| URL | Playwright MCP in an isolated context |
-| Existing repo | Local components, tokens, fonts, assets, and conventions |
+| Recreate this pricing card from the screenshot | WhipUI |
+| Implement this Figma page and responsive layout | WhipUI |
+| Change the button radius to 8px | WhipUI |
+| I want an app to track the books I read | WhipDesign |
+| Review checkout UX; keep the appearance and do not edit code | WhipDesign, UX review only |
+| Propose onboarding approaches; do not build yet | WhipDesign, planning only |
 
-## Pick from Web
+Both skills are discoverable; the generated instructions route normal language.
+They preserve explicit UX-only, visual-only, review-only and planning requests.
+An image accompanying a UX request does not turn it into a visual cloning task.
 
-Pick from Web is the main V0 feature:
+### WhipUI: implement the specified UI
 
-1. open a real URL with Playwright MCP;
-2. let the user choose an element;
-3. capture DOM, computed styles, bounding box, screenshots, accessibility
-   context, and interaction states;
-4. save a structured record under .whipui/web-captures/;
-5. map the evidence to existing project components and update the fingerprint;
-6. implement and run multi-axis Visual QA.
+Prompt, Screenshot, Figma, URL and Existing repo remain supported.
+Match the supplied authority and scope, reuse compatible components, implement
+responsive states, then compare the rendered result. A faithful reproduction
+does not need invented novelty or a product-discovery exercise.
 
-Chrome DevTools is optional for hosts that already expose it. WhipUI does not
-launch a browser or attach to the users real profile.
+Pick from Web remains supported: open a real page using host browser tools
+(Playwright MCP preferred), let the user select an element, capture DOM, computed
+styles, bounding box, screenshot and interaction states, then implement within
+the requested scope. Chrome DevTools is optional; Figma MCP is conditional.
 
-## Design intelligence
+### WhipDesign: UX-led design from a rough idea
 
-The package uses UI/UX Pro Max as design-system intelligence and Impeccable as
-critique/refinement intelligence. They are installed by the explicit init/setup
-flow into the project when missing; their source is not bundled into WhipUI.
-If another established frontend design skill is already available, the
-generated contract can route to it instead. `.whipui/capabilities.json` records
-what is ready, missing, or optional.
+Understand the primary user task and consequential assumptions, shape the flow
+and information hierarchy, then develop visual direction. The agent finds useful
+references or creates concept assets with available tools when needed. Missing
+references are not homework for the user.
 
-The optional ecosystem remains composable: Figma MCP is used when a Figma
-source is present, Chrome DevTools MCP can add runtime inspection, and
-Firecrawl, Fudge, Agentation, or onUI can be used when the host/project already
-provides them. WhipUI catalogs these as adapters rather than silently installing
-or replacing them.
+Build a small clickable slice before expanding the app. Compare alternatives
+only when materially useful or requested. UX review checks task completion,
+clarity and recovery. Visual review checks composition, type, imagery and craft.
+Keep both outcomes separate; visual polish does not cancel a task blocker.
 
-## Creative Direction Gate
+## Reused ecosystem, selectively loaded
 
-When a prompt has no screenshot, Figma, or live URL supplying useful visual
-direction, WhipUI routes the agent through a bounded divergence step before UI
-code is written:
+- **Bundled Sumi-derived UX references:** compact, credited adaptations for
+  heuristic review, flows and navigation. No extra installation required.
+- **Impeccable:** scoped visual exploration, critique, copy/state refinement and
+  polish, not a competing product-design authority.
+- **UI/UX Pro Max:** retained for compatibility and optional focused questions.
+  Its industry/palette recommendations do not determine the whole design.
+- **Playwright MCP:** live reference capture and browser/task evidence.
+- **Figma MCP:** when the user supplies Figma and the host is connected.
+- Existing frontend skills and image tools: used only when available and needed.
 
-1. establish the product truth, audience, repeated workflow, and constraints;
-2. generate at least three structurally distinct directions;
-3. select the strongest direction automatically unless the user asks to
-   compare them;
-4. lock a design thesis, tension pair, layout grammar, type and color logic,
-   responsive promise, and one product-linked signature move in the Design
-   Fingerprint;
-5. require three visible product-specific proofs and pass the logo-and-copy
-   swap test before implementation.
+Read the [source/adaptation record](templates/sources.md) for pinned sources,
+what was retained/removed and licensing. The Sumi-derived notes are Apache-2.0;
+original WhipUI code/workflows are MIT. No complete third-party plugin is vendored.
+The package has no runtime dependencies. One selected workflow owns each task;
+specialists are consulted progressively instead of concatenating entire packs.
 
-UI/UX Pro Max supplies suitable design-system ingredients. It does not replace
-the concept step. Impeccable remains the critique and convergence layer. The
-workflow adds no runtime, model, MCP server, or dependency.
+## Generated structure
 
-## Visual QA
+- `AGENTS.md`, `CLAUDE.md` and Copilot instructions: managed routing pointer.
+- `.agents/skills/{whipui,whipdesign}/SKILL.md`: Codex skills.
+- `.claude/skills/{whipui,whipdesign}/SKILL.md`: Claude skills.
+- `.github/skills/{whipui,whipdesign}/SKILL.md`: VS Code skills.
+- `.whipui/router.md`: shared workflow selection.
+- `.whipui/workflows/`: implementation, design, UX review, visual exploration,
+  Pick from Web and visual QA.
+- `.whipui/specialists/`, `sources.md`, `licenses/`: scoped references and notices.
+- `.whipui/project-dna.json`: product facts, tasks, assumptions and repository context.
+- `.whipui/design-fingerprint.json`: chosen visual direction and separate QA records.
+- `.whipui/capabilities.json`, `providers.md`: detected providers, not live health checks.
+- `.whipui/examples/evaluation.md`: controlled comparison protocol.
 
-Visual QA is evaluated across identity, product specificity, concept
-coherence, generic-pattern debt, composition and hierarchy, typography, color
-and contrast, spacing and density, responsive behavior, interaction states,
-and accessibility. It uses Playwright MCP first, checks desktop, tablet, and
-mobile, fixes the highest-impact mismatch, reloads, and repeats for a bounded
-number of iterations. Failure on product specificity returns to the Creative
-Direction Gate instead of being covered with decorative polish.
+Host files are generated only for selected `--ai codex|claude|vscode|both|all`
+targets. `both` keeps its original Codex + VS Code meaning. Configuration files
+remain project-local and host authentication stays with the host.
 
 ## Optional CLI helpers
 
-The normal UX is natural language after init. These helpers are available for
-debugging, scripting, and creating a handoff artifact:
+```sh
+whipui route "I want a book tracking app" --json
+whipui route "Change the radius to 8px" --workflow ui
+whipui brief "Review the checkout UX; do not edit" --workflow design
+whipui fingerprint --prompt "Recreate this card" --screenshot ./ref.png
+whipui pick https://example.com --selector ".pricing-card"
+whipui critique http://localhost:3000/pricing
+whipui doctor --json
+```
 
-    whipui route "Open https://example.com and let me pick the card" --json
-    whipui fingerprint --prompt "Build the pricing route" --screenshot ./ref.png
-    whipui brief --url https://example.com/reference --prompt "Adapt this page"
-    whipui pick https://example.com --selector ".pricing-card"
-    whipui critique http://localhost:3000/pricing
-    whipui dna
-    whipui doctor --json
+`route`, `brief` and `fingerprint` accept `--workflow auto|ui|design`.
+Automatic CLI routing is a heuristic hint, not natural-language understanding
+or permission to act. The host follows the complete user request. Helpers
+generate metadata/handoffs; they do not execute designs or claim QA succeeded.
+
+## What is and is not validated
+
+Automated tests cover routing contracts, host scaffolding, upgrade safety,
+packaging and the existing platform-safe setup launcher. They do not establish
+that the new workflow produces better aesthetics or real human usability.
+
+Use [the comparison protocol](templates/examples/evaluation.md) with the same
+short prompts, model and budget, retaining screenshots, task observations and
+owner preferences. Agent walkthroughs are heuristic/functional evidence, not
+human usability studies. That comparative design evaluation has not been run
+as part of this renovation.
 
 ## Development
 
@@ -195,8 +164,7 @@ debugging, scripting, and creating a handoff artifact:
     npm run syntax-check
     npm pack --dry-run
 
-GitHub Actions runs the setup smoke test on Linux, Windows, and macOS (the
-Apple runner used for iOS/Xcode workflows) across Node 18, 20, and 22. The
+GitHub Actions runs the setup smoke test on Linux, Windows, and macOS across Node 18, 20, and 22. The
 smoke test validates the installer plan, the platform-safe `npx` launcher, and
 project-local Codex, VS Code, and Claude MCP configuration.
 

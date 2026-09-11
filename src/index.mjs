@@ -23,6 +23,7 @@ export {
   resolveAiHosts
 } from './capabilities.mjs'
 export { buildProjectDna, mergeProjectDna } from './dna.mjs'
+export { WORKFLOWS, selectWorkflow } from './workflow.mjs'
 export {
   INPUT_MODES,
   detectInputs,

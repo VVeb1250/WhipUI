@@ -7,6 +7,8 @@ routes, pages, and future tasks.
 Keep .whipui/project-dna.json current with:
 
 - product purpose, audience, voice, and anti-references;
+- primary tasks and journeys, observed facts and separately labeled assumptions;
+- sources of research and human feedback, only when actually available;
 - stack, package manager, routes, constraints, and repository conventions;
 - tokens, components, fonts, assets, and the existing design system;
 - which input source has priority when sources disagree;
@@ -15,3 +17,5 @@ Keep .whipui/project-dna.json current with:
 
 The agent should update Project DNA only when the change is durable for the
 project. Page-specific decisions belong in .whipui/design-fingerprint.json.
+Reference an authoritative existing PRODUCT.md/DESIGN.md instead of maintaining
+conflicting copies. A stored decision never overrides the current user request.

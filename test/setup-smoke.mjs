@@ -38,9 +38,13 @@ const dryRun = await runCli([
 assert.equal(dryRun.code, 0, dryRun.stderr)
 const plan = JSON.parse(dryRun.stdout)
 const skillCommands = plan.results.filter((result) => result.kind === 'install-skill')
-assert.equal(skillCommands.length, 3)
+assert.equal(skillCommands.length, 1)
 assert.equal(skillCommands.some((result) => result.displayCommand.includes('impeccable')), true)
-assert.equal(skillCommands.some((result) => result.displayCommand.includes('ui-ux-pro-max-cli')), true)
+assert.equal(skillCommands.some((result) => result.displayCommand.includes('ui-ux-pro-max-cli')), false)
+
+const extended = await runCli(['setup', projectRoot, '--ai', 'all', '--yes', '--with-pro-max', '--dry-run', '--json'])
+assert.equal(extended.code, 0, extended.stderr)
+assert.equal(JSON.parse(extended.stdout).results.filter((result) => result.kind === 'install-skill').length, 3)
 
 const setup = await runCli([
   'setup',

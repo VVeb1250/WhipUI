@@ -18,9 +18,11 @@ const BOOLEAN_OPTIONS = new Set([
   'help',
   'json',
   'reset',
+  'refresh',
   'skipMcp',
   'skipSkills',
   'webPick',
+  'withProMax',
   'yes'
 ])
 
@@ -28,7 +30,7 @@ const HELP_TEXT = [
   'whipui — thin frontend design router',
   '',
   'Usage:',
-  '  whipui init [directory] [--ai codex|vscode|claude|both|all] [--force] [--yes]',
+  '  whipui init [directory] [--ai codex|vscode|claude|both|all] [--refresh] [--force] [--yes]',
   '  whipui setup [directory] [--ai codex|vscode|claude|both|all] [--yes] [--skip-skills] [--skip-mcp]',
   '  whipui doctor [directory] [--ai codex|vscode|claude|both|all] [--json]',
   '  whipui route [request...] [--screenshot path] [--figma url] [--url url]',
@@ -36,6 +38,9 @@ const HELP_TEXT = [
   '  whipui brief [request...] [--screenshot path] [--figma url] [--url url]',
   '  whipui pick <url> [--selector selector]',
   '  whipui critique [url]',
+  '  route / brief / fingerprint accept --workflow auto|ui|design (default: auto).',
+  '  init --refresh updates skill/workflow templates with backups; preserves project DNA, fingerprint and config.',
+  '  init / setup install Impeccable when approved; --with-pro-max also opts into UI/UX Pro Max.',
   '',
   'After init, normal users should speak to Codex, Claude Code, or VS Code Agent naturally.',
   'WhipUI routes the request to existing skills and MCP tools; it owns none of them.'
@@ -109,7 +114,8 @@ function getSources(options, positional, { requireOne = true } = {}) {
     screenshot: options.screenshot ?? null,
     figma: options.figma ?? null,
     url: options.url ?? null,
-    existingRepo: true
+    existingRepo: true,
+    workflow: options.workflow ?? 'auto'
   }
   const hasSource = Boolean(prompt || sources.screenshot || sources.figma || sources.url)
   if (requireOne && !hasSource) {
@@ -123,21 +129,25 @@ async function runInit(positional, options) {
   const ai = options.ai ?? 'all'
   const result = await scaffoldProject(projectRoot, {
     ai,
-    force: Boolean(options.force)
+    force: Boolean(options.force),
+    refresh: Boolean(options.refresh)
   })
 
   console.log('Initialized WhipUI in ' + projectRoot)
   for (const fileResult of result.results) {
     console.log('  ' + fileResult.status.padEnd(7) + ' ' + fileResult.path)
+    if (fileResult.backup) console.log('          backup: ' + fileResult.backup)
   }
 
   const installSkills = await chooseSkillInstall(projectRoot, {
     ai,
+    withProMax: Boolean(options.withProMax),
     skipSkills: Boolean(options.skipSkills),
     yes: Boolean(options.yes)
   })
   const setup = await setupProject(projectRoot, {
     ai,
+    withProMax: Boolean(options.withProMax),
     configureMcp: !Boolean(options.skipMcp),
     installSkills
   })
@@ -146,12 +156,13 @@ async function runInit(positional, options) {
   console.log('\nNow speak naturally to Codex, Claude Code, or VS Code Agent. The generated instructions route the work for you.')
 }
 
-async function chooseSkillInstall(projectRoot, { ai, skipSkills, yes }) {
+async function chooseSkillInstall(projectRoot, { ai, skipSkills, yes, withProMax = false }) {
   if (skipSkills || yes === false && !process.stdin.isTTY) return false
 
   const plan = buildSetupPlan(projectRoot, {
     ai,
     configureMcp: false,
+    withProMax,
     installSkills: true
   })
   if (plan.installCommands.length === 0) return false
@@ -188,7 +199,7 @@ function printSetupSummary(setup) {
   for (const filePath of setup.files) console.log('  updated    ' + filePath)
 
   if (setup.manifest.installableMissing.length > 0) {
-    console.log('  pending    ' + setup.manifest.installableMissing.join(', ') + ' (run "whipui setup --yes")')
+    console.log('  available  optional installs: ' + setup.manifest.installableMissing.join(', ') + ' (setup --yes; add --with-pro-max for UI/UX Pro Max)')
   }
   if (setup.manifest.requiredMissing.length > 0) {
     console.log('  warning    required capability missing: ' + setup.manifest.requiredMissing.join(', '))
@@ -210,11 +221,13 @@ async function runSetup(positional, options) {
     ? false
     : Boolean(options.dryRun) || await chooseSkillInstall(projectRoot, {
       ai,
+      withProMax: Boolean(options.withProMax),
       skipSkills: false,
       yes: Boolean(options.yes)
     })
   const setup = await setupProject(projectRoot, {
     ai,
+    withProMax: Boolean(options.withProMax),
     configureMcp: !Boolean(options.skipMcp),
     installSkills,
     dryRun: Boolean(options.dryRun)
@@ -262,7 +275,7 @@ async function runDoctor(positional, options) {
   }
   if (manifest.installableMissing.length > 0) {
     console.log('Installable design skills missing: ' + manifest.installableMissing.join(', '))
-    console.log('Run "whipui setup --yes" to install them into this project.')
+    console.log('Run "whipui setup --yes" for Impeccable; add --with-pro-max for UI/UX Pro Max.')
   }
 }
 

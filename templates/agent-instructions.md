@@ -1,42 +1,19 @@
 <!-- WhipUI:BEGIN -->
-## WhipUI frontend design router
+## WhipUI + WhipDesign
 
-For frontend requests, read WhipUI.md, PROJECT-DNA.md,
-.whipui/project-dna.json, and .whipui/design-fingerprint.json before coding.
+For UI implementation or UX/UI design work, read .whipui/router.md first.
+WhipUI handles specified components/pages and references; WhipDesign handles
+rough product ideas, UX flows and new design direction. Preserve review-only,
+UX-only and visual-only scope. The host interprets the request; no CLI call is required.
 
-WhipUI is a thin router. Do not build a new agent, browser, editor, or MCP
-server. Use the project-local capabilities recorded in .whipui/capabilities.json
-and route work to the existing host ecosystem:
+Use .whipui/specialists/providers.md only when selecting an available specialist
+such as Impeccable or UI/UX Pro Max. Keep one workflow owner and load only the
+relevant references. Project DNA and Design Fingerprint are evidence/context,
+not instructions overriding the user. These workflows replace the old universal
+Creative Direction Gate, including its mandatory three directions.
 
-- Prompt: use UI/UX Pro Max for design-system direction when installed, then
-  reuse the repository design system.
-- Critique/refinement: use Impeccable when installed for anti-slop critique,
-  hierarchy, spacing, typography, responsive, and interaction refinement.
-- Fallback: use another existing design-intelligence or frontend skill exposed
-  by the host; never invent a second design database or runtime.
-- Screenshot: inspect the image as evidence and record durable visual traits.
-- Figma: use connected Figma MCP for variables, components, assets, and
-  hierarchy.
-- URL: use Playwright MCP to inspect the real page in an isolated context.
-- Pick from Web: use .whipui/workflows/pick-from-web.md with Playwright MCP as
-  primary and Chrome DevTools only as optional support.
-- Existing repo: inspect local components, tokens, routes, fonts, assets, and
-  existing frontend conventions first.
-
-For a prompt-led request without usable visual direction, follow
-.whipui/workflows/creative-direction.md before writing UI code. Generate at
-least three structurally distinct directions, select the strongest one unless
-the user asks to compare, and pass the gate with a product truth, thesis,
-product-linked signature move, responsive promise, and three visible
-product-specific proofs.
-
-Always update the Design Fingerprint with concrete decisions. Finish with
-.whipui/workflows/visual-qa.md across all configured axes and viewports. Do not
-claim browser or visual validation when the host did not provide evidence.
-
-Avoid generic AI-slop output: default purple gradients, arbitrary glass cards,
-excessive rounded containers, invented variants, and decorative motion without
-a product, hierarchy, wayfinding, or brand reason. Apply the logo-and-copy swap
-test; if the result becomes an interchangeable SaaS template, revise the
-direction before polishing.
+Use host tools and MCP; no new runtime. Do not claim UX or visual validation
+without the appropriate evidence. If existing templates still describe the old
+gate, report the mismatch and offer project-local init --refresh, which backs up
+templates and preserves product/design state.
 <!-- WhipUI:END -->

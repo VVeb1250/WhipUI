@@ -2,6 +2,7 @@ import {
   requestsCreativeDirection,
   shouldRunCreativeDirection
 } from './creative-direction.mjs'
+import { selectWorkflow } from './workflow.mjs'
 
 const URL_PATTERN = /https?:\/\/[^\s)]+/gi
 const WEB_PICK_PATTERN = /\b(pick|select|capture|extract|borrow|copy|inspect)\b|เลือก|จับ|เก็บ|ดึง/iu
@@ -28,7 +29,8 @@ function extractUrls(text) {
 
 function isFigmaUrl(value) {
   try {
-    return new URL(value).hostname.toLowerCase().endsWith('figma.com')
+    const host = new URL(value).hostname.toLowerCase()
+    return host === 'figma.com' || host.endsWith('.figma.com')
   } catch {
     return false
   }
@@ -48,7 +50,7 @@ export function detectInputs({
     ...(url ? [url] : [])
   ])
   const hasFigma = Boolean(figma) || urls.some(isFigmaUrl)
-  const hasWebUrl = Boolean(url) || urls.some((value) => !isFigmaUrl(value))
+  const hasWebUrl = urls.some((value) => !isFigmaUrl(value))
   const asksToPickFromWeb = Boolean(
     webPick
     || (
@@ -79,32 +81,35 @@ export function routeRequest({
   figma = null,
   url = null,
   existingRepo = true,
-  webPick = false
+  webPick = false,
+  workflow = 'auto'
 } = {}) {
   const inputs = detectInputs({ prompt, screenshot, figma, url, existingRepo, webPick })
-  const creativeDirectionRequired = shouldRunCreativeDirection({
+  const selection = selectWorkflow({ prompt, screenshot, figma, url, webPick: inputs.webPick, workflow })
+  const creativeDirectionRequired = selection.focus !== 'ux' && selection.action === 'build' && shouldRunCreativeDirection({
     prompt,
     screenshot,
     figma,
     url,
-    force: inputs.creativeDirectionRequested
+    workflow: selection.lane
   })
   const skills = [
-    'UI/UX Pro Max for design-system direction, when installed',
-    'Impeccable for critique, refinement, and anti-slop, when installed',
-    'existing design intelligence skill as the fallback',
-    'frontend implementation skill, if available'
+    selection.skill + ' as the workflow owner',
+    ...(selection.lane === 'design' ? ['bundled Sumi-derived UX references for flow/navigation or heuristic review, loaded by task'] : []),
+    'UI/UX Pro Max only for a specific unresolved UX, typography, or component question, when installed',
+    'Impeccable only for a scoped visual exploration or critique task, when installed',
+    'one existing frontend skill for implementation, if needed'
   ]
   const mcp = []
   const steps = [
     'Read Project DNA and the current Design Fingerprint.',
     'Inspect the existing repository and reuse its components, tokens, fonts, and assets.',
-    'Write down the design decisions before implementation.',
-    'Run visual QA across the configured axes and viewports, then refine the highest-impact mismatch.'
+    'Follow ' + selection.workflow + '; respect the requested ' + selection.action + ' stopping point.',
+    'Load .whipui/specialists/providers.md only when selecting a provider; consult it for a bounded question, not the entire workflow.'
   ]
 
   if (creativeDirectionRequired) {
-    steps.splice(2, 0, 'Follow the Creative Direction workflow: generate three structurally distinct directions, select one, and pass the gate before implementation.')
+    steps.push('Establish the primary user task, then render a small clickable direction before expanding; compare alternatives only when useful.')
   }
 
   if (inputs.webPick) {
@@ -119,14 +124,16 @@ export function routeRequest({
       purpose: 'Use only when the host already exposes it and deeper runtime inspection is useful.'
     })
     steps.splice(1, 0, 'Run the Pick from Web workflow with Playwright MCP and save a structured capture.')
-  } else if (inputs.modes.includes('figma')) {
+  }
+  if (inputs.modes.includes('figma')) {
     mcp.push({
       name: 'Figma MCP',
       role: 'conditional',
       purpose: 'Read variables, components, assets, hierarchy, and design context from the supplied Figma source.'
     })
     steps.splice(1, 0, 'Use Figma MCP when connected; treat it as higher-confidence than pixel guesses.')
-  } else if (inputs.modes.includes('url')) {
+  }
+  if (inputs.modes.includes('url') && !inputs.webPick) {
     mcp.push({
       name: 'Playwright MCP',
       role: 'primary',
@@ -144,9 +151,18 @@ export function routeRequest({
     steps.splice(1, 0, 'Analyze the screenshot as visual evidence and separate identity from accidental pixels.')
   }
 
+  if (!mcp.some((tool) => tool.name === 'Playwright MCP')) {
+    mcp.push({ name: 'Playwright MCP', role: 'primary', purpose: 'Inspect the local rendered UI and exercise the primary task; required for browser evidence, not for text-only planning.' })
+  }
+  if (selection.lane === 'design') {
+    steps.push('Record observed facts separately from assumptions in Project DNA; use .whipui/workflows/ux-review.md to evaluate task completion and recovery.')
+  }
+  if (selection.focus !== 'ux') steps.push('Use .whipui/workflows/visual-qa.md for rendered fidelity or visual quality; report unverified evidence explicitly.')
+
   return {
     kind: inputs.webPick ? 'pick-from-web' : 'frontend-design-route',
     inputs,
+    selection,
     creativeDirection: {
       required: creativeDirectionRequired,
       workflow: '.whipui/workflows/creative-direction.md'
@@ -164,7 +180,9 @@ export function formatRouteSummary(plan) {
     'WhipUI route: ' + plan.kind,
     'Inputs: ' + plan.inputs.modes.join(', '),
     'Runtime owned by WhipUI: no',
-    'Creative direction gate: ' + (plan.creativeDirection.required ? 'required' : 'optional'),
+    'Skill: ' + plan.selection.skill + ' (' + plan.selection.focus + ', ' + plan.selection.action + ')',
+    'Routing hint: ' + plan.selection.reason,
+    'Visual exploration: ' + (plan.creativeDirection.required ? 'required' : 'optional'),
     '',
     'Skills:',
     ...plan.skills.map((skill) => '- ' + skill),

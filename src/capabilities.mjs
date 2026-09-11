@@ -31,9 +31,24 @@ const MCP_MARKERS = Object.freeze({
 
 export const CAPABILITY_CATALOG = Object.freeze([
   {
+    id: 'sumi-ux-references',
+    kind: 'reference',
+    role: 'bundled-ux-review-flow-and-navigation',
+    hosts: HOSTS,
+    referenceFiles: [
+      '.whipui/specialists/ux-foundations.md',
+      '.whipui/specialists/flows-and-navigation.md',
+      '.whipui/licenses/sumi-apache-2.0.txt',
+      '.whipui/licenses/sumi-NOTICE.txt',
+      '.whipui/sources.md'
+    ],
+    installable: false,
+    docs: 'https://github.com/phazurlabs/sumi'
+  },
+  {
     id: 'ui-ux-pro-max',
     kind: 'skill',
-    role: 'design-system-and-visual-direction',
+    role: 'optional-task-specific-design-intelligence',
     hosts: ['codex', 'claude'],
     skillDirectories: ['ui-ux-pro-max', 'uiux-pro-max', 'ui_ux_pro_max'],
     installable: true,
@@ -43,7 +58,7 @@ export const CAPABILITY_CATALOG = Object.freeze([
   {
     id: 'impeccable',
     kind: 'skill',
-    role: 'visual-critique-refinement-and-anti-slop',
+    role: 'scoped-visual-craft-critique-and-refinement',
     hosts: ['codex', 'claude'],
     skillDirectories: ['impeccable'],
     installable: true,
@@ -268,6 +283,14 @@ function findAdapter(projectRoot, capability) {
 }
 
 function detectCapability(projectRoot, capability) {
+  if (capability.kind === 'reference') {
+    const bundled = capability.referenceFiles.every((path) => existsSync(join(projectRoot, path)))
+    return {
+      status: bundled ? 'bundled' : 'missing',
+      scope: bundled ? 'project' : null,
+      locations: bundled ? [{ scope: 'project', host: null }] : []
+    }
+  }
   if (capability.kind === 'skill') return findSkill(projectRoot, capability)
   if (capability.kind === 'adapter') return findAdapter(projectRoot, capability)
 
@@ -290,7 +313,7 @@ export function resolveAiHosts(aiTarget = 'all') {
 }
 
 export function isCapabilityReady(capability) {
-  return ['installed', 'configured', 'detected'].includes(capability.status)
+  return ['installed', 'configured', 'detected', 'bundled'].includes(capability.status)
 }
 
 export function detectCapabilities(projectRoot, { ai = 'all' } = {}) {
