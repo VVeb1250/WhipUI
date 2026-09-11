@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.0](https://github.com/VVeb1250/WhipUI/compare/v1.0.0...v1.1.0) (2026-09-11)
+
+
+### Features
+
+* add creative direction gate ([#8](https://github.com/VVeb1250/WhipUI/issues/8)) ([38b79c6](https://github.com/VVeb1250/WhipUI/commit/38b79c68438f0712573fee0a9180a9a219bae49b))
+* restore capability installer and provider routing ([#3](https://github.com/VVeb1250/WhipUI/issues/3)) ([4ec50aa](https://github.com/VVeb1250/WhipUI/commit/4ec50aad9f49c7ceee28e8e1364655b295cafb43))
+
+
+### Bug Fixes
+
+* make Windows setup launcher CI-tested ([#5](https://github.com/VVeb1250/WhipUI/issues/5)) ([d795cc3](https://github.com/VVeb1250/WhipUI/commit/d795cc3def6598ca51eb626bae2f20729bde83a5))
+* test Windows setup in CI ([d795cc3](https://github.com/VVeb1250/WhipUI/commit/d795cc3def6598ca51eb626bae2f20729bde83a5))
+* update version from 0.3.0 to 1.0.0 in package.json ([4c43a1a](https://github.com/VVeb1250/WhipUI/commit/4c43a1a105a9a3b6c7024eab6e09361b2f56de39))
+
 ## [0.3.0](https://github.com/VVeb1250/WhipUI/compare/v0.2.1...v0.3.0) (2026-08-29)
 
 
