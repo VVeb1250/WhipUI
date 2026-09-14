@@ -9,6 +9,7 @@ must fit the current task, references and project constraints.
 | Need | Preferred existing provider | Bounded assignment |
 | --- | --- | --- |
 | Task flow, navigation, UX review | Bundled Sumi-derived references | Read ux-foundations.md or flows-and-navigation.md for the relevant decision, not both automatically |
+| Page composition during WhipDesign exploration | Bundled Hallmark-derived [composition reference](visual-composition.md) | Match content and task to a coherent shape; skip recreate and UX-only work |
 | UX/domain pattern question | UI/UX Pro Max, if installed | Query the relevant UX/product/stack guidance for this task; treat recommendations as hypotheses |
 | Visual concept or craft | One installed design skill, such as Impeccable or frontend-design | Give the primary task, constraints and desired artifact; select one creative lead |
 | Labels, errors, recovery | Impeccable clarify/harden capabilities when exposed | Review the affected flow and states; preserve approved appearance |
@@ -34,7 +35,7 @@ confirmation; optional Figma/image/search tools keep host authentication.
 
 ## Provenance
 
-These are original routing adapters plus the small Sumi-derived UX references
+These are original routing adapters plus small Sumi-derived UX and Hallmark-derived composition references
 documented in [sources](../sources.md). External providers retain their authorship, licenses,
 versioning and installation. Record actual tool/provider versions in experiment
 evidence when comparing results.
@@ -45,6 +46,6 @@ evidence when comparing results.
 - Optional frontend-design: https://github.com/anthropics/skills/tree/main/skills/frontend-design
 - Playwright MCP: https://github.com/microsoft/playwright-mcp
 
-Only the credited Sumi adaptations are bundled. Recheck file-specific licenses
+Only the credited Sumi and Hallmark adaptations are bundled. Recheck file-specific licenses
 before adding sources. The Combo-inspired arrangement separates workflow
 ownership, specialist consultation and evidence rather than concatenating packs.

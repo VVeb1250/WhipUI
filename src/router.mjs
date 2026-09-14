@@ -95,6 +95,7 @@ export function routeRequest({
   })
   const skills = [
     selection.skill + ' as the workflow owner',
+    ...(creativeDirectionRequired ? ['bundled Hallmark-derived composition reference for task-led visual exploration, not recreation or UX-only work'] : []),
     ...(selection.lane === 'design' ? ['bundled Sumi-derived UX references for flow/navigation or heuristic review, loaded by task'] : []),
     'UI/UX Pro Max only for a specific unresolved UX, typography, or component question, when installed',
     'Impeccable only for a scoped visual exploration or critique task, when installed',

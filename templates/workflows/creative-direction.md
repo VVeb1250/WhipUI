@@ -6,6 +6,9 @@ require novelty, three candidates, a signature move or a logo-swap test.
 
 Start with WhipDesign's primary user task and experience structure. Decide how
 composition, content, typography, imagery and motion support that experience.
+For WhipDesign, consult [task-led composition](../specialists/visual-composition.md)
+when choosing the page shape. It supplies selected Hallmark-derived vocabulary,
+not upstream novelty gates or a replacement for the user flow.
 Choose one creative specialist using [providers](../specialists/providers.md).
 
 When the user supplies no references, gather a small set of relevant visual
