@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/VVeb1250/WhipUI/compare/v1.1.0...v1.2.0) (2026-09-14)
+
+
+### Features
+
+* add scoped Hallmark composition guidance to WhipDesign ([#13](https://github.com/VVeb1250/WhipUI/issues/13)) ([162559a](https://github.com/VVeb1250/WhipUI/commit/162559a2c0b295d2ada8e59052f8383bf5ad2460))
+
 ## [1.1.0](https://github.com/VVeb1250/WhipUI/compare/v1.0.0...v1.1.0) (2026-09-11)
 
 
