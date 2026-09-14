@@ -31,6 +31,19 @@ const MCP_MARKERS = Object.freeze({
 
 export const CAPABILITY_CATALOG = Object.freeze([
   {
+    id: 'hallmark-composition',
+    kind: 'reference',
+    role: 'bundled-task-led-visual-composition',
+    hosts: HOSTS,
+    referenceFiles: [
+      '.whipui/specialists/visual-composition.md',
+      '.whipui/licenses/hallmark-MIT.txt',
+      '.whipui/sources.md'
+    ],
+    installable: false,
+    docs: 'https://github.com/Nutlope/hallmark'
+  },
+  {
     id: 'sumi-ux-references',
     kind: 'reference',
     role: 'bundled-ux-review-flow-and-navigation',

@@ -21,6 +21,24 @@ references to unbundled resources. Preserved attribution and the complete
 upstream LICENSE at licenses/sumi-apache-2.0.txt. No upstream executable code,
 hooks or MCP configuration is bundled.
 
+## Bundled composition reference
+
+Hallmark, Copyright (c) 2026 Hallmark contributors, MIT.
+Reviewed 2026-09-14. Pinned revision: 13ac0ec7e148655948100b6396439e481361d690.
+https://github.com/Nutlope/hallmark/tree/13ac0ec7e148655948100b6396439e481361d690
+
+The macrostructures.md and structure.md files under skills/hallmark/references/
+inform [visual-composition.md](specialists/visual-composition.md). This modified
+synthesis retains task-fit page shapes and coherent composition axes. WhipDesign
+owns UX and the creative workflow; this reference is not a full Hallmark install.
+
+Excluded mandatory cross-page diversification, aesthetic blacklists, fixed
+question/candidate quotas, upstream gates and separate design/log storage.
+Those would conflict with product consistency, natural short briefs and existing
+DNA/fingerprint ownership. Keep browser evidence and explicit reference authority.
+No executable code, hooks, MCP or additional provider download is included.
+The complete pinned [MIT license](licenses/hallmark-MIT.txt) accompanies the adaptation.
+
 ## External providers, not vendored
 
 - Impeccable: https://github.com/pbakaus/impeccable
@@ -38,5 +56,5 @@ hooks or MCP configuration is bundled.
   file-specific license terms must be checked before redistribution.
 
 WhipUI's original workflow/CLI remains MIT. The Sumi-derived references retain
-Apache-2.0 terms. Upstream provider installation and authentication remain with
+Apache-2.0 terms; the Hallmark adaptation retains MIT attribution. Upstream provider installation and authentication remain with
 the host and the explicit setup flow; these references need no extra install.

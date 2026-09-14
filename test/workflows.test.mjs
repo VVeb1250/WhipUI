@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { execFileSync, spawnSync } from 'node:child_process'
 import { existsSync } from 'node:fs'
-import { mkdtemp, readFile, writeFile } from 'node:fs/promises'
+import { mkdtemp, readFile, rename, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -37,9 +37,33 @@ for (const [prompt, options, lane, focus, action] of cases) {
     assert.equal(plan.selection.focus, focus)
     assert.equal(plan.selection.action, action)
     assert.equal(plan.creativeDirection.required, lane === 'design' && focus !== 'ux' && action === 'build')
+    assert.equal(plan.skills.some((skill) => skill.includes('Hallmark')), plan.creativeDirection.required)
     assert.equal(plan.ownsRuntime, false)
   })
 }
+
+test('Hallmark reference is bundled, requires its license and is restored by refresh', async () => {
+  const project = await mkdtemp(join(tmpdir(), 'whipui-hallmark-'))
+  await scaffoldProject(project, { ai: 'all' })
+  const capability = () => buildCapabilityManifest(project).capabilities.find(({ id }) => id === 'hallmark-composition')
+  assert.equal(capability().status, 'bundled')
+  assert.equal(capability().ready, true)
+  assert.equal(capability().installable, false)
+  const license = join(project, '.whipui/licenses/hallmark-MIT.txt')
+  assert.equal(await readFile(license, 'utf8'), await readFile(join(root, 'templates/licenses/hallmark-MIT.txt'), 'utf8'))
+  assert.match(await readFile(license, 'utf8'), /Copyright \(c\) 2026 Hallmark contributors/)
+  await rename(license, license + '.saved')
+  assert.equal(capability().ready, false)
+  await rename(license + '.saved', license)
+  assert.equal(capability().ready, true)
+  const reference = join(project, '.whipui/specialists/visual-composition.md')
+  await rename(reference, reference + '.saved')
+  assert.equal(capability().ready, false)
+  const dna = await readFile(join(project, '.whipui/project-dna.json'), 'utf8')
+  await scaffoldProject(project, { ai: 'all', refresh: true })
+  assert.equal(capability().ready, true)
+  assert.equal(await readFile(join(project, '.whipui/project-dna.json'), 'utf8'), dna)
+})
 
 test('explicit workflow reaches CLI, brief and fingerprint consistently', () => {
   const args = ['route', 'Build a specified panel', '--workflow', 'ui', '--json']

@@ -33,17 +33,12 @@ Setup is project-local. No global instructions, skills or configuration are
 overwritten. Codex, Claude Code and VS Code Agent are supported. The host runs
 the models/browser; WhipUI is not an agent, editor, browser or MCP server.
 
-This README describes the renovated source tree. Until a new release is
-published, registry `npx whipui` still resolves the published version. To try this
-checkout now, run `node /path/to/WhipUI/bin/whipui.mjs init /path/to/my-app --ai all`.
-
 ## Upgrade an existing project
 
 ```powershell
-npx whipui init .\my-app --ai all --refresh --skip-skills --skip-mcp
+npx whipui@latest init .\my-app --ai all --refresh --skip-skills --skip-mcp
 ```
 
-Use the renovated local CLI in place of `npx whipui` until released.
 `--refresh` replaces package-owned skill/workflow templates and preserves a copy
 of each changed file under `.whipui/backups/<id>/`. It keeps Project DNA,
 Design Fingerprint, config and unmanaged AGENTS/CLAUDE/Copilot instruction text.
@@ -96,6 +91,9 @@ Keep both outcomes separate; visual polish does not cancel a task blocker.
 
 - **Bundled Sumi-derived UX references:** compact, credited adaptations for
   heuristic review, flows and navigation. No extra installation required.
+- **Bundled Hallmark-derived composition reference:** task-fit page shapes and
+  coherent visual decisions for WhipDesign exploration. No extra install or MCP;
+  no novelty quotas, aesthetic blacklist or changes to WhipUI recreation.
 - **Impeccable:** scoped visual exploration, critique, copy/state refinement and
   polish, not a competing product-design authority.
 - **UI/UX Pro Max:** retained for compatibility and optional focused questions.
@@ -106,7 +104,8 @@ Keep both outcomes separate; visual polish does not cancel a task blocker.
 
 Read the [source/adaptation record](templates/sources.md) for pinned sources,
 what was retained/removed and licensing. The Sumi-derived notes are Apache-2.0;
-original WhipUI code/workflows are MIT. No complete third-party plugin is vendored.
+the Hallmark adaptation and original WhipUI code/workflows are MIT, with retained
+attribution. No complete third-party plugin is vendored.
 The package has no runtime dependencies. One selected workflow owns each task;
 specialists are consulted progressively instead of concatenating entire packs.
 

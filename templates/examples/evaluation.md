@@ -8,6 +8,7 @@ short prompt and time/token allowance. Keep runs in separate temporary projects.
 Do not provide extra design detail/references to only one condition.
 
 Use representative tasks:
+
 - "I want an app to track books I read." No supplied visual references.
 - "Build a booking page for small workshops." Include full/empty/error states.
 - "Recreate this pricing card." Supply the same reference to both conditions.
@@ -32,3 +33,15 @@ Keep this evaluation not-run until artifacts and observations exist. Improvement
 means better owner-rated visual work without worsening observed task outcomes,
 while reference-led and scoped-edit cases remain faithful. Revise based on actual
 failures; adding more instructions is not itself progress.
+
+## Isolate the Hallmark composition contribution
+
+Compare the same renovated workflow with and without the bundled composition
+reference, keeping the creative provider, model, brief and budget fixed. Record
+the condition explicitly. Include a content-led page as well as the reading
+tracker and booking flow, so marketing patterns cannot masquerade as app UX.
+Add a second screen to each product and check that its identity and navigation
+remain coherent. Reference recreation, UX-only review and small edits should
+remain unaffected. Inspect composition and task outcomes separately; a more
+unusual layout is not automatically preferable. This comparison remains not-run
+until both conditions have rendered artifacts and observed results.

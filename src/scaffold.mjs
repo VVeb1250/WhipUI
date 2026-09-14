@@ -20,6 +20,8 @@ const COMMON_FILES = Object.freeze([
   ['workflows/implement.md', '.whipui/workflows/implement.md'],
   ['workflows/ux-review.md', '.whipui/workflows/ux-review.md'],
   ['specialists/providers.md', '.whipui/specialists/providers.md'],
+  ['specialists/visual-composition.md', '.whipui/specialists/visual-composition.md'],
+  ['licenses/hallmark-MIT.txt', '.whipui/licenses/hallmark-MIT.txt'],
   ['specialists/ux-foundations.md', '.whipui/specialists/ux-foundations.md'],
   ['specialists/flows-and-navigation.md', '.whipui/specialists/flows-and-navigation.md'],
   ['sources.md', '.whipui/sources.md'],
