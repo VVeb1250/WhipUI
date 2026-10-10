@@ -1,0 +1,15 @@
+{
+  "name": "whipui",
+  "description": "WhipUI: UX/UI design partner skill pack for Claude Code and other Agent Skills hosts.",
+  "owner": {
+    "name": "VVeb1250"
+  },
+  "plugins": [
+    {
+      "name": "whipui",
+      "source": "./",
+      "description": "UX/UI design partner and implementer: ask-or-act policy, approved-decision memory, references, rendered + motion verification.",
+      "version": "2.0.0"
+    }
+  ]
+}

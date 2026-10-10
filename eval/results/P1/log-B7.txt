@@ -1,0 +1,5 @@
+▶ P1-B7-A-s1 (sonnet)
+  done 29s · $0.1255819 · turns 4 · render errors 0 warns 2
+▶ P1-B7-C-s1 (sonnet)
+  done 85s · $0.1782621 · turns 9 · render errors 0 warns 0
+runs log: results/P1/runs.csv  ·  blinding key: results/P1/KEY-do-not-open-before-judging.json (don't open before judging)

@@ -1,0 +1,21 @@
+render-check: file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/flawed.html
+  2 runs, errors=33 warns=38 info=2  (4982 ms)
+   24  focus-not-visible
+   10  tap-target-small
+    6  console-error
+    4  broken-image
+    4  request-failed
+    2  text-clipped
+    2  text-spill
+    2  interactive-overlap
+    2  interactive-obscured
+    2  placeholder-only-label
+    2  font-load-error
+    2  layout-shift
+    2  uncaught-exception
+    2  axe:color-contrast
+    2  axe:image-alt
+    2  axe:region
+    2  axe:target-size
+    1  horizontal-overflow
+  report: sample-output/flawed/report.json

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Masked overflow</title>
+<style>
+  html, body { overflow-x: hidden; margin: 0; font-family: system-ui, sans-serif; }
+  .row { display: flex; gap: 12px; padding: 16px; }
+  .row a { flex: none; width: 200px; padding: 12px; border: 1px solid #333; color: #0047b3; }
+</style></head>
+<body><main><h1>Masked overflow</h1>
+<!-- SEED M1: body overflow-x hidden hides the scrollbar but the 3rd/4th links are cut off on phones -->
+<div class="row"><a href="#1">First plan</a><a href="#2">Second plan</a><a href="#3">Third plan</a><a href="#4">Fourth plan</a></div>
+</main></body></html>

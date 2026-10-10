@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flawed sample</title>
+<style>
+  /* SEED F11: web font that does not exist */
+  @font-face { font-family: "Ghost"; src: url("missing-font.woff2") format("woff2"); }
+  body { font-family: "Ghost", system-ui, sans-serif; margin: 0; }
+  header { display: flex; gap: 16px; padding: 12px 16px; white-space: nowrap; background: #222; color: #fff; }
+  /* SEED F1: nav that cannot wrap -> horizontal overflow on phones */
+  header nav a { color: #fff; padding: 10px 14px; }
+  main { padding: 16px; }
+  /* SEED F2: fixed-height, overflow-hidden button clips its label */
+  .cta { width: 120px; height: 36px; overflow: hidden; font-size: 16px; line-height: 20px; background: #0057d9; color: #fff; border: 0; border-radius: 6px; }
+  /* SEED F3: fixed-height card, overflow visible -> text spills */
+  .card { height: 60px; width: 240px; border: 1px solid #ccc; margin: 12px 0 40px; padding: 4px; }
+  /* SEED F4: low contrast */
+  .muted { color: #b5b5b5; background: #fff; }
+  /* SEED F5: tiny adjacent icon buttons */
+  .icons button { width: 16px; height: 16px; padding: 0; margin: 0 1px; border: 1px solid #555; background: #eee; font-size: 10px; }
+  /* SEED F6: absolutely-positioned close button sitting on top of a link */
+  .promo { position: relative; padding: 12px; background: #fff3c4; }
+  .promo .close { position: absolute; top: 6px; left: 60px; width: 90px; height: 32px; }
+  /* SEED F7: focus indicator removed */
+  button:focus, a:focus { outline: none; }
+  .wide { width: 640px; height: 40px; background: linear-gradient(90deg,#9cf,#fc9); }
+</style>
+</head>
+<body>
+<header>
+  <strong>Brandname</strong>
+  <nav><a href="#a">Products</a><a href="#b">Solutions</a><a href="#c">Pricing</a><a href="#d">Resources</a><a href="#e">Contact</a></nav>
+</header>
+<main>
+  <h1>Welcome</h1>
+  <!-- SEED F8: image with no alt that is also broken -->
+  <img src="does-not-exist.jpg" width="200" height="100">
+  <img src="corrupt.png" width="50" height="50" alt="corrupt">
+  <p class="muted">This low-contrast paragraph is hard to read.</p>
+  <button class="cta">Start your free trial today</button>
+  <div class="card">This card has a fixed height but its description is much longer than the space that was designed for it, so it spills out.</div>
+  <div class="icons"><button>A</button><button>B</button><button>C</button></div>
+  <div class="promo"><a href="#promo">Read the full announcement</a><button class="close">Dismiss</button></div>
+  <!-- SEED F9: unlabeled input -->
+  <p><input type="email" placeholder="email"></p>
+  <!-- SEED F10: fixed-width element wider than phone -->
+  <div class="wide"></div>
+  <p>Inline <a href="#x">tiny</a> link inside a sentence should be exempt from target size.</p>
+</main>
+<script>
+  // SEED F12: console error + uncaught exception
+  console.error('Failed to init analytics: key missing');
+  setTimeout(() => { undefinedFunctionCall(); }, 10);
+  // SEED F13: late banner insertion -> layout shift
+  setTimeout(() => {
+    const b = document.createElement('div');
+    b.textContent = 'Cookie banner inserted late and pushing content down';
+    b.style.cssText = 'height:180px;background:#ddd;padding:8px';
+    document.body.insertBefore(b, document.body.firstChild);
+  }, 300);
+</script>
+</body>
+</html>

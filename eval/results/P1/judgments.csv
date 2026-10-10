@@ -1,0 +1,6 @@
+prereg_hash,session_id,rater_id,timestamp,phase,brief_id,task_family,pair_id,contrast,left_output_id,right_output_id,left_arm_hidden,right_arm_hidden,choice,strength,goal_fit_left,goal_fit_right,reason_text,seconds_to_decide,is_retest,retest_of_pair_id,viewport_or_media
+315fee5462c0,s1,owner,2026-10-10T10:04:26.311Z,1,B8,,p3,,564cee,058962,,,right,1,0,0,"",18,0,,desktop+mobile
+315fee5462c0,s1,owner,2026-10-10T10:04:33.509Z,1,B7,,p2,,2afc19,e942a2,,,tie,2,0,0,"",7,0,,desktop+mobile
+315fee5462c0,s1,owner,2026-10-10T10:04:35.459Z,1,B1,,p1,,2eba51,e30fbc,,,right,2,0,0,"",2,0,,desktop+mobile
+315fee5462c0,s1,owner,2026-10-10T10:05:15.267Z,1,B8,,r1,,058962,564cee,,,left,1,0,0,"",40,1,p3,desktop+mobile
+315fee5462c0,s1,owner,2026-10-10T10:05:17.585Z,1,B7,,r2,,e942a2,2afc19,,,tie,2,0,0,"",2,1,p2,desktop+mobile

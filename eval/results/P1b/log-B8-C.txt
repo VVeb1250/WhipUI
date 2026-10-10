@@ -1,0 +1,3 @@
+▶ P1b-B8-C-s1 (sonnet)
+  done 268s · $0.2548638 · turns 11 · render errors 0 warns 0
+runs log: results/P1b/runs.csv  ·  blinding key: results/P1b/KEY-do-not-open-before-judging.json (don't open before judging)

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แดชบอร์ด — realistic patterns</title>
+<style>
+  :root { --bg:#fff; --fg:#161616; --muted:#555; --accent:#0b57d0; --line:#d0d0d0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, "Noto Sans Thai", sans-serif; color:var(--fg); background:var(--bg); line-height:1.6; }
+  .topbar { position: sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:8px 16px; background:#fff; border-bottom:1px solid var(--line); }
+  .icon-btn { width:40px; height:40px; display:inline-grid; place-items:center; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  .icon-btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  
+  .drawer { position:fixed; inset:0 auto 0 0; width:280px; transform:translateX(-100%); visibility:hidden; background:#fff; }
+  main { padding:16px; max-width:1100px; margin:0 auto; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+  .kpi { border:1px solid var(--line); border-radius:10px; padding:12px; }
+  .kpi .v { font-size:28px; font-weight:700; }
+  
+  .chips { display:flex; gap:8px; overflow-x:auto; padding:8px 0; scroll-snap-type:x mandatory; }
+  .chips button { flex:none; min-height:36px; padding:6px 14px; border-radius:999px; border:1px solid var(--line); background:#f6f6f6; }
+  
+  .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; }
+  table { border-collapse:collapse; min-width:720px; width:100%; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+  
+  .card { position:relative; border:1px solid var(--line); border-radius:10px; padding:12px; margin-top:16px; }
+  .card a.stretched::after { content:""; position:absolute; inset:0; }
+  .card .fav { position:relative; z-index:1; min-width:44px; min-height:44px; }
+  .card2 .fav2 { min-width:44px; min-height:44px; } 
+  .check { display:flex; gap:8px; align-items:center; margin-top:12px; }
+  .bottom-nav { position:fixed; bottom:0; left:0; right:0; display:flex; justify-content:space-around; background:#fff; border-top:1px solid var(--line); padding:4px 0; }
+  .bottom-nav a { padding:12px; color:var(--accent); }
+  @media (min-width: 768px) { .bottom-nav { display:none; } }
+  .long-url { font-family:monospace; }
+  
+  .save { width:76px; padding:0 4px; min-height:44px; white-space:nowrap; overflow:hidden; border:1px solid var(--line); border-radius:8px; background:#fff; } 
+</style>
+</head>
+<body>
+<div class="topbar">
+  <button class="icon-btn" aria-label="เปิดเมนู"><svg width="20" height="20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="#000" stroke-width="2"/></svg></button>
+  <strong>ระบบจัดการคำสั่งซื้อ</strong>
+  <button class="icon-btn" aria-label="การแจ้งเตือน"><svg width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="#000" stroke-width="2"/></svg></button>
+</div>
+<nav class="drawer" aria-label="เมนูหลัก"><a href="#1">หน้าแรก</a><a href="#2">คำสั่งซื้อ</a></nav>
+<main>
+  <h1>ภาพรวมยอดขายประจำเดือนตุลาคม</h1>
+  <div class="kpis">
+    <div class="kpi"><div>ยอดขายรวม</div><div class="v">฿1,284,900</div></div>
+    <div class="kpi"><div>คำสั่งซื้อ</div><div class="v">3,412</div></div>
+    <div class="kpi"><div>อัตราการคืนสินค้า</div><div class="v">2.4%</div></div>
+  </div>
+  <div class="chips" role="group" aria-label="ตัวกรอง">
+    <button>ทั้งหมด</button><button>รอชำระเงิน</button><button>กำลังจัดส่ง</button><button>จัดส่งแล้ว</button><button>ยกเลิก</button><button>คืนสินค้า</button><button>มีปัญหา</button>
+  </div>
+  <div class="table-wrap">
+    <table><thead><tr><th>เลขที่</th><th>ลูกค้า</th><th>สถานะ</th><th>ยอดเงิน</th><th>วันที่</th></tr></thead>
+    <tbody><tr><td>#10231</td><td>สมชาย ใจดี</td><td>กำลังจัดส่ง</td><td>฿1,250</td><td>9 ต.ค. 2569</td></tr>
+    <tr><td>#10232</td><td>Jennifer Lawrence-Whitmore</td><td>รอชำระเงิน</td><td>฿89,000</td><td>9 ต.ค. 2569</td></tr></tbody></table>
+  </div>
+  <div class="card"><a class="stretched" href="#p1">สินค้าขายดี: หูฟังไร้สาย</a><p>การ์ดทั้งใบคลิกได้</p><button class="fav" aria-label="บันทึก">♥</button></div>
+  <div class="card card2"><a class="stretched" href="#p2">สินค้าขายดี: ลำโพงพกพา</a><p>ปุ่มด้านล่างถูกทับโดย ::after</p><button class="fav2" aria-label="บันทึก">♥</button></div>
+  <p><button class="save">บันทึกร่าง</button></p>
+  <label class="check"><input type="checkbox"> จดจำตัวกรองนี้</label>
+  <p>ลิงก์ติดตามพัสดุ: <span class="long-url">https://tracking.example-logistics.co.th/shipment/TH2026100912345678901234/details</span></p>
+  <p style="height:400px">เนื้อหาเพิ่มเติม…</p>
+  <button class="icon-btn" style="width:auto;padding:0 12px" id="load-more">โหลดเพิ่ม</button>
+</main>
+<nav class="bottom-nav" aria-label="นำทางด้านล่าง"><a href="#h">หน้าแรก</a><a href="#o">คำสั่งซื้อ</a><a href="#s">ตั้งค่า</a></nav>
+</body>
+</html>

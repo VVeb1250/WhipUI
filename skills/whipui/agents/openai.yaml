@@ -1,0 +1,7 @@
+# Codex UI metadata (ignored by other hosts). Fields per Codex "Build skills" docs (checked 2026-10-10).
+interface:
+  display_name: "WhipUI"
+  short_description: "Design partner + implementer: intent, references, options, rendered checks, approved-decision memory"
+  default_prompt: "$whipui "
+policy:
+  allow_implicit_invocation: true

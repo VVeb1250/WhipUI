@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>jank</title>
+<style>.box{width:80px;height:80px;background:#246;transition:transform 600ms ease}.box.go{transform:translateX(300px)}</style>
+<button id="go">Go</button><div class="box" id="b"></div>
+<script>document.getElementById('go').onclick=()=>{document.getElementById('b').classList.add('go');setTimeout(()=>{const t=performance.now();while(performance.now()-t<300){}},60);}</script></html>

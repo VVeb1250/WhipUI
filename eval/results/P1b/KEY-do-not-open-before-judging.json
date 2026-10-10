@@ -1,0 +1,74 @@
+{
+  "7d6268": {
+    "runId": "P1b-B1-A-s1",
+    "arm": "A",
+    "brief": "B1",
+    "seed": 1
+  },
+  "211e8e": {
+    "runId": "P1b-B1-C-s1",
+    "arm": "C",
+    "brief": "B1",
+    "seed": 1
+  },
+  "660b01": {
+    "runId": "P1b-B1-Cv2-s1",
+    "arm": "Cv2",
+    "brief": "B1",
+    "seed": 1
+  },
+  "01a08a": {
+    "runId": "P1b-B1-T-s1",
+    "arm": "T",
+    "brief": "B1",
+    "seed": 1
+  },
+  "60e581": {
+    "runId": "P1b-B7-A-s1",
+    "arm": "A",
+    "brief": "B7",
+    "seed": 1
+  },
+  "4deb74": {
+    "runId": "P1b-B7-C-s1",
+    "arm": "C",
+    "brief": "B7",
+    "seed": 1
+  },
+  "8636df": {
+    "runId": "P1b-B7-Cv2-s1",
+    "arm": "Cv2",
+    "brief": "B7",
+    "seed": 1
+  },
+  "19b94d": {
+    "runId": "P1b-B7-T-s1",
+    "arm": "T",
+    "brief": "B7",
+    "seed": 1
+  },
+  "ca83f3": {
+    "runId": "P1b-B8-A-s1",
+    "arm": "A",
+    "brief": "B8",
+    "seed": 1
+  },
+  "1fd612": {
+    "runId": "P1b-B8-C-s1",
+    "arm": "C",
+    "brief": "B8",
+    "seed": 1
+  },
+  "bb5887": {
+    "runId": "P1b-B8-Cv2-s1",
+    "arm": "Cv2",
+    "brief": "B8",
+    "seed": 1
+  },
+  "cc7348": {
+    "runId": "P1b-B8-T-s1",
+    "arm": "T",
+    "brief": "B8",
+    "seed": 1
+  }
+}

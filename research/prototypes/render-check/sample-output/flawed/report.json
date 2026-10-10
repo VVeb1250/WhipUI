@@ -1,0 +1,1131 @@
+{
+  "tool": "render-check-prototype@0.1.0",
+  "target": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/flawed.html",
+  "startedAt": "2026-10-09T19:56:59.475Z",
+  "browser": "chromium 141.0.7390.37",
+  "runs": [
+    {
+      "tag": "375x812-light",
+      "viewport": {
+        "w": 375,
+        "h": 812
+      },
+      "scheme": "light",
+      "findings": [
+        {
+          "check": "horizontal-overflow",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Page scrolls horizontally: scrollWidth 656px > viewport 375px",
+          "culprits": [
+            {
+              "selector": "html > body > header > nav",
+              "rect": {
+                "x": 122,
+                "y": 208,
+                "w": 469,
+                "h": 20
+              },
+              "text": "ProductsSolutionsPricingResourcesContact"
+            },
+            {
+              "selector": "html > body > main > div.wide:nth-of-type(4)",
+              "rect": {
+                "x": 16,
+                "y": 774,
+                "w": 640,
+                "h": 40
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "check": "text-clipped",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "Text cut off on y-axis by overflow:hidden on itself",
+          "selector": "html > body > main > button.cta",
+          "text": "Start your free trial today",
+          "rect": {
+            "x": 16,
+            "y": 494,
+            "w": 120,
+            "h": 36
+          }
+        },
+        {
+          "check": "text-spill",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "Text extends 15px outside its box (fixed size + overflow visible?)",
+          "selector": "html > body > main > div.card:nth-of-type(1)",
+          "text": "This card has a fixed height but its description is much lon",
+          "rect": {
+            "x": 16,
+            "y": 546,
+            "w": 250,
+            "h": 70
+          }
+        },
+        {
+          "check": "interactive-overlap",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Interactive elements overlap (63% of the smaller one)",
+          "a": {
+            "selector": "body > main > div.promo:nth-of-type(3) > a",
+            "text": "Read the full announcement",
+            "rect": {
+              "x": 28,
+              "y": 688,
+              "w": 212,
+              "h": 20
+            }
+          },
+          "b": {
+            "selector": "body > main > div.promo:nth-of-type(3) > button.close",
+            "text": "Dismiss",
+            "rect": {
+              "x": 76,
+              "y": 682,
+              "w": 90,
+              "h": 32
+            }
+          }
+        },
+        {
+          "check": "interactive-obscured",
+          "severity": "warn",
+          "kind": "measured",
+          "message": "Centre of interactive element is covered by another element (click would land elsewhere)",
+          "selector": "body > main > div.promo:nth-of-type(3) > a",
+          "text": "Read the full announcement",
+          "coveredBy": "body > main > div.promo:nth-of-type(3) > button.close",
+          "rect": {
+            "x": 12,
+            "y": 598,
+            "w": 212,
+            "h": 20
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 16x16 < 24x24 and too close to body > main > div.icons:nth-of-type(2) > button:nth-of-type(2) (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.icons:nth-of-type(2) > button:nth-of-type(1)",
+          "text": "A",
+          "rect": {
+            "x": 17,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 16x16 < 24x24 and too close to body > main > div.icons:nth-of-type(2) > button:nth-of-type(1) (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.icons:nth-of-type(2) > button:nth-of-type(2)",
+          "text": "B",
+          "rect": {
+            "x": 35,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 16x16 < 24x24 and too close to body > main > div.icons:nth-of-type(2) > button:nth-of-type(2) (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.icons:nth-of-type(2) > button:nth-of-type(3)",
+          "text": "C",
+          "rect": {
+            "x": 53,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 212x20 < 24x24 and too close to body > main > div.promo:nth-of-type(3) > button.close (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.promo:nth-of-type(3) > a",
+          "text": "Read the full announcement",
+          "rect": {
+            "x": 28,
+            "y": 688,
+            "w": 212,
+            "h": 20
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "info",
+          "kind": "measured",
+          "message": "Target 185x21 < 24x24 but spaced (passes 2.5.8 via spacing; < 44 is still uncomfortable on touch)",
+          "selector": "body > main > p:nth-of-type(2) > input",
+          "text": "",
+          "rect": {
+            "x": 16,
+            "y": 737,
+            "w": 185,
+            "h": 21
+          }
+        },
+        {
+          "check": "placeholder-only-label",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "Field has a placeholder but no visible <label>/aria-label (label disappears while typing)",
+          "selector": "body > main > p:nth-of-type(2) > input",
+          "placeholder": "email"
+        },
+        {
+          "check": "broken-image",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Image failed to load/decode",
+          "selector": "html > body > main > img:nth-of-type(1)",
+          "src": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/does-not-exist.jpg"
+        },
+        {
+          "check": "broken-image",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Image failed to load/decode",
+          "selector": "html > body > main > img:nth-of-type(2)",
+          "src": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/corrupt.png"
+        },
+        {
+          "check": "font-load-error",
+          "severity": "warn",
+          "kind": "measured",
+          "message": "Web font(s) failed to load; fallback font is rendering",
+          "fonts": [
+            "Ghost normal normal"
+          ]
+        },
+        {
+          "check": "layout-shift",
+          "severity": "warn",
+          "kind": "measured",
+          "message": "Cumulative layout shift 0.241 during load (> 0.1 \"needs improvement\")"
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Products",
+          "rect": {
+            "x": 122,
+            "y": 198,
+            "w": 96,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Solutions",
+          "rect": {
+            "x": 217,
+            "y": 198,
+            "w": 98,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Pricing",
+          "rect": {
+            "x": 315,
+            "y": 198,
+            "w": 81,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Resources",
+          "rect": {
+            "x": 134,
+            "y": 198,
+            "w": 108,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Contact",
+          "rect": {
+            "x": 241,
+            "y": 198,
+            "w": 87,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|Start your free trial today",
+          "rect": {
+            "x": 16,
+            "y": 494,
+            "w": 120,
+            "h": 36
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|A",
+          "rect": {
+            "x": 17,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|B",
+          "rect": {
+            "x": 35,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|C",
+          "rect": {
+            "x": 53,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Read the full announcement",
+          "rect": {
+            "x": 28,
+            "y": 688,
+            "w": 212,
+            "h": 20
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|Dismiss",
+          "rect": {
+            "x": 76,
+            "y": 682,
+            "w": 90,
+            "h": 32
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|tiny",
+          "rect": {
+            "x": 61,
+            "y": 830,
+            "w": 27,
+            "h": 20
+          }
+        },
+        {
+          "check": "console-error",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+          "location": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/does-not-exist.jpg"
+        },
+        {
+          "check": "console-error",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Failed to init analytics: key missing",
+          "location": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/flawed.html"
+        },
+        {
+          "check": "console-error",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+          "location": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/missing-font.woff2"
+        },
+        {
+          "check": "uncaught-exception",
+          "severity": "error",
+          "kind": "measured",
+          "message": "undefinedFunctionCall is not defined"
+        },
+        {
+          "check": "request-failed",
+          "severity": "error",
+          "kind": "measured",
+          "message": "image net::ERR_FILE_NOT_FOUND",
+          "url": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/does-not-exist.jpg"
+        },
+        {
+          "check": "request-failed",
+          "severity": "error",
+          "kind": "measured",
+          "message": "font net::ERR_FILE_NOT_FOUND",
+          "url": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/missing-font.woff2"
+        }
+      ],
+      "screenshots": {
+        "viewport": "375x812-light-viewport.png",
+        "full": "375x812-light-full.png",
+        "stress": "375x812-light-stress-full.png"
+      },
+      "document": {
+        "scrollWidth": 656,
+        "scrollHeight": 902
+      },
+      "interactiveCount": 13,
+      "cls": 0.241,
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "tags": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodes": 1,
+            "targets": [
+              ".muted"
+            ]
+          },
+          {
+            "id": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "tags": [
+              "wcag2a",
+              "wcag111"
+            ],
+            "nodes": 1,
+            "targets": [
+              "img[src$=\"does-not-exist.jpg\"]"
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "help": "All page content should be contained by landmarks",
+            "tags": [],
+            "nodes": 1,
+            "targets": [
+              "body > div"
+            ]
+          },
+          {
+            "id": "target-size",
+            "impact": "serious",
+            "help": "All touch targets must be 24px large, or leave sufficient space",
+            "tags": [
+              "wcag22aa",
+              "wcag258"
+            ],
+            "nodes": 3,
+            "targets": [
+              "button:nth-child(1)",
+              ".icons > button:nth-child(2)",
+              "button:nth-child(3)"
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 4
+          }
+        ],
+        "passes": 29
+      },
+      "stress": {
+        "findings": [
+          {
+            "check": "horizontal-overflow",
+            "severity": "error",
+            "kind": "measured",
+            "message": "Page scrolls horizontally: scrollWidth 796px > viewport 375px",
+            "culprits": [
+              {
+                "selector": "html > body > header > nav",
+                "rect": {
+                  "x": 159,
+                  "y": 208,
+                  "w": 637,
+                  "h": 25
+                },
+                "text": "ProductsการทSolutionsการทPricingการResourcesการทContactการ"
+              },
+              {
+                "selector": "html > body > main > div.wide:nth-of-type(4)",
+                "rect": {
+                  "x": 16,
+                  "y": 821,
+                  "w": 640,
+                  "h": 40
+                },
+                "text": ""
+              }
+            ]
+          },
+          {
+            "check": "text-clipped",
+            "severity": "warn",
+            "kind": "heuristic",
+            "message": "Text cut off on y-axis by overflow:hidden on itself",
+            "selector": "html > body > main > button.cta",
+            "text": "Start your free trial todayการทดสอบข้อ",
+            "rect": {
+              "x": 16,
+              "y": 536,
+              "w": 120,
+              "h": 36
+            }
+          },
+          {
+            "check": "text-spill",
+            "severity": "warn",
+            "kind": "heuristic",
+            "message": "Text extends 62px outside its box (fixed size + overflow visible?)",
+            "selector": "html > body > main > div.card:nth-of-type(1)",
+            "text": "This card has a fixed height but its description is much lon",
+            "rect": {
+              "x": 16,
+              "y": 588,
+              "w": 250,
+              "h": 70
+            }
+          },
+          {
+            "check": "interactive-overlap",
+            "severity": "error",
+            "kind": "measured",
+            "message": "Interactive elements overlap (63% of the smaller one)",
+            "a": {
+              "selector": "body > main > div.promo:nth-of-type(3) > a",
+              "text": "Read the full announcementการทดสอบข้อ",
+              "rect": {
+                "x": 28,
+                "y": 732,
+                "w": 310,
+                "h": 20
+              }
+            },
+            "b": {
+              "selector": "body > main > div.promo:nth-of-type(3) > button.close",
+              "text": "Dismissการ",
+              "rect": {
+                "x": 76,
+                "y": 724,
+                "w": 90,
+                "h": 32
+              }
+            }
+          }
+        ],
+        "document": {
+          "scrollWidth": 796,
+          "scrollHeight": 984
+        }
+      }
+    },
+    {
+      "tag": "1440x900-light",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "scheme": "light",
+      "findings": [
+        {
+          "check": "text-clipped",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "Text cut off on y-axis by overflow:hidden on itself",
+          "selector": "html > body > main > button.cta",
+          "text": "Start your free trial today",
+          "rect": {
+            "x": 16,
+            "y": 494,
+            "w": 120,
+            "h": 36
+          }
+        },
+        {
+          "check": "text-spill",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "Text extends 15px outside its box (fixed size + overflow visible?)",
+          "selector": "html > body > main > div.card:nth-of-type(1)",
+          "text": "This card has a fixed height but its description is much lon",
+          "rect": {
+            "x": 16,
+            "y": 546,
+            "w": 250,
+            "h": 70
+          }
+        },
+        {
+          "check": "interactive-overlap",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Interactive elements overlap (63% of the smaller one)",
+          "a": {
+            "selector": "body > main > div.promo:nth-of-type(3) > a",
+            "text": "Read the full announcement",
+            "rect": {
+              "x": 28,
+              "y": 688,
+              "w": 212,
+              "h": 20
+            }
+          },
+          "b": {
+            "selector": "body > main > div.promo:nth-of-type(3) > button.close",
+            "text": "Dismiss",
+            "rect": {
+              "x": 76,
+              "y": 682,
+              "w": 90,
+              "h": 32
+            }
+          }
+        },
+        {
+          "check": "interactive-obscured",
+          "severity": "warn",
+          "kind": "measured",
+          "message": "Centre of interactive element is covered by another element (click would land elsewhere)",
+          "selector": "body > main > div.promo:nth-of-type(3) > a",
+          "text": "Read the full announcement",
+          "coveredBy": "body > main > div.promo:nth-of-type(3) > button.close",
+          "rect": {
+            "x": 28,
+            "y": 688,
+            "w": 212,
+            "h": 20
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 16x16 < 24x24 and too close to body > main > div.icons:nth-of-type(2) > button:nth-of-type(2) (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.icons:nth-of-type(2) > button:nth-of-type(1)",
+          "text": "A",
+          "rect": {
+            "x": 17,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 16x16 < 24x24 and too close to body > main > div.icons:nth-of-type(2) > button:nth-of-type(1) (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.icons:nth-of-type(2) > button:nth-of-type(2)",
+          "text": "B",
+          "rect": {
+            "x": 35,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 16x16 < 24x24 and too close to body > main > div.icons:nth-of-type(2) > button:nth-of-type(2) (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.icons:nth-of-type(2) > button:nth-of-type(3)",
+          "text": "C",
+          "rect": {
+            "x": 53,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Target 212x20 < 24x24 and too close to body > main > div.promo:nth-of-type(3) > button.close (fails 2.5.8 spacing exception)",
+          "selector": "body > main > div.promo:nth-of-type(3) > a",
+          "text": "Read the full announcement",
+          "rect": {
+            "x": 28,
+            "y": 688,
+            "w": 212,
+            "h": 20
+          }
+        },
+        {
+          "check": "tap-target-small",
+          "severity": "info",
+          "kind": "measured",
+          "message": "Target 185x21 < 24x24 but spaced (passes 2.5.8 via spacing; < 44 is still uncomfortable on touch)",
+          "selector": "body > main > p:nth-of-type(2) > input",
+          "text": "",
+          "rect": {
+            "x": 16,
+            "y": 737,
+            "w": 185,
+            "h": 21
+          }
+        },
+        {
+          "check": "placeholder-only-label",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "Field has a placeholder but no visible <label>/aria-label (label disappears while typing)",
+          "selector": "body > main > p:nth-of-type(2) > input",
+          "placeholder": "email"
+        },
+        {
+          "check": "broken-image",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Image failed to load/decode",
+          "selector": "html > body > main > img:nth-of-type(1)",
+          "src": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/does-not-exist.jpg"
+        },
+        {
+          "check": "broken-image",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Image failed to load/decode",
+          "selector": "html > body > main > img:nth-of-type(2)",
+          "src": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/corrupt.png"
+        },
+        {
+          "check": "font-load-error",
+          "severity": "warn",
+          "kind": "measured",
+          "message": "Web font(s) failed to load; fallback font is rendering",
+          "fonts": [
+            "Ghost normal normal"
+          ]
+        },
+        {
+          "check": "layout-shift",
+          "severity": "warn",
+          "kind": "measured",
+          "message": "Cumulative layout shift 0.133 during load (> 0.1 \"needs improvement\")"
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Products",
+          "rect": {
+            "x": 122,
+            "y": 198,
+            "w": 96,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Solutions",
+          "rect": {
+            "x": 217,
+            "y": 198,
+            "w": 98,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Pricing",
+          "rect": {
+            "x": 315,
+            "y": 198,
+            "w": 81,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Resources",
+          "rect": {
+            "x": 396,
+            "y": 198,
+            "w": 108,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Contact",
+          "rect": {
+            "x": 503,
+            "y": 198,
+            "w": 87,
+            "h": 40
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|Start your free trial today",
+          "rect": {
+            "x": 16,
+            "y": 494,
+            "w": 120,
+            "h": 36
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|A",
+          "rect": {
+            "x": 17,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|B",
+          "rect": {
+            "x": 35,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|C",
+          "rect": {
+            "x": 53,
+            "y": 660,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|Read the full announcement",
+          "rect": {
+            "x": 28,
+            "y": 688,
+            "w": 212,
+            "h": 20
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "button|Dismiss",
+          "rect": {
+            "x": 76,
+            "y": 682,
+            "w": 90,
+            "h": 32
+          }
+        },
+        {
+          "check": "focus-not-visible",
+          "severity": "warn",
+          "kind": "heuristic",
+          "message": "No outline and no style change on keyboard focus (indicator may still exist via ::before/::after or a parent)",
+          "element": "a|tiny",
+          "rect": {
+            "x": 61,
+            "y": 830,
+            "w": 27,
+            "h": 20
+          }
+        },
+        {
+          "check": "console-error",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+          "location": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/does-not-exist.jpg"
+        },
+        {
+          "check": "console-error",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Failed to init analytics: key missing",
+          "location": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/flawed.html"
+        },
+        {
+          "check": "console-error",
+          "severity": "error",
+          "kind": "measured",
+          "message": "Failed to load resource: net::ERR_FILE_NOT_FOUND",
+          "location": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/missing-font.woff2"
+        },
+        {
+          "check": "uncaught-exception",
+          "severity": "error",
+          "kind": "measured",
+          "message": "undefinedFunctionCall is not defined"
+        },
+        {
+          "check": "request-failed",
+          "severity": "error",
+          "kind": "measured",
+          "message": "image net::ERR_FILE_NOT_FOUND",
+          "url": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/does-not-exist.jpg"
+        },
+        {
+          "check": "request-failed",
+          "severity": "error",
+          "kind": "measured",
+          "message": "font net::ERR_FILE_NOT_FOUND",
+          "url": "file:///home/claude/whipui-next/research/prototypes/render-check/test/fixtures/missing-font.woff2"
+        }
+      ],
+      "screenshots": {
+        "viewport": "1440x900-light-viewport.png",
+        "full": "1440x900-light-full.png",
+        "stress": "1440x900-light-stress-full.png"
+      },
+      "document": {
+        "scrollWidth": 1440,
+        "scrollHeight": 900
+      },
+      "interactiveCount": 13,
+      "cls": 0.133,
+      "axe": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "tags": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodes": 1,
+            "targets": [
+              ".muted"
+            ]
+          },
+          {
+            "id": "image-alt",
+            "impact": "critical",
+            "help": "Images must have alternative text",
+            "tags": [
+              "wcag2a",
+              "wcag111"
+            ],
+            "nodes": 1,
+            "targets": [
+              "img[src$=\"does-not-exist.jpg\"]"
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "help": "All page content should be contained by landmarks",
+            "tags": [],
+            "nodes": 1,
+            "targets": [
+              "body > div"
+            ]
+          },
+          {
+            "id": "target-size",
+            "impact": "serious",
+            "help": "All touch targets must be 24px large, or leave sufficient space",
+            "tags": [
+              "wcag22aa",
+              "wcag258"
+            ],
+            "nodes": 3,
+            "targets": [
+              "button:nth-child(1)",
+              ".icons > button:nth-child(2)",
+              "button:nth-child(3)"
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 1
+          }
+        ],
+        "passes": 29
+      },
+      "stress": {
+        "findings": [
+          {
+            "check": "text-clipped",
+            "severity": "warn",
+            "kind": "heuristic",
+            "message": "Text cut off on y-axis by overflow:hidden on itself",
+            "selector": "html > body > main > button.cta",
+            "text": "Start your free trial todayการทดสอบข้อ",
+            "rect": {
+              "x": 16,
+              "y": 516,
+              "w": 120,
+              "h": 36
+            }
+          },
+          {
+            "check": "text-spill",
+            "severity": "warn",
+            "kind": "heuristic",
+            "message": "Text extends 62px outside its box (fixed size + overflow visible?)",
+            "selector": "html > body > main > div.card:nth-of-type(1)",
+            "text": "This card has a fixed height but its description is much lon",
+            "rect": {
+              "x": 16,
+              "y": 568,
+              "w": 250,
+              "h": 70
+            }
+          },
+          {
+            "check": "interactive-overlap",
+            "severity": "error",
+            "kind": "measured",
+            "message": "Interactive elements overlap (63% of the smaller one)",
+            "a": {
+              "selector": "body > main > div.promo:nth-of-type(3) > a",
+              "text": "Read the full announcementการทดสอบข้อ",
+              "rect": {
+                "x": 28,
+                "y": 712,
+                "w": 310,
+                "h": 20
+              }
+            },
+            "b": {
+              "selector": "body > main > div.promo:nth-of-type(3) > button.close",
+              "text": "Dismissการ",
+              "rect": {
+                "x": 76,
+                "y": 704,
+                "w": 90,
+                "h": 32
+              }
+            }
+          }
+        ],
+        "document": {
+          "scrollWidth": 1440,
+          "scrollHeight": 914
+        }
+      }
+    }
+  ],
+  "baselineDiff": [],
+  "summary": {
+    "error": 33,
+    "warn": 38,
+    "info": 2,
+    "byCheck": {
+      "horizontal-overflow": 1,
+      "text-clipped": 2,
+      "text-spill": 2,
+      "interactive-overlap": 2,
+      "interactive-obscured": 2,
+      "tap-target-small": 10,
+      "placeholder-only-label": 2,
+      "broken-image": 4,
+      "font-load-error": 2,
+      "layout-shift": 2,
+      "focus-not-visible": 24,
+      "console-error": 6,
+      "uncaught-exception": 2,
+      "request-failed": 4,
+      "axe:color-contrast": 2,
+      "axe:image-alt": 2,
+      "axe:region": 2,
+      "axe:target-size": 2
+    },
+    "durationMs": 4982
+  }
+}

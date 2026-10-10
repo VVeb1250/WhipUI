@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>motion flawed</title>
+<style>
+body{font:16px system-ui;margin:24px}
+#open{padding:12px 18px}
+.panel{overflow:hidden;max-height:0;transition:max-height 400ms ease-out;background:#eef}
+.panel.open{max-height:300px}
+.item{opacity:0;transform:translateY(16px)}
+.panel.open .item{animation:rise 300ms cubic-bezier(.05,.7,.1,1) forwards}
+.panel.open .item:nth-child(1){animation-delay:0ms}
+.panel.open .item:nth-child(2){animation-delay:150ms}
+.panel.open .item:nth-child(3){animation-delay:300ms}
+.panel.open .item:nth-child(4){animation-delay:450ms}
+.panel.open .item:nth-child(5){animation-delay:600ms}
+.panel.open .item:nth-child(6){animation-delay:750ms}
+@keyframes rise{to{opacity:1;transform:none}}
+/* reduced motion gate forgets the max-height transition and leaves items hidden */
+@media (prefers-reduced-motion: reduce){ .panel.open .item{animation:none} }
+p.after{margin-top:12px}
+</style>
+<button id="open">Open</button>
+<div class="panel" id="p"><div class="item">One</div><div class="item">Two</div><div class="item">Three</div><div class="item">Four</div><div class="item">Five</div><div class="item">Six</div></div>
+<p class="after">Content below the panel</p>
+<script>document.getElementById('open').onclick=()=>document.getElementById('p').classList.add('open')</script>
+</html>

@@ -1,53 +1,14 @@
 {
   "name": "whipui",
-  "version": "1.2.0",
-  "description": "WhipUI + WhipDesign: faithful UI implementation and UX-led design skills for coding agents.",
+  "version": "2.0.0",
+  "private": true,
+  "description": "WhipUI 2 — UX/UI design-partner skill for coding agents (Claude Code, Codex).",
   "type": "module",
-  "bin": {
-    "whipui": "bin/whipui.mjs"
-  },
-  "exports": {
-    ".": "./src/index.mjs",
-    "./router": "./src/router.mjs",
-    "./fingerprint": "./src/fingerprint.mjs",
-    "./capabilities": "./src/capabilities.mjs",
-    "./setup": "./src/setup.mjs"
-  },
-  "files": [
-    "bin",
-    "src",
-    "templates",
-    "README.md",
-    "LICENSE"
-  ],
-  "engines": {
-    "node": ">=18"
-  },
   "scripts": {
-    "test": "node --test",
-    "syntax-check": "node --check bin/whipui.mjs && node --check src/capabilities.mjs && node --check src/cli.mjs && node --check src/creative-direction.mjs && node --check src/dna.mjs && node --check src/fingerprint.mjs && node --check src/router.mjs && node --check src/scaffold.mjs && node --check src/setup.mjs && node --check src/web-pick.mjs && node --check src/index.mjs && node --check src/workflow.mjs"
+    "test": "node tests/run-all.mjs",
+    "test:static": "node tests/run-all.mjs --static",
+    "doctor": "node skills/whipui/scripts/doctor.mjs",
+    "validate": "claude plugin validate --strict ."
   },
-  "keywords": [
-    "frontend",
-    "vibe-coding",
-    "design-system",
-    "codex",
-    "vscode",
-    "figma",
-    "playwright",
-    "visual-qa"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VVeb1250/WhipUI.git",
-    "directory": "."
-  },
-  "homepage": "https://github.com/VVeb1250/WhipUI",
-  "bugs": {
-    "url": "https://github.com/VVeb1250/WhipUI/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  "license": "MIT"
 }

@@ -1,0 +1,3 @@
+▶ P1b-B7-A-s1 (sonnet)
+  done 165s · $0.15405030000000003 · turns 7 · render errors 0 warns 2
+▶ P1b-B7-C-s1 (sonnet)

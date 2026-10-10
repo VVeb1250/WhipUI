@@ -1,0 +1,3 @@
+▶ P1b-B8-A-s1 (sonnet)
+  done 177s · $0.1538706 · turns 6 · render errors 0 warns 0
+▶ P1b-B8-C-s1 (sonnet)

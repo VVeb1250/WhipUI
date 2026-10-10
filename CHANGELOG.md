@@ -1,51 +1,14 @@
 # Changelog
 
-## [1.2.0](https://github.com/VVeb1250/WhipUI/compare/v1.1.0...v1.2.0) (2026-09-14)
+## 2.0.0 — 2026-10-11
 
+Clean-room rewrite. Nothing from 1.x (router, WhipDesign, provider routing, creative-direction gate) is carried over; see `SYNTHESIS.md` for why.
 
-### Features
+- One entry skill `whipui` (`/whipui`, `/whipui:whipui` as a plugin, `$whipui` in Codex) + 10 on-demand modules.
+- Ask / scope-down / proceed rule by uncertainty × cost of a wrong guess.
+- `.whipui/state.json`: proposed / approved / rejected / superseded decisions; only the user approves.
+- Scripts: render-check (viewports, light/dark, Thai text stress, axe + checks axe misses), motion-probe (real-time health + deterministic filmstrip + reduced motion), interact, ref-capture, review-page (offline options/annotation → tickets), detect-project, state, doctor. Every script prints a `WHIPUI-EVIDENCE` line for the built-in `/goal` evaluator.
+- First real-site run fixed six false-positive classes (see `examples/real-site-portfolio/`).
+- Evidence so far: owner blind judgments on a small pilot (Sonnet, 3 briefs) favour the full skill over baseline 3–0; not a superiority claim. Cost ≈1.4–1.7× baseline tokens.
 
-* add scoped Hallmark composition guidance to WhipDesign ([#13](https://github.com/VVeb1250/WhipUI/issues/13)) ([162559a](https://github.com/VVeb1250/WhipUI/commit/162559a2c0b295d2ada8e59052f8383bf5ad2460))
-
-## [1.1.0](https://github.com/VVeb1250/WhipUI/compare/v1.0.0...v1.1.0) (2026-09-11)
-
-
-### Features
-
-* add creative direction gate ([#8](https://github.com/VVeb1250/WhipUI/issues/8)) ([38b79c6](https://github.com/VVeb1250/WhipUI/commit/38b79c68438f0712573fee0a9180a9a219bae49b))
-* restore capability installer and provider routing ([#3](https://github.com/VVeb1250/WhipUI/issues/3)) ([4ec50aa](https://github.com/VVeb1250/WhipUI/commit/4ec50aad9f49c7ceee28e8e1364655b295cafb43))
-
-
-### Bug Fixes
-
-* make Windows setup launcher CI-tested ([#5](https://github.com/VVeb1250/WhipUI/issues/5)) ([d795cc3](https://github.com/VVeb1250/WhipUI/commit/d795cc3def6598ca51eb626bae2f20729bde83a5))
-* test Windows setup in CI ([d795cc3](https://github.com/VVeb1250/WhipUI/commit/d795cc3def6598ca51eb626bae2f20729bde83a5))
-* update version from 0.3.0 to 1.0.0 in package.json ([4c43a1a](https://github.com/VVeb1250/WhipUI/commit/4c43a1a105a9a3b6c7024eab6e09361b2f56de39))
-
-## [0.3.0](https://github.com/VVeb1250/WhipUI/compare/v0.2.1...v0.3.0) (2026-08-29)
-
-
-### Features
-
-* add creative direction gate ([#8](https://github.com/VVeb1250/WhipUI/issues/8)) ([38b79c6](https://github.com/VVeb1250/WhipUI/commit/38b79c68438f0712573fee0a9180a9a219bae49b))
-
-## [0.2.1](https://github.com/VVeb1250/WhipUI/compare/v0.2.0...v0.2.1) (2026-08-12)
-
-
-### Bug Fixes
-
-* make Windows setup launcher CI-tested ([#5](https://github.com/VVeb1250/WhipUI/issues/5)) ([d795cc3](https://github.com/VVeb1250/WhipUI/commit/d795cc3def6598ca51eb626bae2f20729bde83a5))
-* test Windows setup in CI ([d795cc3](https://github.com/VVeb1250/WhipUI/commit/d795cc3def6598ca51eb626bae2f20729bde83a5))
-
-## [0.2.0](https://github.com/VVeb1250/WhipUI/compare/v0.1.0...v0.2.0) (2026-08-12)
-
-
-### Features
-
-* restore capability installer and provider routing ([#3](https://github.com/VVeb1250/WhipUI/issues/3)) ([4ec50aa](https://github.com/VVeb1250/WhipUI/commit/4ec50aad9f49c7ceee28e8e1364655b295cafb43))
-
-## 0.1.0
-
-- Initial WhipUI thin-router release.
-- Added five-input routing, Project DNA, Design Fingerprints, Pick from Web,
-  Playwright-first visual QA, Codex/Claude Code/VS Code templates, and Claude Code support.
+Not yet: tested on Codex/Cursor/Gemini hosts, replication on Opus 5.5 / GPT-6, npm package.

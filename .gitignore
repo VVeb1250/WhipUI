@@ -1,9 +1,9 @@
 node_modules/
-npm-debug.log*
-.DS_Store
-.env
-.env.*
-!.env.example
-.whipui/web-captures/
-coverage/
-*.tgz
+.whipui/runs/
+.whipui/evidence/
+.whipui/reviews/
+eval/results/*/runs/*/work/.whipui/
+research/prototypes/render-check/node_modules/
+*.tmp
+eval/results/*/runs/
+eval/results/*/judging*.html
