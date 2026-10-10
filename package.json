@@ -1,7 +1,6 @@
 {
   "name": "whipui",
   "version": "2.0.0",
-  "private": true,
   "description": "WhipUI 2 — UX/UI design-partner skill for coding agents (Claude Code, Codex).",
   "type": "module",
   "scripts": {
@@ -10,5 +9,31 @@
     "doctor": "node skills/whipui/scripts/doctor.mjs",
     "validate": "claude plugin validate --strict ."
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+    "whipui": "install/install.mjs"
+  },
+  "files": [
+    ".claude-plugin",
+    "adapters",
+    "install",
+    "skills",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VVeb1250/WhipUI.git"
+  },
+  "homepage": "https://github.com/VVeb1250/WhipUI",
+  "bugs": {
+    "url": "https://github.com/VVeb1250/WhipUI/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

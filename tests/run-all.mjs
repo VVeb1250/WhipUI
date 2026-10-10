@@ -84,9 +84,9 @@ expect('does not copy node_modules', !fs.existsSync(path.join(H, '.claude', 'ski
 const NOPW = path.join(TMP, 'no-playwright'); fs.mkdirSync(NOPW);
 r = await node([path.join(H, '.claude', 'skills', 'whipui', 'scripts', 'render-check.mjs'), path.join(FIX, 'control.html')], { cwd: NOPW, env: { ...process.env, HOME: H, NODE_PATH: '' } });
 expect('without Playwright, render-check degrades to NOT RENDERED (exit 4), no stack trace', r.code === 4 && /NOT RENDERED/.test(r.out) && !/at .*\.mjs:\d+/.test(r.out), r.out.slice(0, 300));
-r = await node([path.join(ROOT, 'install', 'install.mjs'), '--host', 'all'], { env: { ...process.env, HOME: H } });
+r = await node([path.join(ROOT, 'install', 'install.mjs'), '--host', 'all'], { env: { ...process.env, HOME: H, USERPROFILE: H } });
 expect('re-install backs up the previous copy', fs.readdirSync(path.join(H, '.claude', 'skills')).some((d) => d.startsWith('whipui.bak-')));
-r = await node([path.join(ROOT, 'install', 'install.mjs'), '--host', 'all', '--uninstall'], { env: { ...process.env, HOME: H } });
+r = await node([path.join(ROOT, 'install', 'install.mjs'), '--host', 'all', '--uninstall'], { env: { ...process.env, HOME: H, USERPROFILE: H } });
 expect('uninstall removes both copies', !fs.existsSync(path.join(H, '.claude', 'skills', 'whipui')) && !fs.existsSync(path.join(H, '.agents', 'skills', 'whipui')));
 
 console.log('\n[state] decision continuity invariants');
