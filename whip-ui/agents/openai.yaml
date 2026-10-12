@@ -1,0 +1,6 @@
+interface:
+  display_name: "WhipUI"
+  short_description: "Build crafted UI, preserve intent, verify the render"
+  default_prompt: "Use $whip-ui to implement my UI and verify the rendered result."
+policy:
+  allow_implicit_invocation: true

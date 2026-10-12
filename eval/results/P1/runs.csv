@@ -1,7 +1,0 @@
-prereg_hash,run_id,output_id,brief_id,arm,seed,model,start_ts,wall_clock_s,input_tokens,cache_read_tokens,cache_write_tokens,output_tokens,cost_usd,num_turns,exit_code,render_errors,render_warns,whipui_invoked,notes
-315fee5462c0,P1-B7-A-s1,e942a2,B7,A,1,sonnet,2026-10-10T09:04:50.741Z,29,8,159580,21331,2407,0.1255819,4,0,0,2,0,"completed"
-315fee5462c0,P1-B1-A-s1,2eba51,B1,A,1,sonnet,2026-10-10T09:05:46.157Z,84,8,166525,31562,9751,0.24056840000000002,8,0,5,3,0,"completed"
-315fee5462c0,P1-B7-C-s1,2afc19,B7,C,1,sonnet,2026-10-10T09:06:21.623Z,85,12,277061,27038,4238,0.1782621,9,0,0,0,1,"completed"
-315fee5462c0,P1-B8-A-s1,564cee,B8,A,1,sonnet,2026-10-10T09:07:35.603Z,171,14,296615,23091,4631,0.1685028,7,0,0,0,0,"completed"
-315fee5462c0,P1-B1-C-s1,e30fbc,B1,C,1,sonnet,2026-10-10T09:08:28.945Z,155,28,792076,37736,13644,0.36664759999999996,20,0,4,2,1,"completed"
-315fee5462c0,P1-B8-C-s1,058962,B8,C,1,sonnet,2026-10-10T09:09:10.099Z,61,10,225322,25537,3786,0.1625602,6,0,0,0,1,"completed"

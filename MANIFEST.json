@@ -1,0 +1,206 @@
+{
+  "version": "3.0.0",
+  "date": "2026-10-13",
+  "status": "candidate; installer and provenance regression checks, not a human design-quality result",
+  "source": {
+    "filename": "whip-skills-v0.1.zip",
+    "sha256": "6917fcc9bb8734348aed1394f862a87e362fb8ab0a2d595f49ea33c5a7106391"
+  },
+  "files": [
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "bytes": 316,
+      "sha256": "6d99701dbd503228671e85fe95175396603f06e2eb633a4ce701ecbd319620c6"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "bytes": 370,
+      "sha256": "90757b9c1179e855d2608df1ac4e6a2b21a9ea16b14f3b7c1aab60a986c5fdb0"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 832,
+      "sha256": "ea7c1d6ac2d17f549c45c2c46d111807dc2cba050a1f58cc58b043ba3ec2d4f6"
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "bytes": 760,
+      "sha256": "c19b8c0e2b469e86cfa254f957bc50ce15a739deef3e233fec4077cf6407ab61"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 46,
+      "sha256": "e8b10efa7461a876e1f83fc4455a552f9af6381b8cbb2c07c749796a5a8f8039"
+    },
+    {
+      "path": "AGENTS.snippet.md",
+      "bytes": 1243,
+      "sha256": "93a59abe87d7de409fde2e61220c2e655d8425c72183edd73becb0d004780877"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1210,
+      "sha256": "8475200e6e7671a6c305ba184df0b0e62e8958c9c2c53ce77941cafe8a7bc500"
+    },
+    {
+      "path": "examples/SCENARIOS.md",
+      "bytes": 4945,
+      "sha256": "c29946e879804ff9d4045cfbff9bb4dcf3f354c20cdca81fe4209b0b4e6b05f5"
+    },
+    {
+      "path": "install/install.mjs",
+      "bytes": 7232,
+      "sha256": "c31e81fac882a74cf7ddf0bc6de1a330155ca0386754dd6bd16d0ec2b0f29b30"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1085,
+      "sha256": "ecf36c94ffb1c23b1c8eaa34f1d4b74fa73fa02a481ff0341c0c1d8862fd50f3"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1027,
+      "sha256": "2ff6bc41b3589fcfa4c56c84930f1dc6e205420b1c5acc241d690bc7a1c29423"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5265,
+      "sha256": "339fcf42981922e2140cf7a4945a4fc16c6ade70a25d398369051b510215bf03"
+    },
+    {
+      "path": "shared/.whip-owner.json",
+      "bytes": 39,
+      "sha256": "438aed9f5517086345b2911b0a795768ad1025cc130999521af569e6c74b6724"
+    },
+    {
+      "path": "shared/design-intent.example.json",
+      "bytes": 2146,
+      "sha256": "48a4de4a99fb3830813a1bd9666d946ff3f7bdf78549a61fd32803d0df013a65"
+    },
+    {
+      "path": "shared/design-state.example.json",
+      "bytes": 991,
+      "sha256": "ba3e5a44abaf3104ac93b33e83ae08b1bd3088b23f04d142a323f10f545e2294"
+    },
+    {
+      "path": "shared/REFERENCE-SOURCES.md",
+      "bytes": 1953,
+      "sha256": "1c0a42bb6a26f34f9a390d02c7a997bdcc6e3a921f258d01d273aea58b1ee57e"
+    },
+    {
+      "path": "shared/SOURCE-MAP.md",
+      "bytes": 9587,
+      "sha256": "18e9955efc25acbbdf85a2b75f5b41e2720d1cee1861c343f31cac62e646774f"
+    },
+    {
+      "path": "tests/behavior-cases.jsonl",
+      "bytes": 5638,
+      "sha256": "05e093c6752c91bd45dffe292ebb3f605280bb038f334ddb656611d7fc227017"
+    },
+    {
+      "path": "tests/check_pack.py",
+      "bytes": 2148,
+      "sha256": "390c6e2a40ff5dfe202601a9a212c6e78826b6c3007065ae31d38fafb252aefa"
+    },
+    {
+      "path": "tests/check_state.py",
+      "bytes": 8395,
+      "sha256": "7590e0a9b03d65a7f2c0d758654c3b96459e98a409a6a1f0ec6e99715b3f9d43"
+    },
+    {
+      "path": "tests/EVALUATION.md",
+      "bytes": 5300,
+      "sha256": "ae4667a49e452516f042e659731e44413469969d30c8d665d308bf8ee5fa50ae"
+    },
+    {
+      "path": "tests/install.test.mjs",
+      "bytes": 8210,
+      "sha256": "f7ebc2f032344a51f73bcbe7909aae890fcfe22e5d89a141091368b9dcaaf8a3"
+    },
+    {
+      "path": "tests/test_pack.py",
+      "bytes": 5898,
+      "sha256": "217f105f896683097f50f00adb4ab3afa5df932aef91b3b28af4abdaeefa4ec5"
+    },
+    {
+      "path": "whip-design/agents/openai.yaml",
+      "bytes": 241,
+      "sha256": "1862ad728584aad107260937fe43747e2c81d61ba9a19a9f8ce39d71f3194354"
+    },
+    {
+      "path": "whip-design/references/handoff.md",
+      "bytes": 3343,
+      "sha256": "1d3d635940bf336ae9fa3f987bd80fe0d9dfd5fbf4d76992e0012d9bfadfb870"
+    },
+    {
+      "path": "whip-design/references/preference-dialogue.md",
+      "bytes": 3672,
+      "sha256": "34edfb847669d68505623077ff19ba9b5f1a3c03c5249850e0c2c78fc49d3cb4"
+    },
+    {
+      "path": "whip-design/references/reference-intelligence.md",
+      "bytes": 4852,
+      "sha256": "54deaeb8aee3037f5803d1689c7ae27111518425a66388df40768fee7b4f9487"
+    },
+    {
+      "path": "whip-design/references/ux-methods.md",
+      "bytes": 3541,
+      "sha256": "50660228523cf50598211e5684a5cf8dba31f843bb50854476dc638a52ebf4b1"
+    },
+    {
+      "path": "whip-design/references/validation.md",
+      "bytes": 2755,
+      "sha256": "020441ac60a14010e3984edaed8c1dec51745c0b7ebd23dbbc77db1064d8f5e7"
+    },
+    {
+      "path": "whip-design/SKILL.md",
+      "bytes": 9775,
+      "sha256": "ee7b9306e669deae48b936d6a8a197663d0d0b54dfa501f266fd7fed1935802c"
+    },
+    {
+      "path": "whip-ui/agents/openai.yaml",
+      "bytes": 238,
+      "sha256": "4ae76b0668619da8c3d5e33deb06328ce711ec797235323a7399edda9c4618fa"
+    },
+    {
+      "path": "whip-ui/references/art-direction.md",
+      "bytes": 3630,
+      "sha256": "18515afb95ceb65df39488481d721f97b52c68e33a1be2b920e77fa18f38c4f7"
+    },
+    {
+      "path": "whip-ui/references/engineering.md",
+      "bytes": 3581,
+      "sha256": "813434cb9e6d4f04f806ebccf8a6f20afad4fe5ad9570571e8b473949826a773"
+    },
+    {
+      "path": "whip-ui/references/motion.md",
+      "bytes": 2599,
+      "sha256": "2de26de1da1ca35d44f6153ad64ae6ad53cd1cf943093c9b128c5ede6e489a6d"
+    },
+    {
+      "path": "whip-ui/references/rendered-qa.md",
+      "bytes": 3690,
+      "sha256": "5ceee5f4e0d86605e72bb094eafe097983db85db6951c4ae9ebca82543fede18"
+    },
+    {
+      "path": "whip-ui/references/surface-modes.md",
+      "bytes": 3099,
+      "sha256": "55f7b520e68b56f57f0d71a1f5e9425a0758402125871223ba03d617348016ac"
+    },
+    {
+      "path": "whip-ui/references/visual-craft.md",
+      "bytes": 4219,
+      "sha256": "6612ad72ac540cfb3064e1c8beae7965a529df37d740c1ad9e31dfa548f02c87"
+    },
+    {
+      "path": "whip-ui/SKILL.md",
+      "bytes": 9554,
+      "sha256": "6c02f6abb72f09a68c90dd24e0e0bca8c3bfaec009521767aa756bef73c053b7"
+    }
+  ]
+}
