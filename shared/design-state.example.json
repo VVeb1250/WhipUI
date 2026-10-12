@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "project": "Example ongoing project",
+  "summary": "Illustrative individual decisions only; overall visual direction is still pending. Replace example evidence before real use.",
+  "decisions": [
+    {
+      "id": "D-001",
+      "statement": "Use real project artifacts rather than stock images",
+      "status": "approved",
+      "authority": "owner",
+      "scope": "portfolio project gallery",
+      "evidence": {"kind": "explicit_owner_approval", "locator": "EXAMPLE approval: replace with actual source message"}
+    },
+    {
+      "id": "D-002",
+      "statement": "Every component uses a neon frame",
+      "status": "rejected",
+      "authority": "owner",
+      "scope": "portfolio project gallery",
+      "evidence": {"kind": "explicit_owner_rejection", "locator": "EXAMPLE rejection: replace with actual source message"}
+    }
+  ],
+  "preferences": [],
+  "references": [],
+  "artifacts": [],
+  "unresolved": ["Content quality and proof of work"]
+}

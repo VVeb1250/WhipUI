@@ -1,11 +1,10 @@
 {
-  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "whipui",
-  "version": "2.0.0",
-  "description": "UX/UI design partner and implementer for coding agents: adaptive ask-or-act policy, approved-decision memory, free-first reference translation, and rendered/motion verification scripts.",
-  "author": { "name": "Teethawat Kumying (VVeb1250)" },
+  "version": "3.0.0",
+  "description": "WhipDesign for human-guided co-design and WhipUI for crafted frontend execution.",
+  "author": {"name": "Teethawat Kumying (VVeb1250)"},
   "homepage": "https://github.com/VVeb1250/WhipUI",
   "repository": "https://github.com/VVeb1250/WhipUI",
   "license": "MIT",
-  "keywords": ["ui", "ux", "design", "frontend", "accessibility", "motion", "playwright"]
+  "skills": ["./whip-design", "./whip-ui"]
 }

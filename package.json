@@ -1,39 +1,21 @@
 {
   "name": "whipui",
-  "version": "2.0.0",
-  "description": "WhipUI 2 — UX/UI design-partner skill for coding agents (Claude Code, Codex).",
+  "version": "3.0.0",
+  "description": "WhipDesign co-design and WhipUI execution: two standalone, intent-preserving UX/UI skills for coding agents.",
   "type": "module",
+  "bin": {"whipui": "install/install.mjs"},
+  "files": ["whip-design", "whip-ui", "shared", "install", ".claude-plugin", "AGENTS.snippet.md", "MANIFEST.json", "README.md", "CHANGELOG.md", "LICENSE"],
   "scripts": {
-    "test": "node tests/run-all.mjs",
-    "test:static": "node tests/run-all.mjs --static",
-    "doctor": "node skills/whipui/scripts/doctor.mjs",
-    "validate": "claude plugin validate --strict ."
+    "test": "node --test tests/install.test.mjs",
+    "test:skills": "python -m unittest discover -s tests -p test_*.py -v",
+    "syntax-check": "node --check install/install.mjs",
+    "validate": "python tests/check_pack.py"
   },
+  "engines": {"node": ">=18"},
+  "keywords": ["agent-skills", "ui", "ux", "co-design", "frontend", "codex", "claude-code"],
   "license": "MIT",
-  "bin": {
-    "whipui": "install/install.mjs"
-  },
-  "files": [
-    ".claude-plugin",
-    "adapters",
-    "install",
-    "skills",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md"
-  ],
-  "engines": {
-    "node": ">=18"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VVeb1250/WhipUI.git"
-  },
+  "repository": {"type": "git", "url": "git+https://github.com/VVeb1250/WhipUI.git"},
   "homepage": "https://github.com/VVeb1250/WhipUI",
-  "bugs": {
-    "url": "https://github.com/VVeb1250/WhipUI/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  "bugs": {"url": "https://github.com/VVeb1250/WhipUI/issues"},
+  "publishConfig": {"access": "public"}
 }

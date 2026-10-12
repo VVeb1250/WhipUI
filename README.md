@@ -1,79 +1,86 @@
-# WhipUI · v2.0.0
+# WhipDesign + WhipUI
 
-A UX/UI **design-partner skill** for coding agents (Claude Code, Codex, Cursor, VS Code, Gemini CLI).
-It doesn't impose a style. It adds what a frontier model lacks on its own:
+Two standalone Agent Skills, published as `whipui@3.0.0`.
 
-- **When to ask vs act:** uncertainty × cost-of-a-wrong-guess, with "scope down and batch" as a third option, and options shown as renders, not interviews.
-- **Decision continuity:** `.whipui/state.json` records what was proposed, approved (with the user's words), rejected or superseded. Suggestions never silently become spec.
-- **References as evidence, not fixtures:** a free-first source catalog, mechanism deconstruction (borrow / avoid / transform), no-copy safeguards.
-- **Rendered verification:** scripts that render at real viewports, check what axe misses, play motion back in normal and reduced modes, script interactions, and measure reproduction fidelity.
-- **Human taste stays human:** an offline options/annotation page whose marks become narrowly scoped tickets. No AI aesthetic scores.
+| Skill | Responsibility |
+| --- | --- |
+| **whip-design** | Human-guided UX/UI co-design: frame goals, explore taste through contrasting references, work through flows, critique, validate and preserve owner decisions. |
+| **whip-ui** | Build, reproduce, extend, polish and repair real frontend UI. Choose product-specific art direction, preserve approved intent, and inspect the rendered result with available host tools. |
 
-> **ภาษาไทยโดยย่อ:** WhipUI คือ skill เดียว (`/whipui`) + module ความรู้ที่โหลดเฉพาะงาน + script ตรวจ render/motion/interaction + ไฟล์ state ที่จำว่าผู้ใช้อนุมัติอะไร. ไม่มี house style ไม่มี blacklist. งานสวยหรือไม่ให้คนตัดสิน ส่วน AI ตรวจ defect ทางเทคนิค/UX
+Use either skill directly. For work that needs both, WhipDesign resolves material open choices and hands off compact intent to WhipUI. A clear implementation request does not require a design workshop.
 
 ## Install
 
-**Claude Code (plugin):**
+Requires Node.js 18+ for the installer. The skills themselves are Markdown, with no runtime dependency.
+
+```sh
+npx whipui@latest --host all
 ```
+
+Codex and other Agent Skills hosts use `~/.agents/skills/`; Claude Code uses `~/.claude/skills/`. The default installs into both user directories. For one project:
+
+```sh
+npx whipui@latest --host codex --scope project --project ./my-project
+npx whipui@latest --host claude --scope project --project ./my-project
+```
+
+Preview with `--dry-run`. `--host agents` is an alias for the `.agents` layout. Start a new host session after installation.
+
+### Upgrade from 2.0.0
+
+```sh
+npx whipui@latest --host all --replace
+```
+
+The installer archives existing Whip directories to `<host-config>/whip-backups/<timestamp>/` outside the active skill search paths. It preserves custom files and recognized legacy `whipui` installations in that backup. Your project content, `.whipui` state, hooks and MCP settings are not changed. Unrelated `shared` directories are refused even with `--replace`; use an isolated project scope instead.
+
+Invoke **`$whip-design`** or **`$whip-ui`** in Codex, **`/whip-design`** or **`/whip-ui`** in Claude Code. The old `/whipui` skill name and its scripts are retired. `--link`, `--with-deps` and destructive `--uninstall` from 2.0.0 are not supported. Archived user state is evidence to inspect, not automatically imported approvals.
+
+### Claude Code plugin
+
+```text
 /plugin marketplace add VVeb1250/WhipUI
-/plugin install whipui@whipui        → invoke: /whipui:whipui <goal>
-```
-**Any host (copy or symlink the skill):**
-```
-node install/install.mjs --host all [--scope user|project] [--link] [--with-deps]
-# Claude Code: ~/.claude/skills/whipui → /whipui     Codex/Cursor/VS Code/Gemini: ~/.agents/skills/whipui → $whipui or /whipui
-```
-**Rendered checks (optional, recommended):** `cd skills/whipui/scripts && npm install && npx playwright install chromium`,
-then `node skills/whipui/scripts/doctor.mjs`. Without a browser, the scripts say "NOT RENDERED" instead of guessing.
-Optional always-on index: `adapters/AGENTS.snippet.md`. Optional one-time reminder before finishing unverified UI work (Claude Code Stop hook, blocks once): `adapters/claude-code/`.
-
-## Use
-
-```
-/whipui landing page for my indie rhythm game, goal: wishlists
-/whipui fix: pricing toggle overlaps cards on mobile
-/whipui rebuild target.png exactly
-```
-It works with the built-in `/goal` of Claude Code and Codex. Every script prints a `WHIPUI-EVIDENCE …`
-line, so the goal evaluator (which reads only the transcript) can see what was verified. See `examples/`.
-
-## Layout
-
-```
-skills/whipui/SKILL.md          entry (≈4k tokens on invoke, ≈210 always-on; measured with `claude plugin details`)
-skills/whipui/references/       10 on-demand modules (framing, ux-diagnostics, accessibility, art-direction,
-                                references, collaboration, motion, frontend, verification, design-state)
-skills/whipui/scripts/          doctor, detect-project, render-check, motion-probe, interact, ref-capture, review-page, state
-skills/whipui/agents/openai.yaml Codex UI metadata
-.claude-plugin/                  Claude plugin + marketplace manifests (validated --strict)
-adapters/                        AGENTS snippet; opt-in Stop hook
-install/install.mjs              multi-host installer
-tests/run-all.mjs                structural + tool tests
-eval/                            pre-registered pilot: briefs, seeds, runner, blinded judging page, analysis, fixture audit
-research/R1–R7                   research tracks with dated sources
-SYNTHESIS.md · ASSUMPTIONS_AND_DECISIONS.md   rationale and decision log
+/plugin install whipui@whipui
 ```
 
-## Status: what is and isn't established
+Plugin commands are `/whipui:whip-design` and `/whipui:whip-ui`. Existing plugin users can update the marketplace/plugin rather than also installing user copies. The plugin loads the same two skills and shared references, with no hooks or MCP servers.
 
-| Claim | Status |
-|---|---|
-| Installs and validates as a Claude Code plugin; skill format follows the Agent Skills spec | **Built + tested** (`claude plugin validate --strict`; installer tests) |
-| Loads and routes in headless Claude Code via `/whipui:whipui` | **Tested** (smoke + 6 pilot runs; tools used in every WhipUI run) |
-| Codex / Cursor / VS Code / Gemini loading | **Not tested** (paths and metadata per docs only) |
-| Skill/manifest/installer structure | **Tested** (static checks in `tests/run-all.mjs --static`) |
-| Scripts detect what they claim on seeded fixtures (render-check, motion-probe, interact, ref-capture, review-page, state, detect-project) | **Tested** (tool suites in `tests/run-all.mjs`; total count printed at the end) |
-| Scripts' false-positive rate on real production sites | **One real site checked** (owner's Astro portfolio, 7 pages): first run surfaced 6 false-positive classes, all fixed with regression tests; warn/error findings 65 → 10, all 10 verified real. One site is not a rate. See `examples/real-site-portfolio/` |
-| Outputs better than / not worse than a strong baseline | **Promising, not established.** Owner blind judgments (P1b + ablation, n = 3 briefs, Sonnet): full skill vs baseline **3–0**, vs tools-only **2–0 + 1 tie**; tools-only alone lost to baseline 1–2. Pre-registered status: replicate before claiming. Cost ≈1.4–1.7× baseline. See `eval/results/P1b/RESULTS.md` |
-| Statistical superiority | **Not claimed.** Would need the full pre-registered pilot plus replication |
+### Manual installation
 
-## Run the tests and the pilot
+Copy `whip-design`, `whip-ui` and `shared` together into the host's skills directory. They must remain siblings for relative references to resolve. The optional [AGENTS snippet](AGENTS.snippet.md) can help explicit routing when the host's automatic discovery is unreliable.
 
+## Examples
+
+- `Use whip-design to explore contrasting directions for my engineering portfolio. Help me identify which traits work. Don't code yet.`
+- `Use whip-ui to implement the approved design in .whip/design-intent.json. Check desktop/mobile renders and the primary keyboard flow.`
+- `Use whip-ui to match this screenshot. Preserve its layout and content.`
+- `Use whip-ui to repair this broken menu without redesigning the page.`
+
+## What changed
+
+3.0.0 replaces the 2.0.0 single-skill architecture with the WhipDesign + WhipUI clean-room pack. Conditional playbooks live in each skill's `references/`. Shared source maps and intent/state examples remain small, optional resources. Host browser/design tools provide rendering and research capabilities. No bundled browser stack, state engine, Stop hook or specialist router is installed.
+
+The base was `whip-skills-v0.1.zip`, SHA256 `6917fcc9bb8734348aed1394f862a87e362fb8ab0a2d595f49ea33c5a7106391`, followed by local provenance-guard fixes. Old release code and experiment results remain available in Git history and the [v2.0.0 tag](https://github.com/VVeb1250/WhipUI/tree/v2.0.0). See [CHANGELOG](CHANGELOG.md).
+
+## Verification and status
+
+This is a candidate design workflow. Packaging, installer transactions and provenance regressions are tested. They do not establish better UI quality, user preference or usability than a strong baseline. Render and interact with actual output, then evaluate with people where the claim requires it.
+
+```sh
+npm test
+npm run syntax-check
+npm run test:skills
+npm run validate
 ```
-node tests/run-all.mjs                       # ~2 min, needs Chromium for render suites (--static otherwise)
-node eval/run-pilot.mjs --pilot P2 --briefs B1,B2 --arms A,B,C,Cp --model sonnet
-node eval/make-judging.mjs --pilot P2 --contrasts B-A,C-B,C-A
-node eval/analyze.mjs --pilot P2             # after judgments.csv is saved into eval/results/P2/
+
+Python 3.10+ is optional for these provenance/pack checks. Before changing real design state, run:
+
+```sh
+python tests/check_state.py new-state.json --previous prior-state.json --strict
 ```
 
-MIT licence. Built clean-room. The legacy `whipui@1.2.0` was read for lessons only; no code or prompts were copied.
+Changed approved statements/scopes and removed pinned constraints require new explicit owner evidence. The guard checks source-locator structure and changes; inspect the cited user message yourself. It cannot authenticate approval. Example locators intentionally fail strict mode.
+
+[Evaluation plan](tests/EVALUATION.md) and [scenarios](examples/SCENARIOS.md) live in the GitHub source checkout. The npm artifact contains the skills, shared resources, plugin metadata and installer; use the repository checkout for Python tests. Upstream source maps describe inspiration and its limits, not measured superiority or bundled external assets.
+
+MIT. No third-party skill databases or paid reference media are bundled.

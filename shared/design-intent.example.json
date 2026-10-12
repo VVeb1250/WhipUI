@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "project": "Example creative engineer portfolio",
+  "goal": {
+    "outcome": "Communicate shipped engineering work to recruiters",
+    "audience": "Recruiters and engineers, both mobile and desktop",
+    "primary_jobs": ["Find representative work", "Understand each project's outcome", "Reach contact/CV"],
+    "constraints": ["Real work only", "Accessible navigation"]
+  },
+  "design_direction": {
+    "thesis": "Editorial project storytelling with purposeful game-like selection feedback",
+    "status": "proposed"
+  },
+  "references": [
+    {
+      "id": "REF-1",
+      "source": "user-supplied screenshot (example placeholder)",
+      "role": "interaction",
+      "observed_traits": ["Selection state feels reactive"],
+      "transfer": ["Responsive feedback for project selector"],
+      "reject": ["Copying original game artwork"],
+      "asset_rights": "unknown"
+    }
+  ],
+  "preference_evidence": [
+    {
+      "id": "PREF-1",
+      "trait": "Blue accents for interactive status",
+      "polarity": "like",
+      "scope": "portfolio",
+      "confidence": "high",
+      "origin": {"kind": "direct_owner_feedback", "locator": "EXAMPLE, replace with actual message reference"}
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-001",
+      "statement": "Project selector should visibly respond to hover and focus",
+      "status": "proposed",
+      "authority": "agent",
+      "scope": "work gallery",
+      "evidence": {"kind": "agent_proposal", "locator": "Initial design exercise"}
+    }
+  ],
+  "freedom": {
+    "pinned": ["Do not invent project achievements"],
+    "agent_may_decide": ["Grid arrangement", "Type pairings", "Component boundaries"],
+    "escalate": ["New brand-wide visual identity", "Replace already approved direction"]
+  },
+  "quality": {
+    "success_conditions": ["Primary project reachable by keyboard", "Portfolio content credible", "Mobile content scan works"],
+    "verification": ["Build", "Desktop and mobile screenshots", "Project selector click/keyboard states"],
+    "user_taste_approval": "not_obtained"
+  },
+  "artifacts": [],
+  "unknowns": ["Motion intensity on mobile"]
+}
