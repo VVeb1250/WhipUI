@@ -1,0 +1,1429 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "impeccable",
+      "repository": "https://github.com/pbakaus/impeccable",
+      "commit": "245ad82def45831dc56a21b683c7a1ff530b06cc",
+      "files": [
+        {
+          "source": "plugin/skills/impeccable/SKILL.md",
+          "path": "shared/library/impeccable/REFERENCE.md",
+          "sha256": "3984708c4fec7cf5227e405c9f7086e681949b9bef009569f101fa60b660a40d",
+          "bytes": 12541
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/adapt.md",
+          "path": "shared/library/impeccable/reference/adapt.md",
+          "sha256": "0648e4e06d01cabc91fa7dc19256ceedeeeea213b9265e9d36b0918370e16fb2",
+          "bytes": 11301
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/adapt.native.md",
+          "path": "shared/library/impeccable/reference/adapt.native.md",
+          "sha256": "17c583cf8ad41266ea1e787b666b9d91fe13469d3d0f6af57c08e0146f9b17ac",
+          "bytes": 3910
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/android.md",
+          "path": "shared/library/impeccable/reference/android.md",
+          "sha256": "058f81f256134841875fd3183e06b37a023de0c877fd2b9eecd97011640791fe",
+          "bytes": 4093
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/animate.md",
+          "path": "shared/library/impeccable/reference/animate.md",
+          "sha256": "94b4ce6299fea93d9f256b2d25705961a76bc5ea940c56db4145686ebc99df1b",
+          "bytes": 5236
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/audit.md",
+          "path": "shared/library/impeccable/reference/audit.md",
+          "sha256": "b7c98bde47e00889c235e3d808b596224aad5a0869f25e439f135ce86551a075",
+          "bytes": 8528
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/audit.native.md",
+          "path": "shared/library/impeccable/reference/audit.native.md",
+          "sha256": "fe91fcf28638f95577af481a50edaf339d6c9a3ad3b9fa477bc81c116b8bc392",
+          "bytes": 8364
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/bolder.md",
+          "path": "shared/library/impeccable/reference/bolder.md",
+          "sha256": "4879f38b23d0a251a63cbb0327e660296194cd2e71eb4da3236c6ebfe5807746",
+          "bytes": 3471
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/clarify.md",
+          "path": "shared/library/impeccable/reference/clarify.md",
+          "sha256": "6c382f8283756e8a693d832b750f7e4cbff1ca5bdcc3825b2b4ef4da9f21876a",
+          "bytes": 4590
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/colorize.md",
+          "path": "shared/library/impeccable/reference/colorize.md",
+          "sha256": "d1fbd55074abb2251bdaa03749d34acc42c38e46e47549f18f5848df57d43c42",
+          "bytes": 4537
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/component-review.md",
+          "path": "shared/library/impeccable/reference/component-review.md",
+          "sha256": "7780461422046ea2d7ae8b62558cbcb2a32a3c8160af8f1cb16f3c434abc00bc",
+          "bytes": 7954
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/craft-floor.md",
+          "path": "shared/library/impeccable/reference/craft-floor.md",
+          "sha256": "96e2e6bd4fcf9a2c6da65fb029f96d9176308fae2efd9d8653d3b8d838960e07",
+          "bytes": 4484
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/craft.md",
+          "path": "shared/library/impeccable/reference/craft.md",
+          "sha256": "9205e222bc6565b37fb504ceec93233c2d2a456802b69d16e6b1c44723907c4c",
+          "bytes": 555
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/critique.md",
+          "path": "shared/library/impeccable/reference/critique.md",
+          "sha256": "8bf1b06547f571d9b8d3875426fff6621fadd3bc08ae9ebb16d749f5c5f44b01",
+          "bytes": 42682
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/degraded/asset-producer.md",
+          "path": "shared/library/impeccable/reference/degraded/asset-producer.md",
+          "sha256": "37c023b8bbb99221516d3c73f1f1b1be7da3a6dd75c1376799e940b5e6d55223",
+          "bytes": 8401
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/degraded/documenter.md",
+          "path": "shared/library/impeccable/reference/degraded/documenter.md",
+          "sha256": "bcc05ea92faebb5c74037a9d4263a5ce9a56f5ab07c8ab3c59ee704d8cade745",
+          "bytes": 3325
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/degraded/finish-reviewer.md",
+          "path": "shared/library/impeccable/reference/degraded/finish-reviewer.md",
+          "sha256": "c40865450b53e0947bb4318e5e4a413d13e2ca0e8e26a8bea92aa043382d5910",
+          "bytes": 15834
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/degraded/manual-edit-applier.md",
+          "path": "shared/library/impeccable/reference/degraded/manual-edit-applier.md",
+          "sha256": "5fae7f8a2fc3ddd49ad0a413446dc44daedef5b6b7de5eb935bd2fbfad646d58",
+          "bytes": 7196
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/delight.md",
+          "path": "shared/library/impeccable/reference/delight.md",
+          "sha256": "56500b1f9d2fcec8324d7f448d813048b5831a46d3feeb1055bd3eb17ec3660f",
+          "bytes": 3716
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/distill.md",
+          "path": "shared/library/impeccable/reference/distill.md",
+          "sha256": "b2f60e0154bf0e687badc46d8c8420e2118a9a6e21162050722be779dc02cb6d",
+          "bytes": 5624
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/doctor.md",
+          "path": "shared/library/impeccable/reference/doctor.md",
+          "sha256": "5eb790f0e7af38b9a5ec9c037ad51beac42f6cadb2e5949e9492011c833713dd",
+          "bytes": 5549
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/document.md",
+          "path": "shared/library/impeccable/reference/document.md",
+          "sha256": "87b3db688c7963898bda8096f7868fed05ec5a0a80d14298e8b906b70cdf9c42",
+          "bytes": 27428
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/extract.md",
+          "path": "shared/library/impeccable/reference/extract.md",
+          "sha256": "bfc51972fbf387566dc9e29c8b1af479a66ab401fdbce659fae9e6a5a9d85316",
+          "bytes": 3340
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/generate.md",
+          "path": "shared/library/impeccable/reference/generate.md",
+          "sha256": "abb8829a629420e6de63690dfbb4a074a01c3de8a3d4934f2bea4bca95dcda5f",
+          "bytes": 13084
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/harden.md",
+          "path": "shared/library/impeccable/reference/harden.md",
+          "sha256": "3898bd9b56a042e860a0db4fb4dd81ac81126fa218b604702e2ac0c2287ae09b",
+          "bytes": 9450
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/hooks.md",
+          "path": "shared/library/impeccable/reference/hooks.md",
+          "sha256": "15da1c42d4d208e5f9e9ef24c3326bf8626794de57e7291276d8a5d428f50f54",
+          "bytes": 13869
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/init.md",
+          "path": "shared/library/impeccable/reference/init.md",
+          "sha256": "dc340befdfb87d1de3b70e860fab0be7e951a60d3ddc529072c39eb136cfcfcd",
+          "bytes": 11671
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/ios.md",
+          "path": "shared/library/impeccable/reference/ios.md",
+          "sha256": "40c87038b5f75147a5952a96237acf312a327bf70c1bcd8e0a5f064625ae9668",
+          "bytes": 3812
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/layout.md",
+          "path": "shared/library/impeccable/reference/layout.md",
+          "sha256": "1d6d2658482b7e2df0c4d27b1b29c5195f0803b402278b96590598f4d3e57aa7",
+          "bytes": 5154
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/live-setup.md",
+          "path": "shared/library/impeccable/reference/live-setup.md",
+          "sha256": "73058cdbe80f7387a8b063db4e2376d0d7276ddaff6bd5e14d3473aecb640465",
+          "bytes": 8179
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/live.md",
+          "path": "shared/library/impeccable/reference/live.md",
+          "sha256": "82a16d267d0b39ff381a65e3093d372fbbc845484f2c831583bef0447aaaad51",
+          "bytes": 36147
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/mode-operate.md",
+          "path": "shared/library/impeccable/reference/mode-operate.md",
+          "sha256": "7a52dd7a94ee75f6ae89542c86a1b6e1d306812b16e0d9dbf12d4acad44d148b",
+          "bytes": 4716
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/mode-persuade.md",
+          "path": "shared/library/impeccable/reference/mode-persuade.md",
+          "sha256": "21e78c8a77badb3f83290cd4577ed3b24bd4dd3b57136d7da75733d4f3ee9ac0",
+          "bytes": 3638
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/mode-read.md",
+          "path": "shared/library/impeccable/reference/mode-read.md",
+          "sha256": "a569989e6a3d6453b4c45e9474e162a15cc54e11732ac6baa7990a6e7cccc0b5",
+          "bytes": 4396
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/new-work.md",
+          "path": "shared/library/impeccable/reference/new-work.md",
+          "sha256": "554f6a03c4a81caf6e1bea4ac73cb2c231f16a659ea1c9175eb7cb34237f53f5",
+          "bytes": 62108
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/onboard.md",
+          "path": "shared/library/impeccable/reference/onboard.md",
+          "sha256": "9a2c08ee2516d2ee87129e7ebe6a0895f9990c9852d1f6fa7e70be9a6a88a659",
+          "bytes": 7740
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/operate.md",
+          "path": "shared/library/impeccable/reference/operate.md",
+          "sha256": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d",
+          "bytes": 4145
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/optimize.md",
+          "path": "shared/library/impeccable/reference/optimize.md",
+          "sha256": "6d368b679a0ed1815812815de65863b5840d419589dfbda06224c01149240287",
+          "bytes": 7614
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/overdrive.md",
+          "path": "shared/library/impeccable/reference/overdrive.md",
+          "sha256": "a9856cb40da6519b1334bcfc75a4fbe83bef39ca86ee6f3effcb2a96794c627c",
+          "bytes": 9085
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/polish.md",
+          "path": "shared/library/impeccable/reference/polish.md",
+          "sha256": "73893e18e874e14beccd7fca92335d9036f5a5e068fd8815fd7daceadf186a43",
+          "bytes": 6632
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/quieter.md",
+          "path": "shared/library/impeccable/reference/quieter.md",
+          "sha256": "ee6d6d127c1c2ab3526d529a8e3698be2185b5e346ac617f37501de2c0698b97",
+          "bytes": 4859
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/region-map.md",
+          "path": "shared/library/impeccable/reference/region-map.md",
+          "sha256": "5c0d1dca9ab72c3ae4a0ea728d6acecf8af980a5b7defa1c7a3924992b62f69a",
+          "bytes": 3340
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/routing.md",
+          "path": "shared/library/impeccable/reference/routing.md",
+          "sha256": "dd6c5877467a30cb328789297bb5250b21c1c673d25c570a990043aa07ed01ac",
+          "bytes": 3322
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/shape.md",
+          "path": "shared/library/impeccable/reference/shape.md",
+          "sha256": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23",
+          "bytes": 3547
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/typeset.md",
+          "path": "shared/library/impeccable/reference/typeset.md",
+          "sha256": "da98692848aa2e9ea22c681522a082f2226cb5dbfdb704ac38903be1b4cffafd",
+          "bytes": 5249
+        },
+        {
+          "source": "plugin/skills/impeccable/reference/visualize.md",
+          "path": "shared/library/impeccable/reference/visualize.md",
+          "sha256": "881bc7155d2207d2f31839efce9805d4bc8e1acacf2572987a5a7f25946caf91",
+          "bytes": 13911
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/VERSION",
+          "path": "shared/library/impeccable/scripts/VERSION",
+          "sha256": "9940d4b5219de8404015bc18af844c88d7e9e9105682a5d47b1d369d027dbd25",
+          "bytes": 7
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/command-metadata.json",
+          "path": "shared/library/impeccable/scripts/command-metadata.json",
+          "sha256": "e8720f3aa41135211cc58cc299a39eeda86c75651f4279cc1ede8db10dcc0584",
+          "bytes": 8392
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/data/font-index-failures.json",
+          "path": "shared/library/impeccable/scripts/data/font-index-failures.json",
+          "sha256": "835f19a0a3812f3652dd6979a2ce5597f654fd01f26e1b420b92d5f42b997ce4",
+          "bytes": 2437
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/data/font-index.json",
+          "path": "shared/library/impeccable/scripts/data/font-index.json",
+          "sha256": "47edbdfaf27073c47033d1ac7dfee881be49e2dcbda7671d1157300481dde6da",
+          "bytes": 1100013
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/impeccable",
+          "path": "shared/library/impeccable/scripts/impeccable",
+          "sha256": "39d9600489073e227e4f4d55c451ce4252a6632ed7ae37923efbbcbc91f16d07",
+          "bytes": 8514
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/impeccable.cmd",
+          "path": "shared/library/impeccable/scripts/impeccable.cmd",
+          "sha256": "69cad1ae7355825ef320ac9638a1c9675ba9fda01c9a0fa12244cc4a1973e550",
+          "bytes": 8498
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/live-browser-dom.js",
+          "path": "shared/library/impeccable/scripts/live-browser-dom.js",
+          "sha256": "24f09f2597b9b55a1e2c4acd2ae5c95db5c8615cfc20aa07d1a3950538ad5c4a",
+          "bytes": 10623
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/live-browser-ignores.js",
+          "path": "shared/library/impeccable/scripts/live-browser-ignores.js",
+          "sha256": "c1cb6877ca99a0c1b38ba0c7d59f32702d3022f6821d8045f7133f7c40b6362f",
+          "bytes": 10346
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/live-browser-session.js",
+          "path": "shared/library/impeccable/scripts/live-browser-session.js",
+          "sha256": "42831c3cd874346d8e7f120808d91e6ed3cda5c3eca6eefd76b126659536bc87",
+          "bytes": 4346
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/live-browser.js",
+          "path": "shared/library/impeccable/scripts/live-browser.js",
+          "sha256": "d7f1ee3fdfc423e90268e9c666dce61b2180b62431dbb6ecfc48bca65398a1f8",
+          "bytes": 548448
+        },
+        {
+          "source": "plugin/skills/impeccable/scripts/modern-screenshot.umd.js",
+          "path": "shared/library/impeccable/scripts/modern-screenshot.umd.js",
+          "sha256": "bb36665889124a0b6e15f16045265737449c3bdcf2712cdb08af3cfa01563e2b",
+          "bytes": 29290
+        },
+        {
+          "source": "plugin/agents/impeccable-asset-producer.md",
+          "path": "shared/library/impeccable/agents/impeccable-asset-producer.md",
+          "sha256": "4bc14a9d0e90fb629217416a56ff442e2264ea7981f9e27757467d7d1eb08c77",
+          "bytes": 8306
+        },
+        {
+          "source": "plugin/agents/impeccable-documenter.md",
+          "path": "shared/library/impeccable/agents/impeccable-documenter.md",
+          "sha256": "6bc62a59f6fef0b749927c8d10e9849ab2411199d86d70772a86f8e83ac309f5",
+          "bytes": 3144
+        },
+        {
+          "source": "plugin/agents/impeccable-finish-reviewer.md",
+          "path": "shared/library/impeccable/agents/impeccable-finish-reviewer.md",
+          "sha256": "344ae59e006d77bee5706554e3b4d1a4e3aefebe99e9373ac89cfb1048434825",
+          "bytes": 15667
+        },
+        {
+          "source": "plugin/agents/impeccable-manual-edit-applier.md",
+          "path": "shared/library/impeccable/agents/impeccable-manual-edit-applier.md",
+          "sha256": "b2d71ff0df7ed49e06dfc4acfce3d3f7eb48afa68be04763ee8c08354df50a07",
+          "bytes": 6983
+        },
+        {
+          "source": "LICENSE",
+          "path": "shared/library/impeccable/LICENSE",
+          "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812",
+          "bytes": 10766
+        },
+        {
+          "source": "NOTICE.md",
+          "path": "shared/library/impeccable/NOTICE.md",
+          "sha256": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb",
+          "bytes": 503
+        }
+      ]
+    },
+    {
+      "id": "intent",
+      "repository": "https://github.com/ghaida/intent",
+      "commit": "3fc38dff381ce0e4dec8f52c97c3e37abd95e10e",
+      "files": [
+        {
+          "source": "skills/articulate/SKILL.md",
+          "path": "shared/library/intent/skills/articulate/REFERENCE.md",
+          "sha256": "20ed6f2f19e53b2afa65976174b9d4c8f99ded239d49166dacfd6f0cd462edf9",
+          "bytes": 22827
+        },
+        {
+          "source": "skills/blueprint/SKILL.md",
+          "path": "shared/library/intent/skills/blueprint/REFERENCE.md",
+          "sha256": "31d727c5b6d065236088b2e7e97f27807916b8d0affd480ab0598fd3a551e57b",
+          "bytes": 28982
+        },
+        {
+          "source": "skills/evaluate/SKILL.md",
+          "path": "shared/library/intent/skills/evaluate/REFERENCE.md",
+          "sha256": "6a6c70fdaa17342489786ad397332c8267b19497a076bc392408203c7ed50107",
+          "bytes": 27737
+        },
+        {
+          "source": "skills/fortify/SKILL.md",
+          "path": "shared/library/intent/skills/fortify/REFERENCE.md",
+          "sha256": "60d7b11e0ac65af25fa1811f5df606ed569da93d43061c171683d795069e8e57",
+          "bytes": 22403
+        },
+        {
+          "source": "skills/include/SKILL.md",
+          "path": "shared/library/intent/skills/include/REFERENCE.md",
+          "sha256": "b40fbf05cc1d7befd1c0c9d710a750bfbe73b7a7ff0dcf4c6b479993143ab99f",
+          "bytes": 31557
+        },
+        {
+          "source": "skills/intent/SKILL.md",
+          "path": "shared/library/intent/skills/intent/REFERENCE.md",
+          "sha256": "09f0fab19467a5e7b42998a9f5eb8312e19bef5ab5ef31520b7ee52d4d1564bd",
+          "bytes": 44149
+        },
+        {
+          "source": "skills/intent/references/accessibility-foundations.md",
+          "path": "shared/library/intent/skills/intent/references/accessibility-foundations.md",
+          "sha256": "a47c31d24f24948a6bb993680b274e4ff4c17db5b695707cc3d3066dda7e6e54",
+          "bytes": 16702
+        },
+        {
+          "source": "skills/intent/references/content-strategy.md",
+          "path": "shared/library/intent/skills/intent/references/content-strategy.md",
+          "sha256": "2b6565811de28c30b6931062d6ac4fc7185fa401a06255a7b3eaf75b64350414",
+          "bytes": 15127
+        },
+        {
+          "source": "skills/intent/references/ethical-design.md",
+          "path": "shared/library/intent/skills/intent/references/ethical-design.md",
+          "sha256": "4ff7def1891d70dd4889e9fc84153d0c072c1874cd8f83e476c80954e83b5449",
+          "bytes": 16224
+        },
+        {
+          "source": "skills/intent/references/information-architecture.md",
+          "path": "shared/library/intent/skills/intent/references/information-architecture.md",
+          "sha256": "829a4e95a6fce3ef4dcaee0892e8d64d86a3149494b6f5aeb8507da4c6a83d78",
+          "bytes": 15598
+        },
+        {
+          "source": "skills/intent/references/interaction-patterns.md",
+          "path": "shared/library/intent/skills/intent/references/interaction-patterns.md",
+          "sha256": "64e1abf9d5eb252452c2b6f6913c217d50d92deb7100c9bd06033e1f5d623cdb",
+          "bytes": 16196
+        },
+        {
+          "source": "skills/intent/references/measurement-frameworks.md",
+          "path": "shared/library/intent/skills/intent/references/measurement-frameworks.md",
+          "sha256": "47a68c32cecfbff5b31bf246b32b966894efe2f01b48602bd19985607ab128ab",
+          "bytes": 17045
+        },
+        {
+          "source": "skills/intent/references/research-methods.md",
+          "path": "shared/library/intent/skills/intent/references/research-methods.md",
+          "sha256": "817e8ea46da1147464a0f4aaa55d357918d5276988a762166116329c7a153359",
+          "bytes": 16827
+        },
+        {
+          "source": "skills/intent/references/service-design.md",
+          "path": "shared/library/intent/skills/intent/references/service-design.md",
+          "sha256": "721d4b0ee5dbc6ac65eff724258cbbff268c0949c29fa3199c8cf57ba3b68196",
+          "bytes": 15063
+        },
+        {
+          "source": "skills/investigate/SKILL.md",
+          "path": "shared/library/intent/skills/investigate/REFERENCE.md",
+          "sha256": "bbea36dc17b69e9501c5aae891800481a2067abbd82ac74d23270a54d7d0d967",
+          "bytes": 29165
+        },
+        {
+          "source": "skills/journey/SKILL.md",
+          "path": "shared/library/intent/skills/journey/REFERENCE.md",
+          "sha256": "f709575dcd9a72cdb3ba8e4616b644193af340c133a3bd757cac85a928569142",
+          "bytes": 30586
+        },
+        {
+          "source": "skills/localize/SKILL.md",
+          "path": "shared/library/intent/skills/localize/REFERENCE.md",
+          "sha256": "56cef7e8a69549050cdfe9cc312d7aea856c0daf03d3811b162cdc1cebf82fa9",
+          "bytes": 18194
+        },
+        {
+          "source": "skills/measure/SKILL.md",
+          "path": "shared/library/intent/skills/measure/REFERENCE.md",
+          "sha256": "3b054a4b017215f2858b1f3fff99a53e303be059a003710e846480c76b3763f2",
+          "bytes": 20630
+        },
+        {
+          "source": "skills/organize/SKILL.md",
+          "path": "shared/library/intent/skills/organize/REFERENCE.md",
+          "sha256": "550eb64883dd4320a1cf04f904d74fe3837b8fa66a177bb91d9490cea6b052b4",
+          "bytes": 32644
+        },
+        {
+          "source": "skills/philosopher/SKILL.md",
+          "path": "shared/library/intent/skills/philosopher/REFERENCE.md",
+          "sha256": "14d18cddb42a99c43361db4a7c2ad7a872517e55de69d2720b6909aacd739b06",
+          "bytes": 18501
+        },
+        {
+          "source": "skills/present/SKILL.md",
+          "path": "shared/library/intent/skills/present/REFERENCE.md",
+          "sha256": "2e9fa4f09417ac257ccf8fd5f56bf6e84b107ce82ec8e5051147b6d3e7baa84f",
+          "bytes": 25389
+        },
+        {
+          "source": "skills/present/references/build_deck.py",
+          "path": "shared/library/intent/skills/present/references/build_deck.py",
+          "sha256": "99a76c5de1cc6325a744dac713af11a50b4db1001f9936dbf66191c93b80aef2",
+          "bytes": 13508
+        },
+        {
+          "source": "skills/present/references/deck-theme.css",
+          "path": "shared/library/intent/skills/present/references/deck-theme.css",
+          "sha256": "2889dbb3d5f518465038d6e08b36cbb0ad0224616c61eb41536044c9c017e5ae",
+          "bytes": 6405
+        },
+        {
+          "source": "skills/present/references/deck-theme.md",
+          "path": "shared/library/intent/skills/present/references/deck-theme.md",
+          "sha256": "f97b2479684b71f53029e8e64f613eded66d4691b0dc7cab4694defac53769f1",
+          "bytes": 3809
+        },
+        {
+          "source": "skills/present/references/reveal-template.html",
+          "path": "shared/library/intent/skills/present/references/reveal-template.html",
+          "sha256": "90ea1f306a978a5ea6f8acb6d7b9c31c1790dc1b482ad97cf95b451fcefe4011",
+          "bytes": 3293
+        },
+        {
+          "source": "skills/specify/SKILL.md",
+          "path": "shared/library/intent/skills/specify/REFERENCE.md",
+          "sha256": "c96f94ef06d6fd0d36b33f301348f7db9f075d2dce90984214d5ee5ccaedabac",
+          "bytes": 15407
+        },
+        {
+          "source": "skills/storytelling/SKILL.md",
+          "path": "shared/library/intent/skills/storytelling/REFERENCE.md",
+          "sha256": "7acb2b9093bef37519dcabc6afa7ced87ce3705a10517012a7ac0af15f28f6fb",
+          "bytes": 13770
+        },
+        {
+          "source": "skills/strategize/SKILL.md",
+          "path": "shared/library/intent/skills/strategize/REFERENCE.md",
+          "sha256": "88b2357f473accccfd549e36c2f59aacd1db6b8e478222e463b6edecd9031159",
+          "bytes": 24436
+        },
+        {
+          "source": "skills/transpose/SKILL.md",
+          "path": "shared/library/intent/skills/transpose/REFERENCE.md",
+          "sha256": "6b68ad2391ca203fdd47ef8465b6dbfda8bbe8c32967b3750a18af72cb82aa93",
+          "bytes": 15701
+        },
+        {
+          "source": "skills/wireframe/SKILL.md",
+          "path": "shared/library/intent/skills/wireframe/REFERENCE.md",
+          "sha256": "948c8b40767b7a0619020fa335495f0684b544660ae8f7bfba9de8f2579d147f",
+          "bytes": 44441
+        },
+        {
+          "source": "skills/wireframe/references/design-system.css",
+          "path": "shared/library/intent/skills/wireframe/references/design-system.css",
+          "sha256": "a58f1262c0600e5bfa0ae6eda0a3dde345365277a5e2d9b23e15d07a8b2f7ae0",
+          "bytes": 29368
+        },
+        {
+          "source": "skills/wireframe/references/styleguide.html",
+          "path": "shared/library/intent/skills/wireframe/references/styleguide.html",
+          "sha256": "bc88ac4039423fd7560f2eaefe1473ba25d106998ce213e029c0a72659d5355b",
+          "bytes": 34499
+        },
+        {
+          "source": "skills/wireframe/references/viewer.css",
+          "path": "shared/library/intent/skills/wireframe/references/viewer.css",
+          "sha256": "d32cdefd34f4b51220290cd211b07ea7ad9e66f9d5a5c55cfae253db224398b0",
+          "bytes": 18286
+        },
+        {
+          "source": "skills/wireframe/references/viewer.js",
+          "path": "shared/library/intent/skills/wireframe/references/viewer.js",
+          "sha256": "0744d84e0fd89199c95d323d58044850e1170f9e95131d3a6fac50190c2cc48e",
+          "bytes": 10628
+        },
+        {
+          "source": "LICENSE",
+          "path": "shared/library/intent/LICENSE",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+          "bytes": 7048
+        }
+      ]
+    },
+    {
+      "id": "taste",
+      "repository": "https://github.com/Leonxlnx/taste-skill",
+      "commit": "d237dd399d57524945c0c81327da5da19f7a468d",
+      "files": [
+        {
+          "source": "skills/taste-skill/SKILL.md",
+          "path": "shared/library/taste/frontend/REFERENCE.md",
+          "sha256": "2136ed83016bfada39f7b8013b2aafd9f78fcbd9799110ed222a79c6419ba5fb",
+          "bytes": 89478
+        },
+        {
+          "source": "skills/redesign-skill/SKILL.md",
+          "path": "shared/library/taste/redesign/REFERENCE.md",
+          "sha256": "a75d547d04595fe97a5d377dddf145d029d51487a4f2a0a5a9d3b532ca3b84cd",
+          "bytes": 16267
+        },
+        {
+          "source": "skills/image-to-code-skill/SKILL.md",
+          "path": "shared/library/taste/image-to-code/REFERENCE.md",
+          "sha256": "4c060a8064a8b13380bc2ef3d6e6a1d0b1e316aa093cd9807d0ce9e4eeb037fa",
+          "bytes": 36442
+        },
+        {
+          "source": "LICENSE",
+          "path": "shared/library/taste/LICENSE",
+          "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+          "bytes": 1065
+        }
+      ]
+    },
+    {
+      "id": "garden",
+      "repository": "https://github.com/ConardLi/garden-skills",
+      "commit": "7a6d5a72e4f44bb4cc0c23c01b3d97205c723b68",
+      "files": [
+        {
+          "source": "skills/web-design-engineer/README.md",
+          "path": "shared/library/garden/README.md",
+          "sha256": "8d9fe5ec8b6d86cfae3cef731b6c83ae70a40e0931259aa4b4eae01399f797e2",
+          "bytes": 28270
+        },
+        {
+          "source": "skills/web-design-engineer/README.zh-CN.md",
+          "path": "shared/library/garden/README.zh-CN.md",
+          "sha256": "54c8aef0bf453c39dcc96c9fa1d74321bea9464abedf72af421e56af02cc58d9",
+          "bytes": 27553
+        },
+        {
+          "source": "skills/web-design-engineer/SKILL.md",
+          "path": "shared/library/garden/REFERENCE.md",
+          "sha256": "00633aa430281e9921c35bb181ab233879d2a21e999d605fc330258a54e26df1",
+          "bytes": 35406
+        },
+        {
+          "source": "skills/web-design-engineer/agents/openai.yaml",
+          "path": "shared/library/garden/agents/openai.yaml",
+          "sha256": "783ab8fa074706aa2adb2168ab0e8a0a58014c9f3b5c93328f8654ca63ce92ac",
+          "bytes": 288
+        },
+        {
+          "source": "skills/web-design-engineer/manifest.json",
+          "path": "shared/library/garden/manifest.json",
+          "sha256": "d777b1d11b64d50f2b9f6de08529abf7a79f039d40c8fbab0f7119e393451a52",
+          "bytes": 609
+        },
+        {
+          "source": "skills/web-design-engineer/references/advanced-patterns.md",
+          "path": "shared/library/garden/references/advanced-patterns.md",
+          "sha256": "e25a37f18e9c578ce24c90ba7b95025eb28c2c75bb03df91b365af9fb8f304d8",
+          "bytes": 14722
+        },
+        {
+          "source": "skills/web-design-engineer/references/block-library.md",
+          "path": "shared/library/garden/references/block-library.md",
+          "sha256": "b24ebc20fb171c0462dfebc7a180598c3f9009d64bb692811109ae61375929c8",
+          "bytes": 1767
+        },
+        {
+          "source": "skills/web-design-engineer/references/browser-acceptance.md",
+          "path": "shared/library/garden/references/browser-acceptance.md",
+          "sha256": "59b6bd23d41f8ae1fa05b6dece2384c1195f5c3ccae7ff2c2aae94930a963751",
+          "bytes": 4643
+        },
+        {
+          "source": "skills/web-design-engineer/references/critique-guide.md",
+          "path": "shared/library/garden/references/critique-guide.md",
+          "sha256": "2f57cce5a9d65be8a24978080d9e99f6d0c7929279f142ca86bde0cca1c23dcb",
+          "bytes": 10446
+        },
+        {
+          "source": "skills/web-design-engineer/references/design-calibration.md",
+          "path": "shared/library/garden/references/design-calibration.md",
+          "sha256": "754086f26f7f880cb23559a16b446847c72673a8428087bc539da2d9137fd8e3",
+          "bytes": 6139
+        },
+        {
+          "source": "skills/web-design-engineer/references/design-directions.md",
+          "path": "shared/library/garden/references/design-directions.md",
+          "sha256": "6ca039cdb5452c3ecdf95b7f846cf949c601d4cb8ea20854d0ccf0cd7fcd94d4",
+          "bytes": 14105
+        },
+        {
+          "source": "skills/web-design-engineer/references/failure-patterns.md",
+          "path": "shared/library/garden/references/failure-patterns.md",
+          "sha256": "7c87f57f090180d1731c974f5f9a45b8704b9a134f482b883a021ab4a88ea66d",
+          "bytes": 7119
+        },
+        {
+          "source": "skills/web-design-engineer/references/redesign-protocol.md",
+          "path": "shared/library/garden/references/redesign-protocol.md",
+          "sha256": "3c79fc6fde3bed3ca046f43d99ca58be74e36e9c69b7076a7322f8140a980294",
+          "bytes": 4181
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/INDEX.md",
+          "path": "shared/library/garden/references/style-recipes/INDEX.md",
+          "sha256": "2eac072037914205fcf219228e68683d1882a525ff5776dcd4ecb52ce4b62435",
+          "bytes": 12177
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/active-theory.md",
+          "path": "shared/library/garden/references/style-recipes/active-theory.md",
+          "sha256": "3bca2379cbe0fcf1be9f84de5b0291f1a6d4aeede42fe97e4b682cb29371d170",
+          "bytes": 2581
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/aesop.md",
+          "path": "shared/library/garden/references/style-recipes/aesop.md",
+          "sha256": "94a5d2f1d0613953d7390646322e907bf8139816dd7669916bb73f4ed532146d",
+          "bytes": 2796
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/apple-hig.md",
+          "path": "shared/library/garden/references/style-recipes/apple-hig.md",
+          "sha256": "94f511fabd22f65591679b7dfa101b96973f3c2060516adbecdfbb1f4f7e36cc",
+          "bytes": 3076
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/are-na.md",
+          "path": "shared/library/garden/references/style-recipes/are-na.md",
+          "sha256": "623804a342c853774bb824bb281e5df3d515dcef3cc9e77c7914ed5d6547ce94",
+          "bytes": 2230
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/balenciaga-post-2017.md",
+          "path": "shared/library/garden/references/style-recipes/balenciaga-post-2017.md",
+          "sha256": "21412888d7e6225e70bad89c8b0b2ed69da0730a7c560359f61490f293ee8b16",
+          "bytes": 2361
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/bloomberg-businessweek-turley.md",
+          "path": "shared/library/garden/references/style-recipes/bloomberg-businessweek-turley.md",
+          "sha256": "42d3beaf6892e2299e73190e2645b14e25acd8bc89b35e9403194151c854fb37",
+          "bytes": 2585
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/bloomberg-terminal.md",
+          "path": "shared/library/garden/references/style-recipes/bloomberg-terminal.md",
+          "sha256": "1ec2e502b3f1137ae0c85f24848f8387b95bed1428fcbbdaff1e77d5d1a84b9d",
+          "bytes": 2772
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/dieter-rams-braun.md",
+          "path": "shared/library/garden/references/style-recipes/dieter-rams-braun.md",
+          "sha256": "ab2eb763c711877601c1c672b9e3c3a980fe3d0512197c83e05f942941f4cdd3",
+          "bytes": 2602
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/field-io.md",
+          "path": "shared/library/garden/references/style-recipes/field-io.md",
+          "sha256": "c765ad82f53d440a8cda70df8dd0c8e799d194da4d6d2fd73e1839c49ccc357f",
+          "bytes": 2921
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/headspace-meditation.md",
+          "path": "shared/library/garden/references/style-recipes/headspace-meditation.md",
+          "sha256": "4940e6ee8f132b7695b719b4eb894dbeef8369294e53c9434e12e49ad8197f4a",
+          "bytes": 2675
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/linear.md",
+          "path": "shared/library/garden/references/style-recipes/linear.md",
+          "sha256": "06c554638918c6ebcc0ff2d9b0841fe6d6077bccbcc71051aef5ad1f7fa576be",
+          "bytes": 3174
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/mailchimp-freddie.md",
+          "path": "shared/library/garden/references/style-recipes/mailchimp-freddie.md",
+          "sha256": "1b06325763809c4b0656527f3ce6c25f3160c001c6fd2ab94de6af300150e3e0",
+          "bytes": 2540
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/mid-century-modern.md",
+          "path": "shared/library/garden/references/style-recipes/mid-century-modern.md",
+          "sha256": "281f5acfca37d69bd02cdc37f33e3b2f5dbf3390c57a2629fb24e4ba3db0a0c9",
+          "bytes": 2723
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/monocle-magazine.md",
+          "path": "shared/library/garden/references/style-recipes/monocle-magazine.md",
+          "sha256": "df9c7c4713dd84725fe544fb8335377ef841e9371359d133efbdbef3bc4075b2",
+          "bytes": 2620
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/muji-kenya-hara.md",
+          "path": "shared/library/garden/references/style-recipes/muji-kenya-hara.md",
+          "sha256": "a447bfbea3db9ec5bea0dc55c6aa3c4426fc4d4d018f1b1f893957a1701a8a1b",
+          "bytes": 2713
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/notion-pre-ai.md",
+          "path": "shared/library/garden/references/style-recipes/notion-pre-ai.md",
+          "sha256": "1b85ae5aa77ee1b0a523b3557045678c022e748f6bd427248f19052d00f8cbe1",
+          "bytes": 2867
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/nyt-the-daily.md",
+          "path": "shared/library/garden/references/style-recipes/nyt-the-daily.md",
+          "sha256": "d7a3b8a3969b62b19a917fc1e0e0602acdfeb6f16dfdb4c9d4d6a208261c300a",
+          "bytes": 2691
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/pentagram.md",
+          "path": "shared/library/garden/references/style-recipes/pentagram.md",
+          "sha256": "e42a40687b0b7f06ac23ecd747cfe0fa902c60e2d6b3b553ab2ab7996fa75a7f",
+          "bytes": 2835
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/raycast.md",
+          "path": "shared/library/garden/references/style-recipes/raycast.md",
+          "sha256": "b22651b5b35a67b2ec06217d1554c193912177c2eb56406fe6dafc171f3304c6",
+          "bytes": 3238
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/resn-storytelling.md",
+          "path": "shared/library/garden/references/style-recipes/resn-storytelling.md",
+          "sha256": "88602c9962d8630d0c06ac4e72b732bc4dbedd8e4ef9ed4fe9cac0dbfea0ac1e",
+          "bytes": 2441
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/stripe-press.md",
+          "path": "shared/library/garden/references/style-recipes/stripe-press.md",
+          "sha256": "f5b3863bc4f8fcd7b803eedbb8884f8b97c76a2e082c2627d635605d779a5644",
+          "bytes": 2880
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/tufte-dataink.md",
+          "path": "shared/library/garden/references/style-recipes/tufte-dataink.md",
+          "sha256": "28d0503016076db52508cb1d05406939f8c765e58fe13e57806f0417b9f9bcc9",
+          "bytes": 2591
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/vercel-mesh.md",
+          "path": "shared/library/garden/references/style-recipes/vercel-mesh.md",
+          "sha256": "04b8710a6ffe26619ac53804f2c5fd59c2641727b9ed8e638cbb52d75b16be5d",
+          "bytes": 2975
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/vignelli-swiss-helvetica.md",
+          "path": "shared/library/garden/references/style-recipes/vignelli-swiss-helvetica.md",
+          "sha256": "c249bc06c32d6fa8daeee4c9e51dfb587f0a88726d6afc6679767d8e9300e203",
+          "bytes": 2517
+        },
+        {
+          "source": "skills/web-design-engineer/references/style-recipes/y2k-retrofuturism.md",
+          "path": "shared/library/garden/references/style-recipes/y2k-retrofuturism.md",
+          "sha256": "0f9495838f2477ade046e092bbbedf04c83f82f48ce89505ff514546ef69ef2b",
+          "bytes": 2750
+        },
+        {
+          "source": "LICENSE",
+          "path": "shared/library/garden/LICENSE",
+          "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+          "bytes": 1056
+        }
+      ]
+    },
+    {
+      "id": "promax",
+      "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "7246805992a42b7bba37d4cac83b01416f0c6c44",
+      "files": [
+        {
+          "source": ".claude/skills/ui-ux-pro-max/SKILL.md",
+          "path": "shared/library/promax/REFERENCE.md",
+          "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
+          "bytes": 15969
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/app-interface.csv",
+          "path": "shared/library/promax/data/app-interface.csv",
+          "sha256": "331e7cf2c0b222d80c566c5f255c63cb339f65bfd02e471a720f28e4864a9f08",
+          "bytes": 11046
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/catalog-summary.json",
+          "path": "shared/library/promax/data/catalog-summary.json",
+          "sha256": "6638da97231c07fb5cef3cd9d3ce483ca7b2f9748980f8c27490eb03968d8894",
+          "bytes": 2392
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/charts.csv",
+          "path": "shared/library/promax/data/charts.csv",
+          "sha256": "4115cf1120680f2cedef0676cb648f30c7ef4699e2a947535d4113e71ed3b12a",
+          "bytes": 23365
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/colors.csv",
+          "path": "shared/library/promax/data/colors.csv",
+          "sha256": "8162429222bce22df62b564085946a30d07cc9722c58d0a3a494bd0d1d00841c",
+          "bytes": 37940
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/data-provenance.json",
+          "path": "shared/library/promax/data/data-provenance.json",
+          "sha256": "e82fb33ed49375a300e93d9c11ccd1c1493c999e84ee7ee295e527634786e2e0",
+          "bytes": 36686
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/google-font-licenses.json",
+          "path": "shared/library/promax/data/google-font-licenses.json",
+          "sha256": "35688523f2955795caa1a47c53b83099e60c1708461476f9cc3a050cf3b0148a",
+          "bytes": 433127
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/google-fonts.csv",
+          "path": "shared/library/promax/data/google-fonts.csv",
+          "sha256": "1c8c3b2ea1faf6a1012da463756def8b3889db33f2226f0343bb4daa80307d03",
+          "bytes": 747241
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/icons.csv",
+          "path": "shared/library/promax/data/icons.csv",
+          "sha256": "50816c6012030178195a16ee481ebf58b47bd985d70e8ec58886cc83f6eddafc",
+          "bytes": 57945
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/landing.csv",
+          "path": "shared/library/promax/data/landing.csv",
+          "sha256": "9a2edd3bb676c2a58f00ade7a062e285222d4297bfd847c8d5b056f0dbbf52d0",
+          "bytes": 25449
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/motion.csv",
+          "path": "shared/library/promax/data/motion.csv",
+          "sha256": "381affe8df8ea1f66fbbda2598827f9f54299107bbe6a1b4e9b68f6b62091ceb",
+          "bytes": 14679
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/phosphor-icons-upstream.json",
+          "path": "shared/library/promax/data/phosphor-icons-upstream.json",
+          "sha256": "2399325233b277b5c97a80e6a5e8941154f5d057beee4e7613db87c87d700236",
+          "bytes": 823933
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/products.csv",
+          "path": "shared/library/promax/data/products.csv",
+          "sha256": "42473f75e8dde5987bdf89ce55d8c168091b80a356cae691dd60247d80720b70",
+          "bytes": 75623
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/react-performance.csv",
+          "path": "shared/library/promax/data/react-performance.csv",
+          "sha256": "3d925802539abac5afeb63ae8aa1960b7229ad271b3a47caed40ab2d97ad0734",
+          "bytes": 15080
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/angular.csv",
+          "path": "shared/library/promax/data/stacks/angular.csv",
+          "sha256": "704be83f2bad30c7e6de01afb113ffa01e0c458762f48b7102f31ba2367b5553",
+          "bytes": 19863
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/astro.csv",
+          "path": "shared/library/promax/data/stacks/astro.csv",
+          "sha256": "2c2f55fadaafc05e04cc321c8194a1a28b656e6757fe2ba316f41b16428299c6",
+          "bytes": 14591
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/avalonia.csv",
+          "path": "shared/library/promax/data/stacks/avalonia.csv",
+          "sha256": "442fca14675a020683473e7e49f08abb27b9df0765c80efe54aef61f1a4ac258",
+          "bytes": 27327
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/flutter.csv",
+          "path": "shared/library/promax/data/stacks/flutter.csv",
+          "sha256": "64dba0ac17349f28bce517a0f5f48c54d9ed2e487ec0c0258303463b382f41a0",
+          "bytes": 14192
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/html-tailwind.csv",
+          "path": "shared/library/promax/data/stacks/html-tailwind.csv",
+          "sha256": "d05a581d20af57b8ca0104a6d31d90a07c437d500662a96c3029fc2f9a4678ee",
+          "bytes": 16551
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/javafx.csv",
+          "path": "shared/library/promax/data/stacks/javafx.csv",
+          "sha256": "2e819b8d5abdd23ad4dae0991650fdb57af497aabd68b37463aa9c442944c869",
+          "bytes": 33577
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/jetpack-compose.csv",
+          "path": "shared/library/promax/data/stacks/jetpack-compose.csv",
+          "sha256": "699de218b286948eaec7d15767b6e1350ee299167e49bf476d82e3ff58724e0a",
+          "bytes": 12295
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/laravel.csv",
+          "path": "shared/library/promax/data/stacks/laravel.csv",
+          "sha256": "854ea4daa5fc61292d22235ad33b49ba3fe22423c3de8d3cb03758ffed3b59f9",
+          "bytes": 20163
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/nextjs.csv",
+          "path": "shared/library/promax/data/stacks/nextjs.csv",
+          "sha256": "ecd2c27b2ea0127d203ae726060efcdd7335b5e83f96b99e4f3befbbfeebd5a4",
+          "bytes": 18687
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/nuxt-ui.csv",
+          "path": "shared/library/promax/data/stacks/nuxt-ui.csv",
+          "sha256": "fce682a338cfcdbf35d318d20e5befbe7b5d81b05abc37f87677a6d9cde84dc6",
+          "bytes": 28700
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/nuxtjs.csv",
+          "path": "shared/library/promax/data/stacks/nuxtjs.csv",
+          "sha256": "3d9b54ed2d151bd9c86e9e5609b8a6f88a00c4c52fa601a30af96c49b2c4d176",
+          "bytes": 23014
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/react-native.csv",
+          "path": "shared/library/promax/data/stacks/react-native.csv",
+          "sha256": "ba31dd9c0c04da6bc02a74448bf121f9c0728ae5ba3b4d47b487778b0a1135b5",
+          "bytes": 14049
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/react.csv",
+          "path": "shared/library/promax/data/stacks/react.csv",
+          "sha256": "4dd176a9787e5c6306b5df94158d75955adcdc6edab41ce5286641a5842303c1",
+          "bytes": 21166
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/shadcn.csv",
+          "path": "shared/library/promax/data/stacks/shadcn.csv",
+          "sha256": "e56cfde5b74907836ac3582a4779d5b7f3d206a702ab81b8669a1b668c3eeb51",
+          "bytes": 23184
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/svelte.csv",
+          "path": "shared/library/promax/data/stacks/svelte.csv",
+          "sha256": "f6e379ba802941ba26b01d4ffbe3cd39120f2587659a1d93851c707f66bc13db",
+          "bytes": 15078
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/swiftui.csv",
+          "path": "shared/library/promax/data/stacks/swiftui.csv",
+          "sha256": "bdd9231ff3ad658f4e7c063e1eb49df2fd09ac8d90631a86df899b39833b9623",
+          "bytes": 15323
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/threejs.csv",
+          "path": "shared/library/promax/data/stacks/threejs.csv",
+          "sha256": "155d583b9c64da0df4b6c6cb060c02eab222505e0734d6353da02c9e2b5d982b",
+          "bytes": 46769
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/uno.csv",
+          "path": "shared/library/promax/data/stacks/uno.csv",
+          "sha256": "a0474363e4225b5367214d5675fd3e075f137026f9500f0d04357882ef4f6d48",
+          "bytes": 30091
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/uwp.csv",
+          "path": "shared/library/promax/data/stacks/uwp.csv",
+          "sha256": "c409f08c1fbba1f1029f1acaa554e7b4471cc85517a5751c9f2e62465badcd5c",
+          "bytes": 24692
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/vue.csv",
+          "path": "shared/library/promax/data/stacks/vue.csv",
+          "sha256": "b655f1ebb9dff2652d15981f31b1784c8a6d4759efd2815a14f3088257569f95",
+          "bytes": 12813
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/winui.csv",
+          "path": "shared/library/promax/data/stacks/winui.csv",
+          "sha256": "e676dc1c13ee6c205c40b0746f1335150a346c7a49a0616d2545bc3d2c930c85",
+          "bytes": 27890
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/stacks/wpf.csv",
+          "path": "shared/library/promax/data/stacks/wpf.csv",
+          "sha256": "9781a9950b20333637b30a02e498b7efca21b618a3eeb8665836f3ac6e974da7",
+          "bytes": 24158
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/styles.csv",
+          "path": "shared/library/promax/data/styles.csv",
+          "sha256": "a93a4d9d7025856575d7b7583bda020be9043013432c5af7c58af9dbdfb206b7",
+          "bytes": 149478
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/typography.csv",
+          "path": "shared/library/promax/data/typography.csv",
+          "sha256": "321fc446e89024488ebae96dda93efc4d2307bd8bddb240857ad51364f6782c8",
+          "bytes": 49997
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/ui-reasoning.csv",
+          "path": "shared/library/promax/data/ui-reasoning.csv",
+          "sha256": "f0774dd741cecdad5eec842034bd6d5e9ea50e9f220a1910069748daa0bb8e9a",
+          "bytes": 77360
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/data/ux-guidelines.csv",
+          "path": "shared/library/promax/data/ux-guidelines.csv",
+          "sha256": "ff81ec613f70ba9fc3fcce52dbe4ae35d44b2079dbe6dc066d2d6e38c28facd5",
+          "bytes": 27516
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/references/pro-rules.md",
+          "path": "shared/library/promax/references/pro-rules.md",
+          "sha256": "d28442d61c310b49c054a4ea736f89fb3008beebdbbc38c4b3a540b8f7fadf23",
+          "bytes": 10909
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/references/quick-reference.md",
+          "path": "shared/library/promax/references/quick-reference.md",
+          "sha256": "0609bc7c89dacb40472465d8fc14257b56b2c43439660fc8d6fa3b8c022e1876",
+          "bytes": 24526
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/core.py",
+          "path": "shared/library/promax/scripts/core.py",
+          "sha256": "c3be4b23e7150e6b45095213158cfa3c8ad96502f01dde3f6ffff9de64a4f481",
+          "bytes": 41236
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/design_system.py",
+          "path": "shared/library/promax/scripts/design_system.py",
+          "sha256": "e7d1c94c4b2eada17c5551157668362659ccf9626d34dbd58e68142410f90103",
+          "bytes": 71537
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/reasoning_contract.py",
+          "path": "shared/library/promax/scripts/reasoning_contract.py",
+          "sha256": "b8bac1af82aa280d3e06f00aabaeac4337e632996b07fed874e2b6ee6e9c5913",
+          "bytes": 5824
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/search.py",
+          "path": "shared/library/promax/scripts/search.py",
+          "sha256": "d54e648fe0ec2932cac66684220cc17be4bd4b4eba1d23d3195d509d398db374",
+          "bytes": 9373
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-api.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/google-api.json",
+          "sha256": "22d8dc81a7d6827b7e8b64b53e7d184210fb9759e8e294e0d5133c81cc460176",
+          "bytes": 1079
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-catalog.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/google-catalog.json",
+          "sha256": "c608ad5c4084ebc50a4bbbfb69ea2456c01fd5519c457e18410fffd250ae948f",
+          "bytes": 1772
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-existing.csv",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/google-existing.csv",
+          "sha256": "4e0761b839dc6b2187a370e82eddc0aed8a7ff10c09e28dd814bb3656dac595b",
+          "bytes": 480
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-metadata.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/google-metadata.json",
+          "sha256": "30bffc29ae348416a2de2f9c6c418e768e4578f136b0f4bac5d2f70124f2e9ba",
+          "bytes": 328
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/google-overrides.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/google-overrides.json",
+          "sha256": "6243a48a4619986768c4628e2d0c98ff195beba71ba9be5df8f0c52fc6d90c0b",
+          "bytes": 97
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/icons-curated.csv",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/icons-curated.csv",
+          "sha256": "68362c9a700c13b96f000784a0198c1c7e117a7088a01c85744e44233038fe9d",
+          "bytes": 495
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-core.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/phosphor-core.json",
+          "sha256": "ae4d0bb076240824e1b643c2270d1f8cc0952a69502ec1e622b7dedd85b930bb",
+          "bytes": 571
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-package.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/phosphor-package.json",
+          "sha256": "500588c757d6de03e3d7e69b27a8b8b1f88ccf6bb0333e4c1e9b0d6a4f112475",
+          "bytes": 370
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+          "sha256": "d79f2ee0afdbc2f87776733e145df3538a16a25d7c2fba0056bb48295dad0ded",
+          "bytes": 87
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+          "sha256": "1c57a1d76bcc0cdd3632d4c18b9c0e79576b4591df39831c9607e5d0eb4f2cec",
+          "bytes": 81
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-baseline.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/relevance-baseline.json",
+          "sha256": "0df200fc54c1cb97a52d6775e7f501509163cea8f8b73fd7268429bc1f835afe",
+          "bytes": 89426
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-cases.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/relevance-cases.json",
+          "sha256": "e77d36eebbf6ddc2860946a02cdb659351da6c09f2688f1ed30939a418099646",
+          "bytes": 36734
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-thresholds.json",
+          "path": "shared/library/promax/scripts/tests/fixtures/relevance-thresholds.json",
+          "sha256": "1fbe8623fe3e49c8d828139bca9df69043746e488e8bf09d93dfb9cbc31f5cef",
+          "bytes": 5079
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_catalog_refresh.py",
+          "path": "shared/library/promax/scripts/tests/test_catalog_refresh.py",
+          "sha256": "3e2ca5d12702318f641ae62d0c14f22a3bcc84d84e79b863c0e947d475604adb",
+          "bytes": 19466
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_catalog_summary_line_endings.py",
+          "path": "shared/library/promax/scripts/tests/test_catalog_summary_line_endings.py",
+          "sha256": "fa6ff09f0ec2c99013588c77397f5082dddebe8f467e94c5f8378ec9595f4989",
+          "bytes": 2947
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_core.py",
+          "path": "shared/library/promax/scripts/tests/test_core.py",
+          "sha256": "3527fe2f4b852f69f07c17ddc0d615d9a6e025c924e45a33985579a94a8d2118",
+          "bytes": 16680
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_core_data_quality.py",
+          "path": "shared/library/promax/scripts/tests/test_core_data_quality.py",
+          "sha256": "3ffc6b4905c9ea26d7ac4527ab154d153584231aee71b2ae4bd017977fa09cc5",
+          "bytes": 8954
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_data_contracts.py",
+          "path": "shared/library/promax/scripts/tests/test_data_contracts.py",
+          "sha256": "0360d6e10080c0bca214f2b0bbad582ba50702a542ce21013351aca54938df3a",
+          "bytes": 19513
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_design_system_mode.py",
+          "path": "shared/library/promax/scripts/tests/test_design_system_mode.py",
+          "sha256": "95ad2c154349f7021f55a558f8dcdd71df1a24fcf531a4364a8e49526a0865ef",
+          "bytes": 9815
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_design_system_stack.py",
+          "path": "shared/library/promax/scripts/tests/test_design_system_stack.py",
+          "sha256": "83d09ffe8cfbf7b265f362129f061dfe8e5e167ce5db43adaead197cabc9ca38",
+          "bytes": 2261
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_native_desktop_stack_freshness.py",
+          "path": "shared/library/promax/scripts/tests/test_native_desktop_stack_freshness.py",
+          "sha256": "3942845712b9a829323cd3568511483135f2a8c7cd79ccf61679da4b0f624dbb",
+          "bytes": 8375
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_relevance_evaluator.py",
+          "path": "shared/library/promax/scripts/tests/test_relevance_evaluator.py",
+          "sha256": "2fe56a4d6fe5fff15ff592274b0eeaba925146cefea6c0fa29d8f1b77c9aca1f",
+          "bytes": 8430
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_skill_script_paths.py",
+          "path": "shared/library/promax/scripts/tests/test_skill_script_paths.py",
+          "sha256": "7cec24b94be771bc60bc84f8993e614bb16d4047930e1dd3d3bed91628311d44",
+          "bytes": 4305
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_style_taxonomy.py",
+          "path": "shared/library/promax/scripts/tests/test_style_taxonomy.py",
+          "sha256": "cd14d0092e8a454d213aa104b53e4e70ba698491fa00fde9fdec5ca8a3d70011",
+          "bytes": 7425
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_text_layout_resilience.py",
+          "path": "shared/library/promax/scripts/tests/test_text_layout_resilience.py",
+          "sha256": "b51d32ee8a15505b87cb81957fb2d1b385e041e8beb4463c311d236bfd29ebd4",
+          "bytes": 5874
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/tests/test_web_stack_freshness.py",
+          "path": "shared/library/promax/scripts/tests/test_web_stack_freshness.py",
+          "sha256": "74897571398585f27e2c35d09d81b0a531c8c774f4a2967e5e1b1d1b05a483d9",
+          "bytes": 7701
+        },
+        {
+          "source": ".claude/skills/ui-ux-pro-max/scripts/validate_data.py",
+          "path": "shared/library/promax/scripts/validate_data.py",
+          "sha256": "a599aa256049cf30954d1f164721b99e453eb7e4cb8241bcab2d5573e6cf58b8",
+          "bytes": 52230
+        },
+        {
+          "source": "LICENSE",
+          "path": "shared/library/promax/LICENSE",
+          "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+          "bytes": 1075
+        }
+      ]
+    },
+    {
+      "id": "frontend-design",
+      "repository": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "files": [
+        {
+          "source": "skills/frontend-design/LICENSE.txt",
+          "path": "shared/library/frontend-design/LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "source": "skills/frontend-design/SKILL.md",
+          "path": "shared/library/frontend-design/REFERENCE.md",
+          "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+          "bytes": 9390
+        }
+      ]
+    },
+    {
+      "id": "game-ui",
+      "repository": "https://github.com/jeremylongworth-source/AgentSkills",
+      "commit": "45f314d2a3d3201dd5a0304a3a4f3a5f23a905a2",
+      "files": [
+        {
+          "source": "skills/game-ui-design/SKILL.md",
+          "path": "shared/library/game-ui/REFERENCE.md",
+          "sha256": "3291770337d611d6fc6425e1d273c4dffdc6d5a8634eac8a2c23459f356c303a",
+          "bytes": 3816
+        },
+        {
+          "source": "skills/game-ui-design/references/game-ui-checklist.md",
+          "path": "shared/library/game-ui/references/game-ui-checklist.md",
+          "sha256": "e996d7c0ff61bc2e5900810457d8cbd18f2171a2c40edc6a7a836ecc1c974a7a",
+          "bytes": 1624
+        },
+        {
+          "source": "LICENSE",
+          "path": "shared/library/game-ui/LICENSE",
+          "sha256": "11f5e60786b82e616ba07f5abe671291f23916f60d197babde5ea46353c441a3",
+          "bytes": 1073
+        }
+      ]
+    },
+    {
+      "id": "game-browser",
+      "repository": "https://github.com/openai/plugins",
+      "commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+      "files": [
+        {
+          "source": "plugins/game-studio/skills/game-ui-frontend/SKILL.md",
+          "path": "shared/library/game-browser/skills/game-ui-frontend/REFERENCE.md",
+          "sha256": "cd017fe0761207dcfd801f236490896cbf1cd6627ee267c801a19c7c780b7a01",
+          "bytes": 5060
+        },
+        {
+          "source": "plugins/game-studio/.codex-plugin/plugin.json",
+          "path": "shared/library/game-browser/LICENSE-METADATA.json",
+          "sha256": "edd750d7ab6df61834916cfc2498fd71c0c19fd9523e1e300fd4d958630e6cd5",
+          "bytes": 1419
+        },
+        {
+          "source": "plugins/game-studio/references/frontend-prompts.md",
+          "path": "shared/library/game-browser/references/frontend-prompts.md",
+          "sha256": "3485139464cb56670bbdaef5f65bb0c657fc27b4c7106723005f5fe79aed0368",
+          "bytes": 3712
+        },
+        {
+          "source": "plugins/game-studio/references/three-hud-layout-patterns.md",
+          "path": "shared/library/game-browser/references/three-hud-layout-patterns.md",
+          "sha256": "5b7c0d49b0495b4be7bf0b860302b74b125e7db681edaec5594909c91f9af090",
+          "bytes": 2192
+        },
+        {
+          "source": "plugins/game-studio/references/playtest-checklist.md",
+          "path": "shared/library/game-browser/references/playtest-checklist.md",
+          "sha256": "d8a4119f3912064c1328f7c537ff5fa94004f3aa81acba33d518758bf7fb8a3c",
+          "bytes": 1599
+        },
+        {
+          "source": "plugins/game-studio/skills/web-game-foundations/SKILL.md",
+          "path": "shared/library/game-browser/skills/web-game-foundations/REFERENCE.md",
+          "sha256": "ef35c1954fa07d10673c1a5a7749656319494fd0675dd2be9671e2dd3cbd7e1b",
+          "bytes": 4592
+        },
+        {
+          "source": "plugins/game-studio/skills/react-three-fiber-game/SKILL.md",
+          "path": "shared/library/game-browser/skills/react-three-fiber-game/REFERENCE.md",
+          "sha256": "45e5aa86ff3a6a71d1f3f2ab6f0267ce4ca4d35d9e1883a483c16bc9b201db4d",
+          "bytes": 4023
+        }
+      ]
+    }
+  ]
+}

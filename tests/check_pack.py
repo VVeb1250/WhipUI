@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Basic Agent Skills structural checks, file references and JSON fixtures."""
+"""Skill discovery, authored links, retained source integrity and provenance."""
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -35,11 +36,26 @@ def validate():
         for rel in re.findall(r"`((?:references|\.\./shared)/[^`]+\.(?:md|json))`", text):
             if not (skill.parent / rel).is_file():
                 errors.append(f"Broken reference {skill.relative_to(ROOT)} -> {rel}")
-    for sub in ("design-intent.example.json", "design-state.example.json"):
-        try:
-            json.loads((ROOT / "shared" / sub).read_text(encoding="utf-8"))
-        except (OSError, UnicodeError, json.JSONDecodeError) as exc:
-            errors.append(f"Invalid template {sub}: {exc}")
+    authored = list((ROOT / "shared").glob("*.md")) + list((ROOT / "shared/workflows").glob("*.md"))
+    for document in authored:
+        for relative in re.findall(r"\]\(([^)]+)\)", document.read_text(encoding="utf-8")):
+            if "://" in relative or relative.startswith("#"):
+                continue
+            target = document.parent / relative.split("#")[0]
+            if not target.is_file():
+                errors.append(f"Broken link: {document.relative_to(ROOT)} -> {relative}")
+    try:
+        sources = json.loads((ROOT / "shared/SOURCES.json").read_text(encoding="utf-8"))["sources"]
+        for source in sources:
+            for entry in source["files"]:
+                file = ROOT / entry["path"]
+                if not file.resolve().is_relative_to(ROOT.resolve()):
+                    errors.append(f"Unsafe source path: {entry['path']}")
+                    continue
+                if not file.is_file() or hashlib.sha256(file.read_bytes()).hexdigest() != entry["sha256"]:
+                    errors.append(f"Source integrity mismatch: {entry['path']}")
+    except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        errors.append(f"Invalid retained source record: {exc}")
     return errors
 
 
@@ -49,4 +65,4 @@ if __name__ == "__main__":
         print("ERROR:", e)
     if errors:
         raise SystemExit(1)
-    print("PASS: two valid skill entrypoints; local references resolve; state templates parse. Not a behavior/design benchmark.")
+    print("PASS: skill entrypoints and authored links resolve; retained source hashes match. Not a design benchmark.")

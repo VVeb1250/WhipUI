@@ -22,6 +22,9 @@ jobs:
       - run: npm run test:skills
       - run: npm run validate
       - run: npm pack --dry-run
-      - run: npm publish --access public --tag latest
+      - name: Select npm dist-tag
+        id: release
+        run: node -e "const fs=require('node:fs'); const tag=require('./package.json').version.includes('-')?'next':'latest'; fs.appendFileSync(process.env.GITHUB_OUTPUT, 'tag='+tag+'\n')"
+      - run: npm publish --access public --tag "${{ steps.release.outputs.tag }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

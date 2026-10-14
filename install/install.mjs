@@ -7,7 +7,8 @@ import { fileURLToPath } from 'node:url';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const names = ['whip-design', 'whip-ui', 'shared'];
-const usage = `whipui 3.0.0: install WhipDesign and WhipUI
+const version = JSON.parse(fs.readFileSync(path.join(source, 'package.json'), 'utf8')).version;
+const usage = `whipui ${version}: install WhipDesign and WhipUI
   npx whipui [init] [--host all|codex|claude|agents] [--scope user|project]
              [--project DIR] [--replace] [--dry-run]
 
@@ -69,7 +70,7 @@ function main() {
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (arg === '--help' || arg === '-h') { console.log(usage); return; }
-    if (arg === '--version') { console.log('3.0.0'); return; }
+    if (arg === '--version') { console.log(version); return; }
     if (arg === '--replace') options.replace = true;
     else if (arg === '--dry-run') options.dry = true;
     else if (['--host', '--scope', '--project'].includes(arg)) {
