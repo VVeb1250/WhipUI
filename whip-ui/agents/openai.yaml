@@ -1,6 +1,6 @@
 interface:
   display_name: "WhipUI"
-  short_description: "Build crafted UI, preserve intent, verify the render"
-  default_prompt: "Use $whip-ui to implement my UI and verify the rendered result."
+  short_description: "Build UI with curated craft, UX and real verification"
+  default_prompt: "Use $whip-ui to build my interface and verify the rendered result and main user journey."
 policy:
   allow_implicit_invocation: true

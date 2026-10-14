@@ -1,6 +1,6 @@
 interface:
   display_name: "WhipDesign"
-  short_description: "Co-design UX, explore taste, preserve owner decisions"
-  default_prompt: "Use $whip-design to help me choose a UX and visual direction."
+  short_description: "Guide product, UX and visual decisions step by step"
+  default_prompt: "Use $whip-design to help me work through the UX and visual decisions for my project."
 policy:
   allow_implicit_invocation: true

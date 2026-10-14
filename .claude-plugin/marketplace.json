@@ -1,9 +1,15 @@
 {
   "name": "whipui",
-  "description": "WhipDesign co-design and WhipUI execution skills for coding agents.",
-  "owner": {"name": "VVeb1250"},
-  "plugins": [{
-    "name": "whipui", "source": "./", "version": "3.0.0",
-    "description": "Two standalone skills: WhipDesign co-design and WhipUI implementation."
-  }]
+  "description": "Guided UX/UI Combo: curated product, craft, retrieval and visual iteration through WhipDesign and WhipUI.",
+  "owner": {
+    "name": "VVeb1250"
+  },
+  "plugins": [
+    {
+      "name": "whipui",
+      "source": "./",
+      "version": "3.1.0-rc.1",
+      "description": "Guided UX/UI Combo with curated product, craft, retrieval and visual tools."
+    }
+  ]
 }

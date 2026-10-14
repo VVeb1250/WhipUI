@@ -1,56 +1,59 @@
-# Whip Source Map v0.1 (checked 2026-10-12)
+# Bounded expertise and source adapters
 
-## Ground rule: "used by people" is not a causal design-quality benchmark
+Retained upstream files are unchanged Git blobs, except `SKILL.md` is named
+`REFERENCE.md` to keep only the two Whip entrypoints discoverable. The complete
+pins, original paths, installed paths, byte counts and SHA-256 hashes are in the
+generated [SOURCES.json](SOURCES.json). Load only the named reference needed now.
+Relative links resolve from that retained file. A link ending `SKILL.md` resolves
+to `REFERENCE.md`; an upstream `/command` means its retained family reference,
+not an instruction to install or recursively invoke another global skill.
 
-An official vendor repo, many installations, shipping product, or a well-made demo supports the **existence and adoption of a practice**, but generally does **not** prove that merging its prose into Whip improves interface quality over a strong model with the same tools and references. This pack was authored anew from evaluated mechanisms, NOT a concatenation of external skill text. We have not copied source scripts, databases, curated examples or proprietary designs.
+| Source | Responsibility and useful entry | Boundary / adapter |
+| --- | --- | --- |
+| [Intent](library/intent/skills/intent/REFERENCE.md) | Product/UX strategy. Select `skills/strategize`, `investigate`, `journey`, `organize`, `wireframe`, `articulate`, `measure`, `specify`, `evaluate`, `include`, `fortify`, `transpose`, `localize` or `blueprint`, each containing REFERENCE.md. Shared research/IA/interaction/content/measurement references are under `skills/intent/references/`. | Research plans and heuristic judgments are not observed user evidence. Its format-selection questions, separate context files, mandatory specialist chains and loop checkpoints follow Whip's scope/pace and existing authority. Use native document/diagram tools; do not add a presentation pipeline to an ordinary UI task. |
+| [Garden Web Design Engineer](library/garden/REFERENCE.md) | Existing identity, reference/asset fidelity and preservation. Read `references/redesign-protocol.md` before an existing UI change; calibration/recipes only for an unresolved fidelity or expression question. | Preserve real assets/contracts and reuse existing identity records. A new Impeccable direction does not need a second Garden calibration. Dials are private choices, not scores. Confirmation applies to unresolved consequential owner choices; rendered verification follows Whip completion. |
+| [Taste v2](library/taste/frontend/REFERENCE.md) | Optional challenge to a named expressive-web weakness, using only the relevant composition, materiality or motion sections. [Image-to-code](library/taste/image-to-code/REFERENCE.md) is conditional on an actual image-first path; [redesign](library/taste/redesign/REFERENCE.md) is a diagnostic supplement. | Do not load its whole frontend body or start a second design pipeline by default. Its core excludes dashboards, tables and multi-step product UI; it is not the game HUD authority. Approved direction and task evidence outrank its aesthetic bans/dials. Pattern familiarity, visual quality and subject identity are separate judgments; preserve purposeful conventions. No forced stack, packages, images, dark mode or icon/font replacement. |
+| [UI/UX Pro Max](library/promax/REFERENCE.md) | Searchable knowledge: styles, type, color, charts, UX, motion and real stack guidance. Execute `library/promax/scripts/search.py` for a specific unresolved question; see [host-integration.md](host-integration.md). Read its relevant quick/pro rules when needed. | Results are candidates, not user preferences or validated requirements. Check category, top-result identity, platform and applicability. Retry once if off-topic. Do not generate a new design system on every page, run `--persist`/`--force`, or duplicate DESIGN.md with MASTER.md. Search with generalized terms, not private data; verify consequential standards/library facts from their primary sources. |
+| [Impeccable](library/impeccable/REFERENCE.md) | Default visual method for a new/unresolved world: choose the surface mode, ground a direction, make a viewable first slice, receive owner feedback, then continue. Read `reference/new-work.md` and `craft-floor.md`; select `critique`, `distill`, `layout`, `clarify`, `polish`, `harden`, `live` or variants only for the actual question. | Reuse settled product/player facts instead of another init/Shape interview. Existing identity, precise matches and local fixes skip world-building. Preserve concrete direction/contract/finish methods within the authorized scope; label unavailable seed/boards/helpers rather than inventing completion. Tools are optional capabilities: check cached runtime and network/side effects before invoking a launcher or verb (concept-seed can use an API). Follow [host-integration.md](host-integration.md). Host policy governs delegation, services and installation. |
+| [Anthropic frontend-design](library/frontend-design/REFERENCE.md) | Compact challenger when a specific concept remains generic, or a smaller fallback where the selected visual method is unavailable. | Optional, not a compulsory second plan/render review after Impeccable. Choose it or Taste for the named question; neither silently replaces accepted direction or factual copy. |
+| [Game UI Design](library/game-ui/REFERENCE.md) | Player decisions, density by play context, HUD/menu/inventory states, input navigation, accessibility and checking UI over gameplay. Read its checklist for an actual game-flow review. | Specializes Intent rather than repeating product discovery. Preserve mechanics, save formats and state owners. Comparison screens may need simultaneous detail; urgency/disclosure follows play context, not a universal low-density target. Architecture suggestions require demonstrated needs. |
+| [Game UI Frontend](library/game-browser/skills/game-ui-frontend/REFERENCE.md) | Browser-game UI layer, scene/input boundaries, readable HUD, menus and overlays. Its prompt/playtest references are conditional; framework references apply only to the existing stack. | Browser adapter, not a second visual director or a game-scaffolding pipeline. Its low-chrome/20–25% HUD defaults concern ordinary real-time 3D play, not every management/inventory/menu surface. Preserve existing renderer, simulation and camera/clock contracts; no forced DOM/canvas split, new framework or dependencies. Native-engine projects use the game decision layer and their actual platform, not browser recipes. |
 
-Evidence tags: **O** official implementer / specification; **D** documented deployable workflow; **C** community third-party skill; **R** research/guideline; **B?** no controlled Whip-vs-baseline advantage demonstrated. `Use` means borrow a mechanism or refer to upstream on demand, not vendor or claim equivalent tooling.
+## Choose visual methods by the actual uncertainty
 
-| Source (real primary URL) | Evidence | Unique mechanism to reuse | Use in pack | Avoid / limits |
-| --- | --- | --- | --- | --- |
-| [Anthropic Frontend Design](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md) | O, B? | Subject-grounded aesthetic POV, actual content, self-critique, restraint | UI art-direction/visual-craft | Not proof that banning fonts or fixed anti-slop examples works across tastes; separate file license terms |
-| [Impeccable](https://github.com/pbakaus/impeccable) & [current skill](https://github.com/pbakaus/impeccable/blob/main/plugin/skills/impeccable/SKILL.md) | O/D, B? | Product/design context separation, craft/shape/critique/audit, bounded visual feedback and detectors | UI execution/QA, WhipDesign framing | Its bundled CLI and deterministic detectors are NOT included; avoid copy of 24 commands and heavyweight setup; license Apache-2.0 |
-| [UI UX Pro Max upstream](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md) | O/D, B? | Searchable design-system/UX/style/stack data and intent-oriented retrieval | Tool/reference selection, no in-core data dump | Counts/version change; note [license metadata inconsistency issue](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/issues/481) even though root LICENSE is MIT |
-| [Appllama App Design](https://github.com/Appllama/appllama-skills/blob/main/skills/appllama-app-design-skill/SKILL.md) | O/D, B? | Study actual app category, native navigation semantics, real simulator and motion validation | UI mobile surface, motion | Mobile/Expo orientation; external MCP optional; "study 20–30 screens" not universal; license listed MIT |
-| [Appllama Usage](https://github.com/Appllama/appllama-skills/blob/main/skills/appllama-usage/SKILL.md) | O/D, B? | Research tool routing and flow/element query plan | Design reference intelligence | Requires their service/MCP; not an offline image library |
-| [Google Stitch Skills](https://github.com/google-labs-code/stitch-skills) | O/D, B? | Design variants, code-to-design, design-system management, prototype & code workflows | Optional external tool/variants | Requires Stitch MCP credentials; cannot assume enabled; NOT copied into pack |
-| [Lovable-oriented third-party skill](https://github.com/headline-design/design-craft/blob/main/lovable/SKILL.md) | C, B? | Specific product/copy, restrained signature decisions, Tailwind/shadcn patterns | Art direction + engineering ideas | Not official Lovable policy; stack-specific, 900-line body would waste context; no vendor endorsement implied |
-| [Microsoft Frontend Design Review](https://github.com/microsoft/skills/blob/main/.github/skills/frontend-design-review/SKILL.md) | O/D, B? | Frictionless insight→action, craft and trustworthy review dimensions | UI QA and critique | Avoid converting multi-criteria judgment into unsupported scalar score |
-| [Vercel Web Design Guidelines](https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md) | O/D, B? | Source-linked review of web interface rule compliance | UI audit + a11y | Fetch/rules tool conditional; lint doesn't evaluate taste |
-| [Vercel Composition Patterns](https://github.com/vercel-labs/agent-skills/blob/main/skills/composition-patterns/SKILL.md) | O/D, B? | Compose complex React components instead of boolean prop proliferation | UI engineering | React-version-dependent; not a reason to refactor an unrelated project |
-| [Vercel React Best Practices](https://github.com/vercel/vercel-plugin/blob/main/skills/react-best-practices/SKILL.md) | O/D, B? | Prioritized React/Next performance/code pitfalls | UI engineering optional | Not style guidance; check actual React version |
-| [Vercel agent-browser](https://github.com/vercel-labs/agent-browser/blob/main/skill-data/core/SKILL.md) | O/D, B? | Inspect real DOM/screenshots and interact using compact refs | UI rendered QA when installed | Browser tool is external, may require install/config; screenshots need image visibility |
-| [Vercel agent-browser dogfood](https://github.com/vercel-labs/agent-browser/blob/main/skill-data/dogfood/SKILL.md) | O/D, B? | Reproducible functional/UX defects with screenshots and steps | UI rendered QA/audit | Test workflow overhead disproportionate for a tiny change |
-| [Browser Use QA](https://github.com/browser-use/browser-use/blob/main/skills/qa/SKILL.md) | O/D, B? | Real browser-driven visual verdict + flow test | UI QA alternative | Its hosted vision service not built in to Whip; AI verdict ≠ owner's taste |
-| [Interaction Design Skills](https://github.com/rastian/interaction-design-skills/blob/main/SKILL.md) | C, B? | Trigger→system response→feedback→failure→recovery state specification | Design UX methods and UI engineering | "10 states for every component" overbroad; implement reachable states |
-| [Refactoring UI agent skill](https://github.com/gnurio/refactoring-ui-plugin/blob/main/SKILL.md) | C, B? | Atomic transformations with input/output, visual signals & failure conditions | UI visual craft methodology | Secondary adaptation of commercial material; not reproducing content from book |
-| [Design Taste](https://github.com/h3nryprod01/design-taste/blob/main/SKILL.md) | C, B? | Visual review heuristics and craft vocabulary | Investigate/compare later | Claims of "elite taste" are positioning, not owner-specific preference accuracy |
-| [Agent Skills specification](https://github.com/agentskills/agentskills/blob/main/docs/specification.mdx) | O | Name/description and progressive disclosure | Pack format | Format compliance doesn't imply quality benefit |
-| [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/) | R / normative | Explicit criteria for accessible web interfaces | UI QA + Design validation | Automated tests don't establish full conformance |
-| [Apple HIG Motion](https://developer.apple.com/design/human-interface-guidelines/motion) | R / platform | Motion as feedback/continuity, reduced motion, nonblocking input | UI motion | Native-platform rules are not universal web style laws |
-| [Apple HIG Design Principles](https://developer.apple.com/design/human-interface-guidelines/design-principles) | R / platform | Accessibility/platform-specific intent | UI surface modes | Platform-specific, check device and OS requirements |
+For unresolved/new identity, Impeccable leads the mode/world and first viewable
+prototype. Inspect real assets/constraints first. In guided work, ask about the
+visible decision and capture accepted/rejected traits before a full speculative
+build. Delegated one-shot work chooses reversible direction autonomously and
+checks it. Cached-engine/board unavailability does not block a local prototype;
+disclose the unperformed mechanism. A named challenger diagnoses one deficiency
+inside that chosen world rather than selecting another palette/layout.
 
-## Capability coverage and selection decisions
+For working apps, Intent's task/state/IA reasoning and existing identity lead.
+For games use [game.md](workflows/game.md) first: player decisions own density and
+disclosure before visual simplification. Pro Max answers targeted gaps; Impeccable
+actions operate at that scope. UX audits are selected by an observed flow/state
+problem, not a universal pre-build checklist or several audit engines in sequence.
 
-| Capability needed | Primary borrowed mechanism | Local implementation | Deferred tool/dependency |
-| --- | --- | --- | --- |
-| Distinct visual identity from domain | Anthropic + Impeccable | UI `art-direction.md` | External image/reference search as available |
-| Co-design, personal taste | Preference probing and contradictory references from prior research | Design `preference-dialogue.md` | Stitch variants / image boards optional |
-| Real screen intelligence | Appllama + UX Pro Max retrieval architecture | Design `reference-intelligence.md` | Their MCPs/data optional |
-| UX flow and errors | Interaction design + standard UX methods | Design `ux-methods.md` | User recruitment / usability lab optional |
-| Component architecture | Vercel composition + project conventions | UI `engineering.md` | Stack-specific verifiers/tools |
-| Motion craft | Apple HIG + mobile simulator | UI `motion.md` | Playwright/simulator/video tool optional |
-| Visual/a11y QA | Impeccable + Vercel + browser workflows + W3C | UI `rendered-qa.md` | Impeccable detectors/Browser Use not bundled |
-| Design intent handoff/approval | Project's prior failures and owner-approved rules | Shared JSON packet / validator | Memory Base adapter deliberately not required |
+Style recipes, catalog worlds and database styles are starting systems. Show what
+fits and what must change for this product. Never claim that selecting a catalog
+style discovered the owner's taste, or that avoiding a named pattern proves craft.
 
-## Explicit rejection / non-adoption decisions
+## Shared tools are capabilities, not extra design authorities
 
-- Do **not** combine every upstream SKILL.md, numeric style catalog, or anti-slop ban into the model hot path.
-- Do **not** enforce "reference 20–30 screens every job," hardcoded typography/palette, or one required interview.
-- Do **not** ship fake wrapper scripts that purport to be Stitch, Appllama, Impeccable or browser tooling.
-- Do **not** make a separate specialist skill per visual discipline until direct A/B evaluations show a gain.
-- Do **not** treat star count, marketing screenshots, revenue rank or model-issued design grades as causal quality proof.
+Use the available native browser, Figma, image, document and reference tools for
+their concrete operations. Read their host skills when required. For Mobbin flows,
+screens or sections, inspect the returned images, extract transferable traits and
+anti-references, and distinguish visual inspiration from evidence of task success.
+Use only the fields/assets needed; do not export private material unnecessarily.
 
-## How to update sources
-
-Pin repository commit/release and license for any third-party code you actually vendor; none vendored in v0.1. Before running external commands, inspect the current upstream docs. Re-check licensing, installation and supported APIs on tool integration, especially where upstream metadata conflicts. User or project approved choices outrank upstream defaults.
+Stitch can supply screen/variant generation and code-to-design when its actual MCP
+capability is connected. Follow the relevant official stitch-skills protocol at
+https://github.com/google-labs-code/stitch-skills; do not pretend it is installed.
+21st MCP can search and retrieve real components/themes; discover its current
+tools and account capabilities before using generation. The old Magic package is
+a compatibility proxy, not the recommended new integration:
+https://github.com/21st-dev/magic-mcp. Verify provenance, license, dependencies,
+semantics and behavior before adapting retrieved code. Use existing components
+first when they already solve the task. Missing optional services get an honest
+fallback, not an automatic installation or a blocked ordinary UI task.
