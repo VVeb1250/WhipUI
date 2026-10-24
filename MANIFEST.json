@@ -123,6 +123,11 @@
       "sha256": "f7ebc2f032344a51f73bcbe7909aae890fcfe22e5d89a141091368b9dcaaf8a3"
     },
     {
+      "path": "tests/test_creative_contract.py",
+      "bytes": 2079,
+      "sha256": "2dfbeac9d94dc348106fca1739a109ca0d255c7f25774a28e62093d7495396d0"
+    },
+    {
       "path": "tests/test_pack.py",
       "bytes": 5898,
       "sha256": "217f105f896683097f50f00adb4ab3afa5df932aef91b3b28af4abdaeefa4ec5"
