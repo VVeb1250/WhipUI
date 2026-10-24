@@ -121,7 +121,7 @@ async function inspectPage(page) {
     const broken = [...document.images]
       .filter(img => img.complete && img.naturalWidth === 0)
       .map(img => img.currentSrc || img.src || '(unknown)');
-    return { documentWidth: document.documentElement.scrollWidth, viewportWidth: window.innerWidth,
+    return { documentWidth: document.documentElement.scrollWidth, viewportWidth: document.documentElement.clientWidth || window.innerWidth,
       brokenImages: broken, imageCount: document.images.length };
   });
 }
