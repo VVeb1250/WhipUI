@@ -69,8 +69,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5997,
-      "sha256": "c61351bf67aba33b4c82d8b253d5f412565d995509551df1a8e64d147a3eb299"
+      "bytes": 6512,
+      "sha256": "dff69faa487189d6869beff9d08d98ba0fb60285bf5e31fd15ac3a14c9b10e65"
     },
     {
       "path": "shared/.whip-owner.json",
@@ -99,8 +99,8 @@
     },
     {
       "path": "tests/behavior-cases.jsonl",
-      "bytes": 5638,
-      "sha256": "05e093c6752c91bd45dffe292ebb3f605280bb038f334ddb656611d7fc227017"
+      "bytes": 7759,
+      "sha256": "130f5b731409b297a5f872f65d09b355b91457941d5561726b3993f60e458d1a"
     },
     {
       "path": "tests/check_pack.py",
@@ -114,13 +114,18 @@
     },
     {
       "path": "tests/EVALUATION.md",
-      "bytes": 5932,
-      "sha256": "a8d7521b9e7f5dc24637d0e682d9e74d94337feba4b0ab8fe088057f14b1fdd4"
+      "bytes": 6666,
+      "sha256": "cb13f7fa530fe41dc7ef8f05cdbbb5340a485bc8f0fb371a45eaa5617ce35d5a"
     },
     {
       "path": "tests/install.test.mjs",
       "bytes": 8210,
       "sha256": "f7ebc2f032344a51f73bcbe7909aae890fcfe22e5d89a141091368b9dcaaf8a3"
+    },
+    {
+      "path": "tests/test_creative_contract.py",
+      "bytes": 2079,
+      "sha256": "2dfbeac9d94dc348106fca1739a109ca0d255c7f25774a28e62093d7495396d0"
     },
     {
       "path": "tests/test_pack.py",
@@ -174,8 +179,8 @@
     },
     {
       "path": "whip-ui/references/art-direction.md",
-      "bytes": 3630,
-      "sha256": "18515afb95ceb65df39488481d721f97b52c68e33a1be2b920e77fa18f38c4f7"
+      "bytes": 6446,
+      "sha256": "dfbd88ddcb10b4c5783ea1b7cab0f1b9576c2610e1340c9dd0af81341396f69d"
     },
     {
       "path": "whip-ui/references/engineering.md",
@@ -189,8 +194,8 @@
     },
     {
       "path": "whip-ui/references/rendered-qa.md",
-      "bytes": 4028,
-      "sha256": "3249b7766a5bd326ef3bfdfa37a2a5e0e5c1a33fea05f9cfbcf7f76a0cb16164"
+      "bytes": 4654,
+      "sha256": "0eb0114699793ab7fb97f619c3cf83c443d539fdd40f4a4fdc3b59e6f3c421a2"
     },
     {
       "path": "whip-ui/references/surface-modes.md",
@@ -204,8 +209,8 @@
     },
     {
       "path": "whip-ui/references/visual-craft.md",
-      "bytes": 4219,
-      "sha256": "6612ad72ac540cfb3064e1c8beae7965a529df37d740c1ad9e31dfa548f02c87"
+      "bytes": 5114,
+      "sha256": "16d3a62539ce5f03eac729a53d9a8f56b4dda314e940a20e8a055ae577ea8321"
     },
     {
       "path": "whip-ui/scripts/visual-qa.mjs",
@@ -214,8 +219,8 @@
     },
     {
       "path": "whip-ui/SKILL.md",
-      "bytes": 9912,
-      "sha256": "812420c6bc183e213ba3709e2514f098bf795ba0bf873fad7e0569e358bc17ad"
+      "bytes": 10700,
+      "sha256": "e3b73275b705925956fba76e79b237b854ec08a70ccf6d9e353a11812111d775"
     }
   ]
 }

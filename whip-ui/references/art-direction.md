@@ -17,6 +17,21 @@ Restraint: no gradients/ornaments unrelated to sensor signals
 
 A concept is useful only if you can explain **why its composition, visual material, interaction and content** fit the audience's job. "Premium dark SaaS" is not enough. A different concept might be preferable for a public marketing page vs daily expert operations.
 
+
+## Bounded creative exploration (only when there is latitude)
+
+For a new `CREATE` or explicitly exploratory `REDESIGN` with no pinned direction, briefly contrast **2–3 materially different** options before committing. This is a private decision aid, not a required multi-page deliverable. Skip when user intent, brand or reference already decides the art direction. Do not activate for `MATCH`, `EXTEND`, `REPAIR`, scoped `POLISH`, `MOTION`, or `AUDIT`.
+
+Use a **compact decision table** (one line per option, no multi-paragraph manifesto):
+
+- **Distinct mechanism:** what changes in attention order, composition, domain artifact, imagery or interaction (not merely palette/font adjectives)?
+- **Product reason:** what real audience job or content makes the idea appropriate?
+- **Risk / rejection:** where might it harm scan speed, legibility, accessibility, maintainability or approved intent?
+
+Prefer an alternative that transforms or questions an assumed layout pattern instead of merely decorating it. Select one direction and one concrete product-native visual anchor. A safe conventional option is allowed to win, especially for high-frequency operational UI. Keep selection internal if owner gave autonomy; call `whip-design` only when a consequential choice genuinely requires owner preference. Do not generate three code implementations, search for more references without a question, or repeat the fork during local polish.
+
+**Anchor test:** Name the authentic object/evidence/content whose appearance or behavior differentiates this UI (e.g. a real technical artifact, product output, workflow, data trace, or domain interaction). Explain how it shapes one visible area. Do not invent metrics, screenshots, artwork ownership, customer claims, or features. If no assets exist, use truthful UI-native representation or clearly mark a placeholder.
+
 ## Choose the organizing gesture
 
 Decide what gets the strongest visual emphasis: a hero artifact, type composition, product interaction, unusual spatial arrangement, illustration, data object, or cinematic transition. An unusual grid does not by itself create identity. Spend distinctiveness where it conveys meaning; quieter supporting elements establish usability and rhythm.
@@ -35,6 +50,16 @@ Separate **art direction** from **task flow**. Learn type treatment from one ref
 ## Asset design
 
 List visible assets with origin and constraints: existing approved brand artwork, supplied files, generated-original graphics, UI-native diagrams, or placeholder. Prefer appropriate authentic project images/screenshots over meaningless hero stock photos. Missing assets must be visible as a limitation, not hidden behind fictional achievements. Keep an asset provenance note for licensed, user-supplied or generated assets.
+
+## First-render concept critique (before micro-polish)
+
+On the first meaningful screenshot, ask three independent questions:
+
+1. **Product substitution:** Would the same composition still work if the brand and nouns were swapped for a competitor? Identify the actual product-native element that survives.
+2. **Composition:** Is the organizing gesture expressed in pixels/interaction, or did implementation collapse into a default hero/cards/grid despite the thesis?
+3. **Purpose:** Does the visual irregularity, image, animation or signature choice clarify the job, or just decorate it?
+
+Record a **specific visible observation**, not an unsupported aesthetic score. If the concept fails materially and the route permits reinvention, make **one** high-leverage structural revision and re-render the affected area. If it passes, preserve the anchor through technical fixes. Stop before infinite design churn; owner preference requires real owner feedback.
 
 ## Diagnose why a page looks generic
 
