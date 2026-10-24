@@ -48,7 +48,7 @@ Do not run all routes. When multiple apply, pick the user's primary goal, then a
 
 **4. Implement in real components.** Inspect stack before choosing libraries. Prefer current tokens/components; create purposeful new components when current primitives cannot convey the approved concept. Preserve functionality and content. Implement loading/empty/error/disabled/feedback states if within scope. Images/assets must have real paths, license/provenance or clear placeholders, and fallbacks. Never silently invent product claims or logos.
 
-**5. Verify.** Run available lint/typecheck/build. Launch a browser/simulator if possible; capture at least a representative desktop and mobile viewport for multi-device web pages, plus important interaction states. Compare the rendered evidence with the design intent or target, not only with your own coding plan. Evaluate the accessibility floor, overflow, hierarchy, asset fidelity and behavioral interactions. See `references/rendered-qa.md`.
+**5. Verify with a risk-sized budget.** Read `references/verification-budget.md` when rendered QA is needed. Use the local script-first runner for repeatable known checks, and interactive browser exploration only when evidence is insufficient. Run available lint/typecheck/build. Launch a browser/simulator if possible; capture at least a representative desktop and mobile viewport for multi-device web pages, plus important interaction states. Compare the rendered evidence with the design intent or target, not only with your own coding plan. Evaluate the accessibility floor, overflow, hierarchy, asset fidelity and behavioral interactions. See `references/rendered-qa.md` for evidence and `references/verification-budget.md` for scope, tool choice and stop rules.
 
 **6. Correct and report.** Prioritize major visible/functional defects, then scoped polish. One targeted batch and one confirmation round are a useful default, not a hard limit when critical problems remain. Return changed files, design decisions, screenshots/test evidence, remaining gaps and approval-sensitive questions. If rendering is unavailable, explicitly say **not visually verified**; never claim finish based solely on successful compilation.
 
@@ -59,7 +59,7 @@ Do not run all routes. When multiple apply, pick the user's primary goal, then a
 | New visual direction; expressive marketing/portfolio/game-inspired design | `references/art-direction.md` |
 | Layout, hierarchy, type, composition, color, assets, density | `references/visual-craft.md` |
 | Reactive product UI, UI states, React architecture, existing design system | `references/engineering.md` |
-| Screenshots, Playwright/browser validation, diagnostic priority, QA | `references/rendered-qa.md` |
+| Screenshots, Playwright/browser validation, diagnostic priority, QA | `references/rendered-qa.md` + `references/verification-budget.md` |
 | Motion interaction, spring choreography, scroll or game-like UI | `references/motion.md` |
 | Data-heavy dashboards, commerce, game-like UI, mobile/native | `references/surface-modes.md` |
 | User research, taste exploration, defining UX intent | Activate `whip-design` instead of pretending WhipUI can infer approvals |
