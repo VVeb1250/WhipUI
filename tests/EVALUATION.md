@@ -28,6 +28,10 @@ Do not compare Whip+great references against baseline with no references. Lock m
 
 From `behavior-cases.jsonl`, pick ten-plus diverse tasks; at least one each: creative marketing/portfolio; product dashboard; mobile; `MATCH`; `POLISH`; existing design system extension; motion; ambiguous co-design. Include briefs with domain-specific artifacts, not blank "build SaaS landing page." For each task freeze the natural user prompt and working repo. Human participants should only see anonymized artifacts, not source skill names.
 
+## Phase B creative-quality experiment
+
+Compare identical fresh `CREATE` and explicitly unpinned `REDESIGN` tasks using strong baseline, Phase A WhipUI and Phase B WhipUI with equal model, repo, references, browser access and budget. Include a preservation suite for MATCH/EXTEND/REPAIR/POLISH and an operational dashboard where restraint is preferable to novelty. Blind-rank genuine screenshots for recognizable product identity, composition, task fit and preference; report inter-rater disagreement, visual defects, tokens and wall-time. Record which first-render critique changed a *structural* decision. Never treat assertion-only route tests as evidence of improved design or claim a percentage improvement without actual runs.
+
 ## Phase A paired QA-efficiency experiment
 
 Use identical code and defect fixtures on 3.0 browser-agent inspection and the new script-first path. Record prompt, model, tool/harness versions, actual screenshot/interaction evidence, browser calls, input/output tokens, wall time, findings, false negatives and false positives. Evaluate small local REPAIR, multi-viewport CREATE and broken critical interaction separately. Pass condition is fewer tokens/tool calls *without increasing critical missed defects*, not fewer screenshots alone. Browser-script unit tests are not evidence of a real browser run or design-quality advantage.
