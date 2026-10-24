@@ -6,7 +6,7 @@
   "bin": {"whipui": "install/install.mjs"},
   "files": ["whip-design", "whip-ui", "shared", "install", ".claude-plugin", "AGENTS.snippet.md", "MANIFEST.json", "README.md", "CHANGELOG.md", "LICENSE"],
   "scripts": {
-    "test": "node --test tests/install.test.mjs",
+    "test": "node --test tests/*.test.mjs",
     "test:skills": "python -m unittest discover -s tests -p test_*.py -v",
     "syntax-check": "node --check install/install.mjs",
     "validate": "python tests/check_pack.py"

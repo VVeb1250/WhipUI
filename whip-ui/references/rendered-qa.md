@@ -2,6 +2,8 @@
 
 Load for `CREATE`, `MATCH`, `POLISH`, `REDESIGN`, `MOTION`, `REPAIR` once the artifact can render. QA is a **tool loop**, not a promise that a skill alone can enforce visual quality.
 
+For scope, cost and tool choice, follow `verification-budget.md` as the single budget authority. Do not run every check below on every task.
+
 ## Minimum sequence
 
 ```
@@ -43,7 +45,7 @@ When polishing, preserve the accepted composition and fix local causes. When red
 
 ## Browser tool choice
 
-Use browser already available in the host (Playwright, Puppeteer, Chrome DevTools, agent-browser, Browser Use) rather than installing a browser stack automatically. For visual evidence, capture local screen/viewport image to inspect, not just text DOM or accessibility snapshots. Agent-browser and Browser Use have their own instructions; consult only when those tools are installed. Tool availability is not guaranteed; never invent invocation syntax.
+For known, repeatable local checks prefer `../scripts/visual-qa.mjs` with existing project Playwright and a compact report; see `verification-budget.md`. Use interactive browser only when needed. Use browser already available in the host (Playwright, Puppeteer, Chrome DevTools, agent-browser, Browser Use) rather than installing a browser stack automatically. For visual evidence, capture local screen/viewport image to inspect, not just text DOM or accessibility snapshots. Agent-browser and Browser Use have their own instructions; consult only when those tools are installed. Tool availability is not guaranteed; never invent invocation syntax.
 
 ## Report example
 

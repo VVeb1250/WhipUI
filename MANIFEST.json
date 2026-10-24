@@ -64,13 +64,13 @@
     },
     {
       "path": "package.json",
-      "bytes": 1027,
-      "sha256": "2ff6bc41b3589fcfa4c56c84930f1dc6e205420b1c5acc241d690bc7a1c29423"
+      "bytes": 1021,
+      "sha256": "40c36d1bd0ffea82456c22b230e452e667809cddb7f148c063a55ead25791f5a"
     },
     {
       "path": "README.md",
-      "bytes": 5265,
-      "sha256": "339fcf42981922e2140cf7a4945a4fc16c6ade70a25d398369051b510215bf03"
+      "bytes": 5997,
+      "sha256": "c61351bf67aba33b4c82d8b253d5f412565d995509551df1a8e64d147a3eb299"
     },
     {
       "path": "shared/.whip-owner.json",
@@ -114,8 +114,8 @@
     },
     {
       "path": "tests/EVALUATION.md",
-      "bytes": 5300,
-      "sha256": "ae4667a49e452516f042e659731e44413469969d30c8d665d308bf8ee5fa50ae"
+      "bytes": 5932,
+      "sha256": "a8d7521b9e7f5dc24637d0e682d9e74d94337feba4b0ab8fe088057f14b1fdd4"
     },
     {
       "path": "tests/install.test.mjs",
@@ -126,6 +126,11 @@
       "path": "tests/test_pack.py",
       "bytes": 5898,
       "sha256": "217f105f896683097f50f00adb4ab3afa5df932aef91b3b28af4abdaeefa4ec5"
+    },
+    {
+      "path": "tests/visual-qa.test.mjs",
+      "bytes": 1907,
+      "sha256": "a74145d4293b56b8099c80f4709931363e95b055506e1d533fc7f53477295613"
     },
     {
       "path": "whip-design/agents/openai.yaml",
@@ -184,8 +189,8 @@
     },
     {
       "path": "whip-ui/references/rendered-qa.md",
-      "bytes": 3690,
-      "sha256": "5ceee5f4e0d86605e72bb094eafe097983db85db6951c4ae9ebca82543fede18"
+      "bytes": 4028,
+      "sha256": "3249b7766a5bd326ef3bfdfa37a2a5e0e5c1a33fea05f9cfbcf7f76a0cb16164"
     },
     {
       "path": "whip-ui/references/surface-modes.md",
@@ -193,14 +198,24 @@
       "sha256": "55f7b520e68b56f57f0d71a1f5e9425a0758402125871223ba03d617348016ac"
     },
     {
+      "path": "whip-ui/references/verification-budget.md",
+      "bytes": 2697,
+      "sha256": "a3f89ec379b70ac9c92285e36a01996275ef0e16f7c57997aa5004ed0371414f"
+    },
+    {
       "path": "whip-ui/references/visual-craft.md",
       "bytes": 4219,
       "sha256": "6612ad72ac540cfb3064e1c8beae7965a529df37d740c1ad9e31dfa548f02c87"
     },
     {
+      "path": "whip-ui/scripts/visual-qa.mjs",
+      "bytes": 9890,
+      "sha256": "40e27a72f280c662ee44e830237bd0c2eceb68daf4ffbdf9172fd30ed7c6e3fb"
+    },
+    {
       "path": "whip-ui/SKILL.md",
-      "bytes": 9554,
-      "sha256": "6c02f6abb72f09a68c90dd24e0e0bca8c3bfaec009521767aa756bef73c053b7"
+      "bytes": 9912,
+      "sha256": "812420c6bc183e213ba3709e2514f098bf795ba0bf873fad7e0569e358bc17ad"
     }
   ]
 }

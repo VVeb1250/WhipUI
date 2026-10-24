@@ -62,6 +62,17 @@ Copy `whip-design`, `whip-ui` and `shared` together into the host's skills direc
 
 The base was `whip-skills-v0.1.zip`, SHA256 `6917fcc9bb8734348aed1394f862a87e362fb8ab0a2d595f49ea33c5a7106391`, followed by local provenance-guard fixes. Old release code and experiment results remain available in Git history and the [v2.0.0 tag](https://github.com/VVeb1250/WhipUI/tree/v2.0.0). See [CHANGELOG](CHANGELOG.md).
 
+## Local script-first visual QA (experimental)
+
+For a frontend project with Playwright and Chromium already installed, run the bundled tool from the project directory. It never auto-installs packages and only connects to loopback URLs:
+
+```sh
+node /path/to/whip-ui/scripts/visual-qa.mjs --url http://127.0.0.1:5173 --profile standard
+node /path/to/whip-ui/scripts/visual-qa.mjs --url http://127.0.0.1:5173 --profile focused --selector '.hero' --viewport mobile
+```
+
+See [verification budget](whip-ui/references/verification-budget.md). Output is a compact report plus local screenshots. It checks common technical symptoms, not aesthetics, accessibility conformance, motion or actual task usability. No measured token savings yet.
+
 ## Verification and status
 
 This is a candidate design workflow. Packaging, installer transactions and provenance regressions are tested. They do not establish better UI quality, user preference or usability than a strong baseline. Render and interact with actual output, then evaluate with people where the claim requires it.
