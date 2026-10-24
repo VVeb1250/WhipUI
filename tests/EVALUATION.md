@@ -28,6 +28,10 @@ Do not compare Whip+great references against baseline with no references. Lock m
 
 From `behavior-cases.jsonl`, pick ten-plus diverse tasks; at least one each: creative marketing/portfolio; product dashboard; mobile; `MATCH`; `POLISH`; existing design system extension; motion; ambiguous co-design. Include briefs with domain-specific artifacts, not blank "build SaaS landing page." For each task freeze the natural user prompt and working repo. Human participants should only see anonymized artifacts, not source skill names.
 
+## Phase A paired QA-efficiency experiment
+
+Use identical code and defect fixtures on 3.0 browser-agent inspection and the new script-first path. Record prompt, model, tool/harness versions, actual screenshot/interaction evidence, browser calls, input/output tokens, wall time, findings, false negatives and false positives. Evaluate small local REPAIR, multi-viewport CREATE and broken critical interaction separately. Pass condition is fewer tokens/tool calls *without increasing critical missed defects*, not fewer screenshots alone. Browser-script unit tests are not evidence of a real browser run or design-quality advantage.
+
 ## Actual measurements
 
 **UI:** blind pairwise forced choice; preference reasons; brief fit (1–7), coherence/hierarchy/type (1–7), distinctiveness without mismatching audience (1–7), realistic functionality (pass/fail), responsive defects count, accessibility defects, deviation from approved decisions, render/interaction evidence, total input/output tokens, wall time and tool calls. Use separate rater groups for owner taste, design craft, and target-user usability. Do not infer task completion from screenshots.
