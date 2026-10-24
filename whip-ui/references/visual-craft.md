@@ -20,6 +20,10 @@ Use grouping, edge alignment, stable rhythm, negative space, controlled asymmetr
 
 **Failure:** every section gets an identical rounded dark card, card-in-card and arbitrary gradient. **Fix:** ask which group genuinely needs a surface boundary; use spacing, type or divider when surfaces don't communicate a new state.
 
+## Intentional irregularity, not random imperfection
+
+Controlled asymmetry, uneven editorial rhythm, a handmade texture or an unexpected focal crop are **optional expressive tools**, never quality requirements. Use one only if its cause is legible in product context (material, content, interaction, brand, or hierarchy). Preserve reading order, accessibility, operational scan paths and approved structure. If an irregularity can be removed without losing meaning, it is not needed. Do not trade function for novelty or turn anti-slop advice into another fixed visual style.
+
 ## Color and tone
 
 Decide semantic roles before hexes: canvas, raised surfaces, body text, muted text, action, accent, success, warning, error, selection, focus. Accent hierarchy should not imply all items are equally actionable. Test contrast for body/text and visible focus; color alone must not convey state. Dark mode requires independent contrast work, not brightness inversion. Preserve pinned palettes even if they are unusual; solve legibility locally.
@@ -38,5 +42,7 @@ Ask what each asset proves or helps recognize. Use authentic product screenshots
 - Coherent copy with concrete CTA verbs and empty/error recovery.
 
 ## A two-minute red-team
+
+When doing exploratory `CREATE`/`REDESIGN`, complete the concept-level critique in `art-direction.md` *before* this local craft check. Do not run an extra full-browser cycle just to satisfy prose; reuse the first render. `MATCH`, `REPAIR`, `EXTEND` and approved design work require fidelity, not a new creative fork.
 
 Compare against: (1) the brief; (2) one credible strong product/reference in the same category; (3) the before screenshot if polishing. Identify **the biggest 1–3 defects**, each linked to the rendered evidence, before touching minor details. A model preference for a font is not a defect unless it compromises identity, legibility or an approved choice.
