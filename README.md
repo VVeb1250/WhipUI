@@ -62,6 +62,10 @@ Copy `whip-design`, `whip-ui` and `shared` together into the host's skills direc
 
 The base was `whip-skills-v0.1.zip`, SHA256 `6917fcc9bb8734348aed1394f862a87e362fb8ab0a2d595f49ea33c5a7106391`, followed by local provenance-guard fixes. Old release code and experiment results remain available in Git history and the [v2.0.0 tag](https://github.com/VVeb1250/WhipUI/tree/v2.0.0). See [CHANGELOG](CHANGELOG.md).
 
+## Phase B creative direction (experimental)
+
+For unconstrained `CREATE` and `REDESIGN` work, WhipUI briefly compares materially different design mechanisms, selects one product-grounded visual anchor, then critiques the first render *before* cosmetic polish. No mandatory moodboards, owner interviews or three implementations. `MATCH`, `REPAIR`, `EXTEND`, `MOTION`, scoped `POLISH` and approved designs retain fidelity-first execution. This is a behavior hypothesis; no measured anti-slop improvement is claimed.
+
 ## Local script-first visual QA (experimental)
 
 For a frontend project with Playwright and Chromium already installed, run the bundled tool from the project directory. It never auto-installs packages and only connects to loopback URLs:
