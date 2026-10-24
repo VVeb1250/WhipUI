@@ -34,6 +34,10 @@ For a responsive web page inspect representative narrow/mobile and wide/desktop 
 
 Do not claim "WCAG compliant" from one automated checker. Automated checks detect only a subset. Prefer exact issue with evidence and remediation.
 
+## Creative versus technical judgment
+
+For new expressive `CREATE`/`REDESIGN` work only, reuse the first screenshots to perform the concept check in `art-direction.md` before fine-grained polish. A build, accessibility scan, screenshot match or pixel-diff is **not** a test of originality or owner taste. Do not add another browser tour solely for creative critique. If art direction is fundamentally wrong, correct the single highest-impact structural cause and then return to risk-sized technical QA; do not endlessly restyle. For `MATCH`, `EXTEND`, `REPAIR` and other preservation routes, focus on scope/fidelity instead.
+
 ## Defect severity and repair boundary
 
 1. Primary functionality/keyboard inaccessible/broken visual on target viewport.
