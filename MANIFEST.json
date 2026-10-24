@@ -209,8 +209,8 @@
     },
     {
       "path": "whip-ui/scripts/visual-qa.mjs",
-      "bytes": 9850,
-      "sha256": "1f290473d4a041bb87732edbf4b0b9fb15b2582d89f774612009dda996961ee9"
+      "bytes": 9890,
+      "sha256": "40e27a72f280c662ee44e830237bd0c2eceb68daf4ffbdf9172fd30ed7c6e3fb"
     },
     {
       "path": "whip-ui/SKILL.md",
